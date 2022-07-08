@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="landscape" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LEDViewController" customModule="LEDBoard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ws9-9M-C1l">
+                                <rect key="frame" x="94" y="200" width="708" height="143"/>
+                                <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRH-xo-19v">
+                                <rect key="frame" x="124" y="40" width="692" height="80"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WNU-c0-r9T">
+                                        <rect key="frame" x="28" y="15" width="364" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="textFieldDidEndOnExit:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="y4n-u7-ApB"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UkA-xu-jwB">
+                                        <rect key="frame" x="572" y="15" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="6SQ-Hq-2dS"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="sendButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hej-D2-LQ5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zga-9s-xfw">
+                                        <rect key="frame" x="422" y="15" width="100" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="2eq-ib-6uR"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="zga-9s-xfw" secondAttribute="bottom" constant="15" id="0Sr-Av-xCD"/>
+                                    <constraint firstAttribute="height" constant="80" id="6OR-wC-SIS"/>
+                                    <constraint firstItem="zga-9s-xfw" firstAttribute="top" secondItem="NRH-xo-19v" secondAttribute="top" constant="15" id="IDB-YS-cMy"/>
+                                    <constraint firstItem="zga-9s-xfw" firstAttribute="leading" secondItem="WNU-c0-r9T" secondAttribute="trailing" constant="30" id="J48-nE-aZG"/>
+                                    <constraint firstAttribute="bottom" secondItem="UkA-xu-jwB" secondAttribute="bottom" constant="15" id="Ny9-A7-PXm"/>
+                                    <constraint firstAttribute="bottom" secondItem="WNU-c0-r9T" secondAttribute="bottom" constant="15" id="Puh-me-QOm"/>
+                                    <constraint firstItem="WNU-c0-r9T" firstAttribute="top" secondItem="NRH-xo-19v" secondAttribute="top" constant="15" id="Rtu-Fq-7rX"/>
+                                    <constraint firstItem="UkA-xu-jwB" firstAttribute="top" secondItem="NRH-xo-19v" secondAttribute="top" constant="15" id="WBR-vg-iCU"/>
+                                    <constraint firstItem="UkA-xu-jwB" firstAttribute="centerY" secondItem="NRH-xo-19v" secondAttribute="centerY" id="YwW-Gt-uon"/>
+                                    <constraint firstAttribute="trailing" secondItem="UkA-xu-jwB" secondAttribute="trailing" constant="20" id="ZRW-ys-uKc"/>
+                                    <constraint firstItem="zga-9s-xfw" firstAttribute="centerY" secondItem="NRH-xo-19v" secondAttribute="centerY" id="c6a-ys-z58"/>
+                                    <constraint firstItem="WNU-c0-r9T" firstAttribute="leading" secondItem="NRH-xo-19v" secondAttribute="leadingMargin" constant="20" id="lyV-B6-grp"/>
+                                    <constraint firstItem="UkA-xu-jwB" firstAttribute="leading" secondItem="zga-9s-xfw" secondAttribute="trailing" constant="50" id="sIB-HN-dN8"/>
+                                    <constraint firstItem="WNU-c0-r9T" firstAttribute="centerY" secondItem="NRH-xo-19v" secondAttribute="centerY" id="yX7-bG-INf"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oX-2Z-GBA">
+                                <rect key="frame" x="786" y="154" width="61" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="임시완"/>
+                                <connections>
+                                    <action selector="exampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5x6-kl-Ifn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-fP-lpq">
+                                <rect key="frame" x="660" y="153" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="임시"/>
+                                <connections>
+                                    <action selector="exampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gyc-ps-TSg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dx8-Ln-XyF">
+                                <rect key="frame" x="738" y="153" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="임시"/>
+                                <connections>
+                                    <action selector="exampleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e8Y-5e-fJ9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="subColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Ws9-9M-C1l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="2CP-IR-yiZ"/>
+                            <constraint firstAttribute="trailing" secondItem="NRH-xo-19v" secondAttribute="trailing" constant="80" id="2hT-hs-u4r"/>
+                            <constraint firstItem="NRH-xo-19v" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="778-24-znh"/>
+                            <constraint firstItem="NRH-xo-19v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="Knm-rJ-RzG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ws9-9M-C1l" secondAttribute="bottom" constant="50" id="P8n-7G-tzf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ws9-9M-C1l" secondAttribute="trailing" constant="50" id="iC2-hO-O9t"/>
+                            <constraint firstItem="Ws9-9M-C1l" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jIJ-XA-WPN"/>
+                            <constraint firstItem="Ws9-9M-C1l" firstAttribute="top" secondItem="NRH-xo-19v" secondAttribute="bottom" constant="80" id="u72-do-Lf9"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4gz-Kw-sGn" appends="YES" id="hJW-th-r2i"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="backView" destination="NRH-xo-19v" id="VwH-dU-EFL"/>
+                        <outlet property="changeColorButton" destination="zga-9s-xfw" id="NjS-hT-xKZ"/>
+                        <outlet property="resultLabel" destination="Ws9-9M-C1l" id="RPc-dg-5It"/>
+                        <outlet property="sendButton" destination="UkA-xu-jwB" id="jov-kS-GCR"/>
+                        <outlet property="tagGestureRecognizer" destination="4gz-Kw-sGn" id="E5r-zP-rjZ"/>
+                        <outlet property="writeTextField" destination="WNU-c0-r9T" id="Rcs-AV-IuP"/>
+                        <outletCollection property="buttonList" destination="UkA-xu-jwB" collectionClass="NSMutableArray" id="x1E-F9-dlV"/>
+                        <outletCollection property="buttonList" destination="zga-9s-xfw" collectionClass="NSMutableArray" id="cWc-uY-S2f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4gz-Kw-sGn">
+                    <connections>
+                        <action selector="tapGestureClicked:" destination="BYZ-38-t0r" id="xyZ-Hy-hxt"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-12.053571428571429" y="114.49275362318842"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="subColor">
+            <color red="0.49399998784065247" green="0.71700000762939453" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
