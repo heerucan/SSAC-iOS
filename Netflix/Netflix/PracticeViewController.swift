@@ -24,7 +24,7 @@ class PracticeViewController: UIViewController {
         super.viewDidLoad()
         posterImageView.image = UIImage(named: "movie\(Int.random(in: 1...5))")
         posterImageView.clipsToBounds = true
-        posterImageView.layer.cornerRadius = posterImageView.frame.height / 2
+        posterImageView.layer.cornerRadius = posterImageView.frame.width / 2
         
         movieTitleLabel.text = "택시운전사"
         movieTitleLabel.backgroundColor = .yellow

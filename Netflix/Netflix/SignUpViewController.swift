@@ -58,7 +58,6 @@ class SignUpViewController: UIViewController {
         textField.keyboardType = keyboardType
         textField.placeholder = placeholder
         textField.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.white])
-        codeTextField.delegate = self
     }
     
     // 2. 배열해서 만드는 방법
@@ -97,34 +96,5 @@ class SignUpViewController: UIViewController {
         toggleSwitch.setOn(true, animated: true)
         toggleSwitch.backgroundColor = .lightGray
         toggleSwitch.layer.cornerRadius = toggleSwitch.frame.height / 2
-    }
-    
-    
-}
-
-extension SignUpViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        guard let codeText = codeTextField.text else { return false }
-        
-        if codeText.hasCharacters() {
-            return true
-        } else {
-             return false
-        }
-    }
-}
-
-extension String {
-    func hasCharacters() -> Bool {
-        do {
-            let regex = try NSRegularExpression(pattern: "^[0-9]$", options: .caseInsensitive)
-            if let _ = regex.firstMatch(in: self, options: NSRegularExpression.MatchingOptions.reportCompletion, range: NSMakeRange(0, self.count)) {
-                return true
-            }
-        } catch {
-            print(error.localizedDescription)
-            return false
-        }
-        return false
     }
 }
