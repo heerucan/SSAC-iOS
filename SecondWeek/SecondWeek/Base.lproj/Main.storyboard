@@ -434,43 +434,52 @@
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSz-I9-Wlg">
-                                <rect key="frame" x="159.33333333333334" y="267.33333333333331" width="56.333333333333343" height="56.333333333333314"/>
+                                <rect key="frame" x="159.33333333333334" y="266.66666666666669" width="56.333333333333343" height="56.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zSz-I9-Wlg" secondAttribute="height" multiplier="1:1" id="xx9-aZ-Qdj"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime2"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="Isk-pN-whu"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-ak-oNV">
-                                <rect key="frame" x="166.33333333333334" y="333.66666666666669" width="42.333333333333343" height="14.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사랑해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8b-ak-oNV">
+                                <rect key="frame" x="166" y="333" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8Y-mn-sU4">
-                                <rect key="frame" x="63" y="267.33333333333331" width="56.333333333333343" height="56.333333333333314"/>
+                                <rect key="frame" x="63" y="266.66666666666669" width="56.333333333333343" height="56.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="h8Y-mn-sU4" secondAttribute="height" multiplier="1:1" id="pgn-5F-SwK"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime1"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="QP7-TY-idl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0AQ-pI-nbg">
-                                <rect key="frame" x="255.66666666666666" y="267.33333333333331" width="56.333333333333343" height="56.333333333333314"/>
+                                <rect key="frame" x="255.66666666666666" y="266.66666666666669" width="56.333333333333343" height="56.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="0AQ-pI-nbg" secondAttribute="height" multiplier="1:1" id="MQq-5o-phf"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime3"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="xZl-f6-cq2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eTz-wA-U4J">
-                                <rect key="frame" x="70" y="333.66666666666669" width="42.333333333333343" height="14.333333333333314"/>
+                                <rect key="frame" x="70" y="333" width="42.333333333333343" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRE-E9-Klb">
-                                <rect key="frame" x="262.66666666666669" y="333.66666666666669" width="42.333333333333314" height="14.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRE-E9-Klb">
+                                <rect key="frame" x="262.33333333333331" y="333" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -479,9 +488,12 @@
                                 <rect key="frame" x="159.33333333333334" y="378" width="56.333333333333343" height="56"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime5"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="IeB-9K-B44"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJu-RV-OMq">
-                                <rect key="frame" x="166.33333333333334" y="444" width="42.333333333333343" height="14.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="속상해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJu-RV-OMq">
+                                <rect key="frame" x="166" y="444" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -490,6 +502,9 @@
                                 <rect key="frame" x="63" y="378" width="56.333333333333343" height="56"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime4"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="jxI-HP-FEZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3k2-HC-qsM">
                                 <rect key="frame" x="255.66666666666666" y="378" width="56.333333333333343" height="56"/>
@@ -498,48 +513,60 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime6"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="Lj8-hV-GrM"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQn-fQ-Jh4">
-                                <rect key="frame" x="70" y="444" width="42.333333333333343" height="14.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당황해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQn-fQ-Jh4">
+                                <rect key="frame" x="69.666666666666671" y="444" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is6-CD-Wxo">
-                                <rect key="frame" x="262.66666666666669" y="444" width="42.333333333333314" height="14.333333333333314"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우울해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="is6-CD-Wxo">
+                                <rect key="frame" x="262.33333333333331" y="444" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1R-j0-8Hr">
-                                <rect key="frame" x="159.33333333333334" y="488.33333333333331" width="56.333333333333343" height="56.333333333333314"/>
+                                <rect key="frame" x="159.33333333333334" y="488.99999999999994" width="56.333333333333343" height="56.333333333333314"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime8"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="VUW-KC-ixR"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-AE-x4A">
-                                <rect key="frame" x="166.33333333333334" y="554.66666666666663" width="42.333333333333343" height="14.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="찝찝해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DaF-AE-x4A">
+                                <rect key="frame" x="166" y="555.33333333333337" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJu-uL-Ydx">
-                                <rect key="frame" x="63" y="488.33333333333331" width="56.333333333333343" height="56.333333333333314"/>
+                                <rect key="frame" x="63" y="488.99999999999994" width="56.333333333333343" height="56.333333333333314"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime7"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="5JG-nu-7Nf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kkB-Qy-mW0">
-                                <rect key="frame" x="255.66666666666666" y="488.33333333333331" width="56.333333333333343" height="56.333333333333314"/>
+                                <rect key="frame" x="255.66666666666666" y="488.99999999999994" width="56.333333333333343" height="56.333333333333314"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="sesac_slime9"/>
+                                <connections>
+                                    <action selector="clickedEmotionButton:" destination="djh-Zt-KYe" eventType="touchUpInside" id="BCl-9e-54h"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wg-I3-jfP">
-                                <rect key="frame" x="70" y="554.66666666666663" width="42.333333333333343" height="14.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="심심해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wg-I3-jfP">
+                                <rect key="frame" x="69.666666666666671" y="555.33333333333337" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRe-BM-nmd">
-                                <rect key="frame" x="262.66666666666669" y="554.66666666666663" width="42.333333333333314" height="14.333333333333371"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="억울해 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRe-BM-nmd">
+                                <rect key="frame" x="262.33333333333331" y="555.33333333333337" width="43" height="15"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -606,6 +633,26 @@
                             <constraint firstItem="0AQ-pI-nbg" firstAttribute="top" secondItem="zSz-I9-Wlg" secondAttribute="top" id="zFr-36-6S4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outletCollection property="labelList" destination="eTz-wA-U4J" collectionClass="NSMutableArray" id="YpC-fY-ZWi"/>
+                        <outletCollection property="labelList" destination="c8b-ak-oNV" collectionClass="NSMutableArray" id="ADF-rf-fcW"/>
+                        <outletCollection property="labelList" destination="zRE-E9-Klb" collectionClass="NSMutableArray" id="I0d-Mi-ueG"/>
+                        <outletCollection property="labelList" destination="hQn-fQ-Jh4" collectionClass="NSMutableArray" id="2L6-ei-uvF"/>
+                        <outletCollection property="labelList" destination="JJu-RV-OMq" collectionClass="NSMutableArray" id="6d9-6m-q9V"/>
+                        <outletCollection property="labelList" destination="is6-CD-Wxo" collectionClass="NSMutableArray" id="bqZ-gF-mO7"/>
+                        <outletCollection property="labelList" destination="4Wg-I3-jfP" collectionClass="NSMutableArray" id="Sxv-nE-mTY"/>
+                        <outletCollection property="labelList" destination="DaF-AE-x4A" collectionClass="NSMutableArray" id="EQe-HL-cyE"/>
+                        <outletCollection property="labelList" destination="qRe-BM-nmd" collectionClass="NSMutableArray" id="3k7-l7-1S8"/>
+                        <outletCollection property="buttonList" destination="h8Y-mn-sU4" collectionClass="NSMutableArray" id="gYY-r1-SsI"/>
+                        <outletCollection property="buttonList" destination="zSz-I9-Wlg" collectionClass="NSMutableArray" id="iVa-iD-adX"/>
+                        <outletCollection property="buttonList" destination="0AQ-pI-nbg" collectionClass="NSMutableArray" id="faZ-77-N0E"/>
+                        <outletCollection property="buttonList" destination="2Nz-GF-BMw" collectionClass="NSMutableArray" id="qFT-et-bpP"/>
+                        <outletCollection property="buttonList" destination="mc3-3D-qMd" collectionClass="NSMutableArray" id="MmY-MO-hzA"/>
+                        <outletCollection property="buttonList" destination="3k2-HC-qsM" collectionClass="NSMutableArray" id="Jp4-b1-y5R"/>
+                        <outletCollection property="buttonList" destination="NJu-uL-Ydx" collectionClass="NSMutableArray" id="hhH-Fk-4Uh"/>
+                        <outletCollection property="buttonList" destination="Y1R-j0-8Hr" collectionClass="NSMutableArray" id="7EO-2o-F0T"/>
+                        <outletCollection property="buttonList" destination="kkB-Qy-mW0" collectionClass="NSMutableArray" id="VgH-kn-r7Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yoX-Ra-39A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

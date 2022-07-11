@@ -61,11 +61,11 @@
 				5BD55D77287BA3A400466F1D /* AppDelegate.swift */,
 				5BD55D79287BA3A400466F1D /* SceneDelegate.swift */,
 				5BD55D7B287BA3A400466F1D /* ViewController.swift */,
+				5BD55D8B287C0FDB00466F1D /* DiaryViewController.swift */,
 				5BD55D7D287BA3A400466F1D /* Main.storyboard */,
 				5BD55D80287BA3A500466F1D /* Assets.xcassets */,
 				5BD55D82287BA3A500466F1D /* LaunchScreen.storyboard */,
 				5BD55D85287BA3A500466F1D /* Info.plist */,
-				5BD55D8B287C0FDB00466F1D /* DiaryViewController.swift */,
 			);
 			path = SecondWeek;
 			sourceTree = "<group>";
