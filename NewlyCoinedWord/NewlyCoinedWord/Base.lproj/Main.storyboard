@@ -48,50 +48,52 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sss-Km-rat">
-                                <rect key="frame" x="20" y="129" width="120" height="14"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LsH-oD-A2L">
-                                        <rect key="frame" x="0.0" y="0.0" width="24" height="14"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RZl-fz-4dD">
-                                        <rect key="frame" x="32" y="0.0" width="24" height="14"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TxE-mX-Jvk">
-                                        <rect key="frame" x="64" y="0.0" width="24" height="14"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmS-Ue-rfb">
-                                        <rect key="frame" x="96" y="0.0" width="24" height="14"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dpR-0u-9wK">
+                                <rect key="frame" x="20" y="129" width="20" height="28"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzd-lC-OMd">
+                                <rect key="frame" x="50" y="129" width="20" height="28"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtX-se-JKb">
+                                <rect key="frame" x="80" y="129" width="20" height="28"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiw-hV-Jr7">
+                                <rect key="frame" x="110" y="129" width="20" height="28"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="524-nZ-565" secondAttribute="trailing" constant="30" id="1Gr-ud-NrW"/>
-                            <constraint firstItem="sss-Km-rat" firstAttribute="top" secondItem="ybn-Bj-bq0" secondAttribute="bottom" constant="10" id="1r2-Uh-AbZ"/>
+                            <constraint firstItem="PtX-se-JKb" firstAttribute="top" secondItem="ybn-Bj-bq0" secondAttribute="bottom" constant="10" id="5Kb-T4-Ofw"/>
                             <constraint firstItem="524-nZ-565" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="6fn-uG-PEN"/>
-                            <constraint firstItem="sss-Km-rat" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7Pq-WX-xxd"/>
                             <constraint firstItem="ybn-Bj-bq0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="9Vi-US-E0q"/>
                             <constraint firstItem="524-nZ-565" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ega-Yl-oOQ"/>
+                            <constraint firstItem="dpR-0u-9wK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="LSn-fK-kYB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aiw-hV-Jr7" secondAttribute="trailing" constant="20" id="N3E-ja-V7F"/>
                             <constraint firstItem="8fm-OD-1U7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TlO-eq-SMr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8fm-OD-1U7" secondAttribute="trailing" id="WQj-d9-s4D"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Hv-sm-JBY" secondAttribute="trailing" constant="20" id="X96-Zq-vxS"/>
+                            <constraint firstItem="PtX-se-JKb" firstAttribute="leading" secondItem="Kzd-lC-OMd" secondAttribute="trailing" constant="10" id="abO-lp-PSi"/>
                             <constraint firstItem="ybn-Bj-bq0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aq6-eB-LS4"/>
                             <constraint firstItem="8fm-OD-1U7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bgQ-lf-hua"/>
                             <constraint firstItem="8fm-OD-1U7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fTU-E1-XOP"/>
+                            <constraint firstItem="Kzd-lC-OMd" firstAttribute="top" secondItem="ybn-Bj-bq0" secondAttribute="bottom" constant="10" id="feP-SI-S1D"/>
+                            <constraint firstItem="dpR-0u-9wK" firstAttribute="top" secondItem="ybn-Bj-bq0" secondAttribute="bottom" constant="10" id="g1b-h8-8cZ"/>
+                            <constraint firstItem="Kzd-lC-OMd" firstAttribute="leading" secondItem="dpR-0u-9wK" secondAttribute="trailing" constant="10" id="gwd-um-aVl"/>
+                            <constraint firstItem="aiw-hV-Jr7" firstAttribute="leading" secondItem="PtX-se-JKb" secondAttribute="trailing" constant="10" id="k3T-et-2uR"/>
                             <constraint firstItem="5Hv-sm-JBY" firstAttribute="leading" secondItem="ybn-Bj-bq0" secondAttribute="trailing" id="lqI-ja-2lo"/>
                             <constraint firstItem="524-nZ-565" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSj-CY-d43"/>
+                            <constraint firstItem="aiw-hV-Jr7" firstAttribute="top" secondItem="ybn-Bj-bq0" secondAttribute="bottom" constant="10" id="uFB-zD-Zin"/>
                             <constraint firstItem="5Hv-sm-JBY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="z7y-Nr-8Sh"/>
                         </constraints>
                         <connections>
@@ -101,10 +103,10 @@
                     <connections>
                         <outlet property="resultLabel" destination="524-nZ-565" id="dVa-L2-ngC"/>
                         <outlet property="searchTextField" destination="ybn-Bj-bq0" id="Zz1-S9-SAx"/>
-                        <outletCollection property="tagButtonList" destination="LsH-oD-A2L" collectionClass="NSMutableArray" id="R5T-AJ-0F5"/>
-                        <outletCollection property="tagButtonList" destination="RZl-fz-4dD" collectionClass="NSMutableArray" id="sfu-2d-BEu"/>
-                        <outletCollection property="tagButtonList" destination="TxE-mX-Jvk" collectionClass="NSMutableArray" id="fZM-VF-1XB"/>
-                        <outletCollection property="tagButtonList" destination="bmS-Ue-rfb" collectionClass="NSMutableArray" id="HhA-tJ-hZI"/>
+                        <outletCollection property="tagButtonList" destination="dpR-0u-9wK" collectionClass="NSMutableArray" id="kGo-Ga-o5w"/>
+                        <outletCollection property="tagButtonList" destination="Kzd-lC-OMd" collectionClass="NSMutableArray" id="atT-VE-B7T"/>
+                        <outletCollection property="tagButtonList" destination="PtX-se-JKb" collectionClass="NSMutableArray" id="cC6-3X-SQM"/>
+                        <outletCollection property="tagButtonList" destination="aiw-hV-Jr7" collectionClass="NSMutableArray" id="9qD-SI-Toy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -11,9 +11,9 @@ class SearchViewController: UIViewController {
     
     // MARK: - Property
     
-    var words = ["캘박", "좋댓구알", "구취", "꾸안꾸", "실매"]
+    var words = ["캘박", "좋댓구알좋댓구알", "구취구취", "꾸안꾸", "실매"]
     var wordsDictionary = ["캘박": "캘린더에 일정을 픽스한다는 뜻이다",
-                           "좋댓구알": "좋아요, 댓글, 구독, 알림설정을 의미한다",
+                           "좋댓구알좋댓구알": "좋아요, 댓글, 구독, 알림설정을 의미한다",
                            "구취": "구독취소를 의미한다",
                            "꾸안꾸": "꾸민듯 안꾸민듯이라는 뜻이다",
                            "실매": "실시간 매니저를 의미한다"]
@@ -47,6 +47,7 @@ class SearchViewController: UIViewController {
     
     func setButton() {
         for i in (0...tagButtonList.count-1) {
+            tagButtonList[i].titleLabel?.numberOfLines = 1
             tagButtonList[i].setTitle(words[i], for: .normal)
             tagButtonList[i].setTitleColor(.black, for: .normal)
             tagButtonList[i].layer.cornerRadius = 10
