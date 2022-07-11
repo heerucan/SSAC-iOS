@@ -11,7 +11,7 @@ class SearchViewController: UIViewController {
     
     // MARK: - Property
     
-    var words = ["캘박", "좋댓구알좋댓구알", "구취구취", "꾸안꾸", "실매"]
+    var words = ["캘박", "좋댓구알", "구취", "꾸안꾸", "실매"]
     var wordsDictionary = ["캘박": "캘린더에 일정을 픽스한다는 뜻이다",
                            "좋댓구알좋댓구알": "좋아요, 댓글, 구독, 알림설정을 의미한다",
                            "구취": "구독취소를 의미한다",
@@ -60,6 +60,12 @@ class SearchViewController: UIViewController {
         searchTextField.delegate = self
         searchTextField.font = .systemFont(ofSize: 17)
         searchTextField.placeholder = "검색하고 싶은 신조어를 입력하세요"
+        
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: searchTextField.frame.height))
+        searchTextField.leftView = paddingView
+        searchTextField.leftViewMode = .always
+        searchTextField.rightView = paddingView
+        searchTextField.rightViewMode = .always
     }
     
     func searchWords() {
