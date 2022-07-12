@@ -76,6 +76,7 @@ class SearchViewController: UIViewController {
             
             if let index = words.firstIndex(where: { $0 == searchText} ) {
                 words.remove(at: index)
+                words.shuffle()
                 words.insert(searchText, at: 0)
                 setButton()
             }

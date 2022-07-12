@@ -58,11 +58,11 @@
 			children = (
 				5B4C9D1C287AEC9B00A2B656 /* AppDelegate.swift */,
 				5B4C9D1E287AEC9B00A2B656 /* SceneDelegate.swift */,
+				5B4C9D30287AF76D00A2B656 /* SearchViewController.swift */,
 				5B4C9D22287AEC9B00A2B656 /* Main.storyboard */,
 				5B4C9D25287AEC9D00A2B656 /* Assets.xcassets */,
 				5B4C9D27287AEC9D00A2B656 /* LaunchScreen.storyboard */,
 				5B4C9D2A287AEC9D00A2B656 /* Info.plist */,
-				5B4C9D30287AF76D00A2B656 /* SearchViewController.swift */,
 			);
 			path = NewlyCoinedWord;
 			sourceTree = "<group>";
