@@ -7,51 +7,80 @@
 
 import UIKit
 
+// MARK: - Emotion
+
+enum Emotion: Int, CaseIterable {
+    case happy
+    case love
+    case like
+    case flustered
+    case upset
+    case depressed
+    case bored
+    case uncomfortable
+    case unfair
+    
+    var emotion: String {
+        switch self {
+        case .happy:
+            return "행복해"
+        case .love:
+            return "사랑해"
+        case .like:
+            return "좋아해"
+        case .flustered:
+            return "당황해"
+        case .upset:
+            return "속상해"
+        case .depressed:
+            return "우울해"
+        case .bored:
+            return "심심해"
+        case .uncomfortable:
+            return "찝찝해"
+        case .unfair:
+            return "억울해"
+        }
+    }
+}
+
 class DiaryViewController: UIViewController {
     
-    var countList = [0, 0, 0,
-                 0, 0, 0,
-                 0, 0, 0]
+    // MARK: - Property
     
-    var emotionList = ["행복해", "사랑해", "좋아해",
-                       "당황해", "속상해", "우울해",
-                       "심심해", "찝찝해", "억울해"]
-
+    var countList = [0, 0, 0,
+                     0, 0, 0,
+                     0, 0, 0]
+                
+    // MARK: - @IBOutlet
+    
     @IBOutlet var labelList: [UILabel]!
     @IBOutlet var buttonList: [UIButton]!
     
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        labelList[0].text = setUserNickname()
-        view.backgroundColor = example().0
     }
     
+    // MARK: - @IBAction
+    
     @IBAction func clickedEmotionButton(_ sender: UIButton) {
-        for i in 0...buttonList.count-1 {
+        
+        for i in Emotion.allCases {
             switch sender {
-            case buttonList[i]:
-                countList[i] += 1
-                labelList[i].text = emotionList[i] + " \(countList[i])"
+            case buttonList[i.rawValue]:
+                countList[i.rawValue] += 1
+                labelList[i.rawValue].text = i.emotion + " \(countList[i.rawValue])"
             default: break
             }
-        }
+        }        
         
         showAlertController()
     }
     
-    func setUserNickname() -> String {
-        let nickname = ["고래밥", "칙촉", "꼬깔콘"]
-        let select = nickname.randomElement()!
-            
-        return "저는 \(select)입니다"
-    }
     
-    func example() -> (UIColor, String, String) {
-        let color: [UIColor] = [.yellow, .red, .blue]
-        let image: [String] = ["sesac_slime6", "sesac_slime7"]
-        
-        return (color.randomElement()!, "루희", image.randomElement()!)
-    }
+    // MARK: - AlertController
     
     func showAlertController() {
         // 1. 흰색 바탕 만들기 : UIAlertController
@@ -75,5 +104,21 @@ class DiaryViewController: UIViewController {
         // 4. 띄워주기
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    // MARK: - 반환값
+    
+    func setUserNickname() -> String {
+        let nickname = ["고래밥", "칙촉", "꼬깔콘"]
+        let select = nickname.randomElement()!
+        
+        return "저는 \(select)입니다"
+    }
+    
+    func example() -> (UIColor, String, String) {
+        let color: [UIColor] = [.yellow, .red, .blue]
+        let image: [String] = ["sesac_slime6", "sesac_slime7"]
+        
+        return (color.randomElement()!, "루희", image.randomElement()!)
     }
 }
