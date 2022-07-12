@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         greenView.layer.cornerRadius = 20
         greenView.clipsToBounds = false
+        greenView.layer.opacity
         
         // 특정 모서리에만 cornerRadius를 주고 싶을 때
         greenView.layer.maskedCorners = [.layerMinXMinYCorner]
