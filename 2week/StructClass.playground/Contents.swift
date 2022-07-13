@@ -42,17 +42,40 @@ class BossMonster: Monster {
     }
 }
 
-var boss = BossMonster()
-boss.bossAttack()
-boss.levelLimit
-boss.speed
-boss.attack()
+var finalBoss = BossMonster()
+finalBoss.bossAttack()
+finalBoss.levelLimit
+finalBoss.speed
+finalBoss.attack()
 
-//class FinalBossMonster: BossMonster {
-//
-//}
-//
-//var finalBoss = FinalBossMonster()
-//finalBoss.bossAttack()
-//finalBoss.levelLimit
-//finalBoss.speed
+// 객체, 클래스의 인스턴스를 객체라고 부른다. / 뷰 객체다라고 할 수 있는 거는 뷰가 클래스로 만들어져서
+
+var name = "고래밥"
+var subNickname = name
+print(name) // 고래밥
+print(subNickname) // 고래밥
+ 
+subNickname = "칙촉"
+print(name) // 고래밥
+print(subNickname) // 칙촉
+
+var miniMonster = Monster()
+miniMonster.attack()
+
+var bossMonster = miniMonster
+
+print(bossMonster.power)
+
+bossMonster.power = 5000
+
+print(miniMonster.power)
+print(bossMonster.power) // 원래 5였는데 5000으로 바뀜
+
+
+// 구조체는 값 타입, 클래스는 참조 타입
+
+// 클래스는 자신의 공간에 메모리 주소만 저장하고, 데이터는 다른 곳에 저장하고 있기 때문이다.
+
+
+// Formatted
+
