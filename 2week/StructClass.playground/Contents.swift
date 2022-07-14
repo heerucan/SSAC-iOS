@@ -76,6 +76,63 @@ print(bossMonster.power) // 원래 5였는데 5000으로 바뀜
 
 // 클래스는 자신의 공간에 메모리 주소만 저장하고, 데이터는 다른 곳에 저장하고 있기 때문이다.
 
+// 7/14
+// 변수/상수가 클래스/구조체/열거형 등에 들어가면 프로퍼티라고 바뀌고, 함수는 메소드로 바뀜
 
-// Formatted
+class MyMonster {
+    var name = "초보몬스터"
+    var level = 1
+}
+
+let easy = MyMonster()
+
+var hard = easy
+
+print(easy.name, easy.level)
+print(hard.name, hard.level)
+
+hard.name = "보스몬스터"
+hard.level = 100
+
+// class의 경우 hard값을 변경했더니 easyMonster도 값이 바뀌어버림
+// struct의 경우 값이 각자 유지됨
+print(easy.name, easy.level)
+print(hard.name, hard.level)
+
+var nicknames = "고래밥" // 선언과 초기화를 동시에 함
+
+
+// 옵셔널로 선언된 프로퍼티는 nil을 가질 수 있는 상황. 그래서 나중에 초기화를 해도 됨
+// 옵셔널이 아닌 프로퍼티는 값이 무조건 있어야 함. 그래서 초기화가 필요함
+class SecondMonster {
+    var name: String
+    var level: Int
+    
+    init(name: String, level: Int) { // 초기화 구문, 초기화 == 이니셜라이저
+        self.name = name
+        self.level = level
+    }
+}
+
+let easymon = SecondMonster(name: "잭몬", level: 1) // 클래스를 초기화한 거고, 인스턴스를 만든 것.
+// 초기화를 하려면 클래스가 갖고 있는 모든 요소들이 값이 있어야 함
+
+easymon.name = "슈렉몬스터"
+easymon.level = 3
+
+print(easy.name, easy.level) // let으로 선언해줬는데 왜 데이터가 바뀌는가?
+
+SecondMonster(name: "잭잭몬", level: 1)
+
+
+// 구조체
+
+// 구조체는 멤버와이즈 초기화구문이 자동으로 제공된다.
+struct StructMonster {
+    var name: String
+    var level: Int = 1
+}
+
+let structMonster = StructMonster(name: "스몬이", level: 1)
+
 
