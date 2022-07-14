@@ -7,13 +7,17 @@
 
 import UIKit
 
+import IQKeyboardManagerSwift
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // 키보드 기능 추가
+        IQKeyboardManager.shared.enable = true
+        // 키보드 영역에 텍필이 가려지는 경우, 텍필만큼의 높이를 자동으로 올렸다가 내려준다.
         return true
     }
 

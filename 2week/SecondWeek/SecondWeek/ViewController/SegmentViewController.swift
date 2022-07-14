@@ -21,6 +21,7 @@ class SegmentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentControlValueChanged(segmentControl)
+        studyDateFormatter()
     }
     
     @IBAction func segmentControlValueChanged(_ sender: UISegmentedControl) {
@@ -44,5 +45,27 @@ class SegmentViewController: UIViewController {
         } else {
             resultLabel.text = "오류"
         }
+    }
+    
+    // MARK: - DateFormatter
+    
+    func studyDateFormatter() {
+        // DateFormatter : 알아보기 쉬운 날짜 + 시간대
+        // yyyy MM dd hh:mm:ss
+        
+        let format = DateFormatter()
+        format.dateFormat = "M월 d일, yy년"
+        format.locale = Locale(identifier: "ko-KR")
+        // 매개변수를 문자로 받아서 날짜로 바꾸는 것
+        let result = format.string(from: .now)
+        print(result)
+        
+        let word = "3월 2일, 19년"
+        let dateResult = format.date(from: word)
+        
+        print(dateResult)
+        
+        // 근데 locale을 안해주면 영국 표준시 기준으로 나온다.
+        
     }
 }

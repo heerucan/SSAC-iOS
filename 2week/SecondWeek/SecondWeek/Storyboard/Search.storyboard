@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cvN-jI-0T1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="닉네임을 써라" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dw7-XN-AYm" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="108" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jqw-Ku-I3R"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" systemColor="systemGreenColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="STk-TC-H96" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="208" width="374" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="8yk-QJ-otn"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z1m-uC-NZd">
+                                <rect key="frame" x="173.5" y="608" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="Yhz-7s-3yG" kind="presentation" id="1Ok-UD-w8e"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJd-we-uYV">
+                                <rect key="frame" x="30" y="788" width="354" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="94c-6l-eYj"/>
+                                    <constraint firstAttribute="height" constant="34" id="Aje-z6-2FW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="STk-TC-H96" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="7ig-61-UH0"/>
+                            <constraint firstItem="Z1m-uC-NZd" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="864-Ix-cre"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="STk-TC-H96" secondAttribute="trailing" constant="20" id="9wE-5S-Obl"/>
+                            <constraint firstItem="Z1m-uC-NZd" firstAttribute="top" secondItem="STk-TC-H96" secondAttribute="bottom" constant="100" id="Ed2-wG-dr8"/>
+                            <constraint firstItem="iJd-we-uYV" firstAttribute="top" secondItem="Z1m-uC-NZd" secondAttribute="bottom" constant="149" id="JmA-R1-Evu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iJd-we-uYV" secondAttribute="trailing" constant="30" id="Ug6-Ep-qDy"/>
+                            <constraint firstItem="iJd-we-uYV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="bNx-RH-Cd4"/>
+                            <constraint firstItem="dw7-XN-AYm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="mV2-e6-92v"/>
+                            <constraint firstItem="dw7-XN-AYm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="oHf-j1-hbI"/>
+                            <constraint firstItem="iJd-we-uYV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="rND-Va-MBe"/>
+                            <constraint firstItem="STk-TC-H96" firstAttribute="top" secondItem="dw7-XN-AYm" secondAttribute="bottom" constant="50" id="tOQ-BS-Rvi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dw7-XN-AYm" secondAttribute="trailing" constant="20" id="y7Y-7M-j97"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1i7-W9-wAj">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="pencil.circle.fill" catalog="system" id="v7M-Oi-gMS">
+                            <connections>
+                                <segue destination="Yhz-7s-3yG" kind="presentation" id="JQz-eg-Kvx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="955.07246376811599" y="70.982142857142847"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="SdI-An-BCU">
+            <objects>
+                <viewController id="Nao-6y-Jfl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WLS-EE-E9g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="vtb-de-aGU"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MCK-MO-tXL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KPE-Yh-9vu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2666.666666666667" y="70.982142857142847"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="RcE-Ek-zRV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Yhz-7s-3yG" customClass="SideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="1lU-7U-utc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j5M-dS-gON">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="Nao-6y-Jfl" kind="relationship" relationship="rootViewController" id="5AV-ZO-JTr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uaG-W6-yQP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1757.9710144927537" y="70.982142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NM0-8n-9DT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cvN-jI-0T1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ffh-oQ-BSq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="nQT-F1-fHZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yg7-8b-6SQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="44.927536231884062" y="70.982142857142847"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="dw7-XN-AYm">
+            <size key="intrinsicContentSize" width="76.5" height="18.5"/>
+        </designable>
+    </designables>
+    <inferredMetricsTieBreakers>
+        <segue reference="1Ok-UD-w8e"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
