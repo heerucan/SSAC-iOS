@@ -29,7 +29,11 @@ class DatePickerViewController: UIViewController {
     }
     
     func configureDatePicker() {
-        datePicker.preferredDatePickerStyle = .wheels
+        if #available(iOS 14.0, *) {
+            datePicker.preferredDatePickerStyle = .inline
+        } else {
+            datePicker.preferredDatePickerStyle = .wheels
+        }
     }
     
     func configureImageView() {
