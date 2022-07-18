@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B2939132880E84E00AD7F11 /* Transition.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2939122880E84E00AD7F11 /* Transition.storyboard */; };
 		5B3B4C7B287CFDDA0085A0CE /* PracticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3B4C7A287CFDDA0085A0CE /* PracticeViewController.swift */; };
 		5BAD308F287C602800109F92 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAD308E287C602800109F92 /* TestViewController.swift */; };
 		5BAE517D287FA68800FF9E03 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BAE517C287FA68800FF9E03 /* Setting.storyboard */; };
@@ -16,6 +17,8 @@
 		5BAE5189287FAFC000FF9E03 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = 5BAE5188287FAFC000FF9E03 /* TextFieldEffects */; };
 		5BAE518C287FBE4A00FF9E03 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5BAE518B287FBE4A00FF9E03 /* IQKeyboardManagerSwift */; };
 		5BB242AB287D212C00DC8E0B /* SegmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB242AA287D212C00DC8E0B /* SegmentViewController.swift */; };
+		5BB275DF2880EFBE008F0437 /* TransitionFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB275DE2880EFBE008F0437 /* TransitionFirstViewController.swift */; };
+		5BB275E12880EFE8008F0437 /* TransitionSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB275E02880EFE8008F0437 /* TransitionSecondViewController.swift */; };
 		5BB3A10D287E738600DDBEE5 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB3A10C287E738600DDBEE5 /* DatePickerViewController.swift */; };
 		5BD55D78287BA3A400466F1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD55D77287BA3A400466F1D /* AppDelegate.swift */; };
 		5BD55D7A287BA3A400466F1D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD55D79287BA3A400466F1D /* SceneDelegate.swift */; };
@@ -27,11 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B2939122880E84E00AD7F11 /* Transition.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Transition.storyboard; sourceTree = "<group>"; };
 		5B3B4C7A287CFDDA0085A0CE /* PracticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticeViewController.swift; sourceTree = "<group>"; };
 		5BAD308E287C602800109F92 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		5BAE517C287FA68800FF9E03 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		5BAE517E287FA80600FF9E03 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		5BB242AA287D212C00DC8E0B /* SegmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewController.swift; sourceTree = "<group>"; };
+		5BB275DE2880EFBE008F0437 /* TransitionFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionFirstViewController.swift; sourceTree = "<group>"; };
+		5BB275E02880EFE8008F0437 /* TransitionSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionSecondViewController.swift; sourceTree = "<group>"; };
 		5BB3A10C287E738600DDBEE5 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		5BD55D74287BA3A300466F1D /* SecondWeek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SecondWeek.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD55D77287BA3A400466F1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +65,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B29390F2880E82200AD7F11 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				5B2939122880E84E00AD7F11 /* Transition.storyboard */,
+				5BB275DE2880EFBE008F0437 /* TransitionFirstViewController.swift */,
+				5BB275E02880EFE8008F0437 /* TransitionSecondViewController.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		5BAE5180287FA80D00FF9E03 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +126,7 @@
 		5BD55D76287BA3A300466F1D /* SecondWeek */ = {
 			isa = PBXGroup;
 			children = (
+				5B29390F2880E82200AD7F11 /* Transition */,
 				5BAE5180287FA80D00FF9E03 /* Storyboard */,
 				5BB3A10B287E732E00DDBEE5 /* ViewController */,
 				5BB3A10A287E732600DDBEE5 /* Support */,
@@ -191,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BD55D84287BA3A500466F1D /* LaunchScreen.storyboard in Resources */,
+				5B2939132880E84E00AD7F11 /* Transition.storyboard in Resources */,
 				5BD55D81287BA3A500466F1D /* Assets.xcassets in Resources */,
 				5BD55D7F287BA3A400466F1D /* Main.storyboard in Resources */,
 				5BAE517D287FA68800FF9E03 /* Setting.storyboard in Resources */,
@@ -210,9 +228,11 @@
 				5BD55D8C287C0FDB00466F1D /* DiaryViewController.swift in Sources */,
 				5BD55D7C287BA3A400466F1D /* ViewController.swift in Sources */,
 				5BB3A10D287E738600DDBEE5 /* DatePickerViewController.swift in Sources */,
+				5BB275DF2880EFBE008F0437 /* TransitionFirstViewController.swift in Sources */,
 				5B3B4C7B287CFDDA0085A0CE /* PracticeViewController.swift in Sources */,
 				5BD55D78287BA3A400466F1D /* AppDelegate.swift in Sources */,
 				5BD55D7A287BA3A400466F1D /* SceneDelegate.swift in Sources */,
+				5BB275E12880EFE8008F0437 /* TransitionSecondViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
