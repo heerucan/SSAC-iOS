@@ -7,6 +7,14 @@
 
 import UIKit
 
+enum SignUp: String, CaseIterable {
+    case email = "이메일 주소 또는 전화번호"
+    case password = "비밀번호"
+    case nickname = "닉네임"
+    case location = "위치"
+    case code = "추천코드입력"
+}
+
 class SignUpViewController: UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
@@ -18,15 +26,15 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var moreInfoButton: UIButton!
     @IBOutlet weak var toggleSwitch: UISwitch!
     
-    var placeholder = ["이메일 주소 또는 전화번호", "비밀번호", "닉네임", "위치", "추천코드입력"]
+    var placeholder = SignUp.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextField(emailTextField, placeholder: placeholder[0], keyboardType: .emailAddress)
-        configureTextField(passwordTextField, placeholder: placeholder[1])
-        configureTextField(nicknameTextField, placeholder: placeholder[2])
-        configureTextField(locationTextField, placeholder: placeholder[3])
-        configureTextField(codeTextField, placeholder: placeholder[4], keyboardType: .numberPad)
+        configureTextField(emailTextField, placeholder: SignUp.email.rawValue, keyboardType: .emailAddress)
+        configureTextField(passwordTextField, placeholder: SignUp.password.rawValue)
+        configureTextField(nicknameTextField, placeholder: SignUp.nickname.rawValue)
+        configureTextField(locationTextField, placeholder: SignUp.location.rawValue)
+        configureTextField(codeTextField, placeholder: SignUp.code.rawValue, keyboardType: .numberPad)
         configureButton()
         configureSwitch()
     }
