@@ -14,15 +14,12 @@ class TrendMediaSearchTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var storyLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(data: Movie) {
+        movieTitleLabel.font = .boldSystemFont(ofSize: 15)
+        movieTitleLabel.text = data.title
+        dateLabel.text = "\(data.releaseDate) | \(data.runtime) | \(data.rate)"
+        storyLabel.text = data.overview
+        storyLabel.numberOfLines = 0
     }
 
 }

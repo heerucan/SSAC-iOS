@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B150FD828878C9C001705E4 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B150FD728878C9C001705E4 /* Movie.swift */; };
+		5B150FE528879558001705E4 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B150FE428879558001705E4 /* MovieInfo.swift */; };
 		5B4FA1812886403300EB857E /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FA1802886403300EB857E /* Search.storyboard */; };
 		5B4FA1832886403F00EB857E /* Trend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FA1822886403F00EB857E /* Trend.storyboard */; };
 		5B4FA1862886407400EB857E /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FA1852886407400EB857E /* Intro.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B150FD728878C9C001705E4 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		5B150FE428879558001705E4 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		5B4FA1802886403300EB857E /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		5B4FA1822886403F00EB857E /* Trend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trend.storyboard; sourceTree = "<group>"; };
 		5B4FA1852886407400EB857E /* Intro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -152,9 +156,11 @@
 		5B60D6F128874857000431AA /* TrendMediaSearch */ = {
 			isa = PBXGroup;
 			children = (
+				5B150FE428879558001705E4 /* MovieInfo.swift */,
 				5B60D6F228874872000431AA /* TrendMediaSearch.storyboard */,
 				5B60D6F428874886000431AA /* TrendMediaSearchTableViewCell.swift */,
 				5B60D6F628874898000431AA /* TrendMediaSearchTableViewController.swift */,
+				5B150FD728878C9C001705E4 /* Movie.swift */,
 			);
 			path = TrendMediaSearch;
 			sourceTree = "<group>";
@@ -266,12 +272,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B150FE528879558001705E4 /* MovieInfo.swift in Sources */,
 				5B4FA1902886479400EB857E /* UITextField+Extension.swift in Sources */,
 				5B60D6F02887458C000431AA /* ShoppingTableViewCell.swift in Sources */,
 				5B60D6EE28874579000431AA /* ShoppingTableViewController.swift in Sources */,
 				5B4FA19528864D8E00EB857E /* BucketListTableViewCell.swift in Sources */,
 				5B4FA19228864B9700EB857E /* BucketListTableViewController.swift in Sources */,
 				5B4FA18C2886451800EB857E /* UIViewController+Extension.swift in Sources */,
+				5B150FD828878C9C001705E4 /* Movie.swift in Sources */,
 				5B60D6F728874898000431AA /* TrendMediaSearchTableViewController.swift in Sources */,
 				5BBC76B72884FE340088C187 /* SettingTableViewController.swift in Sources */,
 				5B4FA18A2886441500EB857E /* SearchViewController.swift in Sources */,
