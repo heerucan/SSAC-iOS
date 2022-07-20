@@ -1,5 +1,5 @@
 //
-//  TrendMediaSearchTableViewController.swift
+//  MovieTableViewController.swift
 //  TrendMedia
 //
 //  Created by heerucan on 2022/07/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendMediaSearchTableViewController: UITableViewController {
+class MovieTableViewController: UITableViewController {
     
     let movieList = MovieInfo()
 //    [
@@ -31,7 +31,7 @@ class TrendMediaSearchTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TrendMediaSearchCell", for: indexPath) as! TrendMediaSearchTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath) as! MovieTableViewCell
         let data = movieList.movie[indexPath.row]
         cell.configureCell(data: data)
         return cell

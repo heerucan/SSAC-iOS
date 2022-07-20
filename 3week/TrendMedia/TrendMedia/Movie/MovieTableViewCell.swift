@@ -1,5 +1,5 @@
 //
-//  TrendMediaSearchTableViewCell.swift
+//  MovieTableViewCell.swift
 //  TrendMedia
 //
 //  Created by heerucan on 2022/07/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TrendMediaSearchTableViewCell: UITableViewCell {
+class MovieTableViewCell: UITableViewCell {
 
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var movieTitleLabel: UILabel!
