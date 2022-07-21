@@ -9,31 +9,8 @@ import UIKit
 
 // MARK: - Emotion
 
-enum Emotion: Int, CaseIterable {
-    case happy, love, like, flustered, upset, depressed, bored, uncomfortable, unfair
-    
-    var emotion: String {
-        switch self {
-        case .happy:
-            return "행복해"
-        case .love:
-            return "사랑해"
-        case .like:
-            return "좋아해"
-        case .flustered:
-            return "당황해"
-        case .upset:
-            return "속상해"
-        case .depressed:
-            return "우울해"
-        case .bored:
-            return "심심해"
-        case .uncomfortable:
-            return "찝찝해"
-        case .unfair:
-            return "억울해"
-        }
-    }
+enum Emotion: String, CaseIterable {
+    case 행복해, 사랑해, 좋아해, 당황해, 속상해, 우울해, 심심해, 찝찝해, 억울해
 }
 
 class DiaryViewController: UIViewController {
@@ -60,11 +37,11 @@ class DiaryViewController: UIViewController {
     // MARK: - @IBAction
     
     @IBAction func clickedEmotionButton(_ sender: UIButton) {
-        for i in Emotion.allCases {
+        for i in Emotion.allCases.indices {
             switch sender {
-            case buttonList[i.rawValue]:
-                countList[i.rawValue] += 1
-                labelList[i.rawValue].text = i.emotion + " \(countList[i.rawValue])"
+            case buttonList[i]:
+                countList[i] += 1
+                labelList[i].text = "\(Emotion.allCases[i].rawValue) \(countList[i])"
                 UserDefaults.standard.set(countList, forKey: "countList")
             default: break
             }
@@ -73,8 +50,8 @@ class DiaryViewController: UIViewController {
     }
     
     func setEmotionCount() {
-        for i in Emotion.allCases {
-            labelList[i.rawValue].text = i.emotion + " \(countList[i.rawValue])"
+        for i in Emotion.allCases.indices {
+            labelList[i].text = "\(Emotion.allCases[i].rawValue) \(countList[i])"
         }
     }
     
