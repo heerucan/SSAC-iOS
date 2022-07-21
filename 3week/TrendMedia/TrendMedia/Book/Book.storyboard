@@ -101,8 +101,20 @@
                     <view key="view" contentMode="scaleToFill" id="Y7I-gu-nnm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lfd-f4-S7s">
+                                <rect key="frame" x="72.5" y="418" width="269" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="FSG-tq-Okh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lfd-f4-S7s" firstAttribute="centerY" secondItem="Y7I-gu-nnm" secondAttribute="centerY" id="RC9-ae-S9O"/>
+                            <constraint firstItem="lfd-f4-S7s" firstAttribute="centerX" secondItem="Y7I-gu-nnm" secondAttribute="centerX" id="zkD-zd-SJZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1fc-by-Wbu"/>
                 </viewController>
@@ -130,12 +142,20 @@
                                     <action selector="webButtonClicked:" destination="ZwS-8f-U72" eventType="touchUpInside" id="Ruf-Gi-Xg2"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1V-fq-Med">
+                                <rect key="frame" x="86" y="144" width="242" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MV6-fA-lwh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="J1V-fq-Med" firstAttribute="centerX" secondItem="qYA-6P-9Qd" secondAttribute="centerX" id="7ob-Kt-Iti"/>
                             <constraint firstItem="Jvl-yh-Utz" firstAttribute="centerX" secondItem="qYA-6P-9Qd" secondAttribute="centerX" id="UBF-62-6Ch"/>
                             <constraint firstItem="Jvl-yh-Utz" firstAttribute="centerY" secondItem="qYA-6P-9Qd" secondAttribute="centerY" id="h63-AX-YoD"/>
+                            <constraint firstItem="J1V-fq-Med" firstAttribute="top" secondItem="MV6-fA-lwh" secondAttribute="top" constant="100" id="wsX-IC-yF4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rDe-lm-Mzv"/>
@@ -151,8 +171,20 @@
                     <view key="view" contentMode="scaleToFill" id="psq-J5-njS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Book WEB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqX-pA-zZC">
+                                <rect key="frame" x="94.5" y="418" width="225" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="AWd-Wp-alx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pqX-pA-zZC" firstAttribute="centerY" secondItem="psq-J5-njS" secondAttribute="centerY" id="7OQ-Mi-Chf"/>
+                            <constraint firstItem="pqX-pA-zZC" firstAttribute="centerX" secondItem="psq-J5-njS" secondAttribute="centerX" id="T9N-9J-fQh"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hf4-kQ-JFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

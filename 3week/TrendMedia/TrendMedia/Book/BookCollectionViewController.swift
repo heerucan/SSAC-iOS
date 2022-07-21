@@ -17,8 +17,11 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "도서 1번째 뷰"
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchButtonClicked))
+        navigationItem.title = "도서 목록 프로젝트"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"),
+                                                            style: .plain,
+                                                            target: self,
+                                                            action: #selector(searchButtonClicked))
         setCollectionView()
     }
     
@@ -36,12 +39,10 @@ class BookCollectionViewController: UICollectionViewController {
     
     @objc
     func searchButtonClicked() {
-        
         let sb = UIStoryboard(name: "Book", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: BookSearchViewController.identifier) as! BookSearchViewController
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
-
         self.present(nav, animated: true, completion: nil)
     }
     
@@ -51,17 +52,16 @@ class BookCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell",
+                                                      for: indexPath) as! BookCollectionViewCell
         cell.configureUI()
         cell.configureCell(data: book.bookList[indexPath.item])
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         let sb = UIStoryboard(name: "Book", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: BookDetailViewController.identifier) as! BookDetailViewController
-        
         navigationController?.pushViewController(vc, animated: true)
     }
 }

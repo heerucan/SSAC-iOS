@@ -13,12 +13,14 @@ class BookSearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"),
+                                                           style: .plain,
+                                                           target: self,
+                                                           action: #selector(closeButtonClicked))
     }
     
     @objc
     func closeButtonClicked() {
         self.dismiss(animated: true, completion: nil)
     }
-
 }
