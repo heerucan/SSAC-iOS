@@ -9,6 +9,8 @@ import UIKit
 
 class BucketListTableViewController: UITableViewController {
     
+    static let identifier = "BucketListTableViewController"
+    
     var list = ["헤어질 결심", "탑건", "범죄도시2"]
     
     @IBOutlet weak var textField: UITextField!
@@ -17,12 +19,29 @@ class BucketListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = 80
+        navigationItem.title = "버킷리스트"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
         list.append("마녀")
         list.append("겨울")
     }
     
+    @objc func closeButtonClicked() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func textFieldDidEndOnExit(_ sender: UITextField) {
-        list.append(sender.text!)
+        if let value = sender.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            !value.isEmpty,
+            (2...6).contains(value.count) {
+            list.append(value)
+            myTableView.reloadData()
+        } else {
+            
+        }
+        
+        // 또는 
+        guard let value = sender.text else { return }
+        list.append(value)
         myTableView.reloadData()
         
         //reloadSections - 특정 섹션만 리로드할 때
@@ -40,7 +59,7 @@ class BucketListTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BucketListTableViewCell", for: indexPath) as! BucketListTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: BucketListTableViewCell.identifier, for: indexPath) as? BucketListTableViewCell else { return UITableViewCell() }
         cell.bucketListLabel.text = list[indexPath.row]
         cell.bucketListLabel.font = .boldSystemFont(ofSize: 18)
         return cell
@@ -59,5 +78,11 @@ class BucketListTableViewController: UITableViewController {
             list.remove(at: indexPath.row)
             tableView.reloadData()
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Trend", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: RecommendCollectionViewController.identifier) as! RecommendCollectionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
