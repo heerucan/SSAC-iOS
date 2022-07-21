@@ -45,6 +45,9 @@
 		5BBC76B72884FE340088C187 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC76B62884FE340088C187 /* SettingTableViewController.swift */; };
 		5BBC76B928850FCD0088C187 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC76B828850FCD0088C187 /* Setting.storyboard */; };
 		5BBC76BB28850FDF0088C187 /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC76BA28850FDF0088C187 /* AssignmentTableViewController.swift */; };
+		5BFF353E28891EF400984F86 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF353D28891EF400984F86 /* BookSearchViewController.swift */; };
+		5BFF354128891F0800984F86 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF354028891F0800984F86 /* BookDetailViewController.swift */; };
+		5BFF354328891F1600984F86 /* BookWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF354228891F1600984F86 /* BookWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +89,9 @@
 		5BBC76B62884FE340088C187 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		5BBC76B828850FCD0088C187 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		5BBC76BA28850FDF0088C187 /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
+		5BFF353D28891EF400984F86 /* BookSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
+		5BFF354028891F0800984F86 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		5BFF354228891F1600984F86 /* BookWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 		5B150FF22887FDB7001705E4 /* Book */ = {
 			isa = PBXGroup;
 			children = (
+				5BFF353C28891ED100984F86 /* Transition */,
 				5B150FF32887FDC4001705E4 /* Book.storyboard */,
 				5B150FF52887FDCD001705E4 /* BookCollectionViewCell.swift */,
 				5B150FF72887FDDD001705E4 /* BookCollectionViewController.swift */,
@@ -249,6 +256,16 @@
 			path = TrendMedia;
 			sourceTree = "<group>";
 		};
+		5BFF353C28891ED100984F86 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				5BFF353D28891EF400984F86 /* BookSearchViewController.swift */,
+				5BFF354028891F0800984F86 /* BookDetailViewController.swift */,
+				5BFF354228891F1600984F86 /* BookWebViewController.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -359,7 +376,10 @@
 				5B150FF82887FDDD001705E4 /* BookCollectionViewController.swift in Sources */,
 				5B150FFA2887FEAE001705E4 /* BookInfo.swift in Sources */,
 				5BBC76A32884DDD40088C187 /* SceneDelegate.swift in Sources */,
+				5BFF354128891F0800984F86 /* BookDetailViewController.swift in Sources */,
+				5BFF353E28891EF400984F86 /* BookSearchViewController.swift in Sources */,
 				5B4FA188288643F600EB857E /* TrendViewController.swift in Sources */,
+				5BFF354328891F1600984F86 /* BookWebViewController.swift in Sources */,
 				5BBC76BB28850FDF0088C187 /* AssignmentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

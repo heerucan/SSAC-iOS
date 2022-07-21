@@ -50,7 +50,9 @@ class User { // 값을 가지고 있는 상태에서 만들어줘야 함
 }
 
 let user = User() // 클래스 초기화, 인스턴스 생성
-user.nickname //
+user.nickname = "칙촉" //
+print(user.nickname)
+
  
 // static member 'red'는 cannot be used instance of type 'UIColor'
 
@@ -63,6 +65,8 @@ let user3 = User()
 
 User.staticNickname // 호출 시 메모리에 올라감, 인스턴스를 생성한다고 해서 초기화되지 않고, 호출해서 사용할 때 초기화가 된다. 그리고 한 번 올라가면 앱이 꺼질 떄까지 메모리에서 사라지지 않는다.
 
+User.staticNickname = "칙촉"
+print(User.staticNickname)
 
 // 역할 기준 - 저장, 연산, 감시자
 // 메모리 기준 - 인스턴스, 타입

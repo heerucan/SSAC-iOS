@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ddd-9z-Mtq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Lgw-zn-fBE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--Book Collection View Controller-->
         <scene sceneID="KnD-3V-auD">
             <objects>
-                <collectionViewController id="Ddd-9z-Mtq" customClass="BookCollectionViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="BookCollectionViewController" id="Ddd-9z-Mtq" customClass="BookCollectionViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ODo-dz-zKJ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,11 +85,95 @@
                             <outlet property="delegate" destination="Ddd-9z-Mtq" id="UzN-bd-Kar"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="cau-6R-cjR"/>
                     <connections>
                         <outlet property="bookCollectionView" destination="ODo-dz-zKJ" id="0EI-5T-Sl7"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wZy-O2-hfT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="423.1884057971015" y="-222.32142857142856"/>
+        </scene>
+        <!--Book Search View Controller-->
+        <scene sceneID="cQN-FY-4cf">
+            <objects>
+                <viewController storyboardIdentifier="BookSearchViewController" id="bQb-9c-GSX" customClass="BookSearchViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y7I-gu-nnm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="FSG-tq-Okh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1fc-by-Wbu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bsJ-eK-Yhq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2557.971014492754" y="-222.32142857142856"/>
+        </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="jUB-AU-IZM">
+            <objects>
+                <viewController storyboardIdentifier="BookDetailViewController" id="ZwS-8f-U72" customClass="BookDetailViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qYA-6P-9Qd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvl-yh-Utz">
+                                <rect key="frame" x="131" y="413" width="152" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="VhI-44-7RE"/>
+                                    <constraint firstAttribute="width" constant="152" id="rKf-Jj-pe5"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="웹으로가기"/>
+                                <connections>
+                                    <action selector="webButtonClicked:" destination="ZwS-8f-U72" eventType="touchUpInside" id="Ruf-Gi-Xg2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MV6-fA-lwh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jvl-yh-Utz" firstAttribute="centerX" secondItem="qYA-6P-9Qd" secondAttribute="centerX" id="UBF-62-6Ch"/>
+                            <constraint firstItem="Jvl-yh-Utz" firstAttribute="centerY" secondItem="qYA-6P-9Qd" secondAttribute="centerY" id="h63-AX-YoD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="rDe-lm-Mzv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wmG-BA-JtA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2557.971014492754" y="545.75892857142856"/>
+        </scene>
+        <!--Book Web View Controller-->
+        <scene sceneID="nwt-qC-msh">
+            <objects>
+                <viewController storyboardIdentifier="BookWebViewController" id="i4Q-7P-wUw" customClass="BookWebViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="psq-J5-njS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="AWd-Wp-alx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hf4-kQ-JFP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3768.115942028986" y="545.75892857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="jsQ-Rl-Agh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Lgw-zn-fBE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bCZ-4X-VBA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ddd-9z-Mtq" kind="relationship" relationship="rootViewController" id="fEd-F4-Bja"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gsl-Rw-lv7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-486.95652173913049" y="-222.32142857142856"/>
         </scene>
