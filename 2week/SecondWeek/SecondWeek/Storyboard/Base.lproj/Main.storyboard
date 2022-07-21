@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8cj-PF-6dg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="djh-Zt-KYe">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -634,7 +634,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emotionLabel" destination="eTz-wA-U4J" id="BO8-HX-c6X"/>
                         <outletCollection property="labelList" destination="eTz-wA-U4J" collectionClass="NSMutableArray" id="YpC-fY-ZWi"/>
                         <outletCollection property="labelList" destination="c8b-ak-oNV" collectionClass="NSMutableArray" id="ADF-rf-fcW"/>
                         <outletCollection property="labelList" destination="zRE-E9-Klb" collectionClass="NSMutableArray" id="I0d-Mi-ueG"/>
@@ -1362,10 +1361,10 @@
         <image name="arrowshape.turn.up.left.circle" catalog="system" width="128" height="121"/>
         <image name="calendar.badge.exclamationmark" catalog="system" width="128" height="108"/>
         <image name="contextualmenu.and.cursorarrow" catalog="system" width="124" height="128"/>
-        <image name="huree1" width="176" height="198"/>
-        <image name="huree2" width="1174" height="1147"/>
-        <image name="huree3" width="100" height="102"/>
-        <image name="huree4" width="1170" height="876"/>
+        <image name="huree1" width="702" height="148"/>
+        <image name="huree2" width="1080" height="1440"/>
+        <image name="huree3" width="390" height="384"/>
+        <image name="huree4" width="7680" height="4320"/>
         <image name="lasso.and.sparkles" catalog="system" width="114" height="128"/>
         <image name="paperplane.fill" catalog="system" width="128" height="118"/>
         <image name="pencil.circle.fill" catalog="system" width="128" height="121"/>

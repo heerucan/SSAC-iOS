@@ -10,15 +10,7 @@ import UIKit
 // MARK: - Emotion
 
 enum Emotion: Int, CaseIterable {
-    case happy
-    case love
-    case like
-    case flustered
-    case upset
-    case depressed
-    case bored
-    case uncomfortable
-    case unfair
+    case happy, love, like, flustered, upset, depressed, bored, uncomfortable, unfair
     
     var emotion: String {
         switch self {
@@ -61,24 +53,30 @@ class DiaryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        countList = UserDefaults.standard.array(forKey: "countList") as! [Int]
+        setEmotionCount()
     }
     
     // MARK: - @IBAction
     
     @IBAction func clickedEmotionButton(_ sender: UIButton) {
-        
         for i in Emotion.allCases {
             switch sender {
             case buttonList[i.rawValue]:
                 countList[i.rawValue] += 1
                 labelList[i.rawValue].text = i.emotion + " \(countList[i.rawValue])"
+                UserDefaults.standard.set(countList, forKey: "countList")
             default: break
             }
-        }        
-        
+        }
         showAlertController()
     }
     
+    func setEmotionCount() {
+        for i in Emotion.allCases {
+            labelList[i.rawValue].text = i.emotion + " \(countList[i.rawValue])"
+        }
+    }
     
     // MARK: - AlertController
     
