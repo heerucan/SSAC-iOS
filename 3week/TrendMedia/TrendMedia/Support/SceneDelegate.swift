@@ -12,11 +12,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
 
+    // 시작하는 화면을 연결하기 전에 여기서 통제가능
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // true이면 ViewController를 띄우고, false면 기존 유저니까 홈으로 이동~
+//        UserDefaults.standard.set(false, forKey: "First") // > 이건 sceneDelegate에 있으면 안됨
+        // 왜냐하면 앱이 시작될 때마다 값이
+        
+        guard let scene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: scene)
+        
+        if UserDefaults.standard.bool(forKey: "First") {
+            let sb = UIStoryboard(name: "Trend", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "MyViewController") as! MyViewController
+            
+            window?.rootViewController = UINavigationController(rootViewController: vc)
+            window?.makeKeyAndVisible() // window에 실제로 이 rootViewController를 보여주는 역할
+        } else {
+            
+            let sb = UIStoryboard(name: "Trend", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: BucketListTableViewController.identifier) as! BucketListTableViewController
+            
+            window?.rootViewController = UINavigationController(rootViewController: vc)
+        }
+        
+        window?.makeKeyAndVisible()
+
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

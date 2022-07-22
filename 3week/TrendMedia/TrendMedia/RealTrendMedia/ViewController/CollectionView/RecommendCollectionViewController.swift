@@ -20,12 +20,19 @@ class RecommendCollectionViewController: UICollectionViewController {
     
     static let identifier = "RecommendCollectionViewController"
     
+    // 1. 값 전달 - 데이터를 받을 프로퍼티 생성
+    // 따로따로 프로퍼티 생성하지 않고 하나의 구조체 전체를 전달 받는 이유?
+    var movieData: Movie?
+    
     var imageURL = "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA2MjBfMjg1%2FMDAxNjU1NzI3MTk1ODA3.ED4Enwxy9cLt_KWG9VQZDmYMfcv6sxOZfChWkFns0W4g.aZm2h8SUIGvLvUG3gO8nnX8FC5tyXswS1UXABDfg-kgg.JPEG.yunhsy%2Fsearch.pstatic.jpg&type=a340"
 
     @IBOutlet var recommendCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 3. 값 전달 - 프로퍼티
+        title = movieData?.title == nil ? "데이터 없음" : movieData?.title
 
         // 컬렉션뷰의 셀 크기, 셀 사이의 간격 등 설정
         let layout = UICollectionViewFlowLayout()
@@ -59,7 +66,9 @@ class RecommendCollectionViewController: UICollectionViewController {
     // cell 선택
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 왜 view일까? 그건 그냥 uiview가 깔려 있는 게 아니라 애플이 이름을 view로 명칭해뒀으니까..
+        
         self.view.makeToast("\(indexPath.item)번 째 셀을 선택했당!", duration: 1.0, position: .center)
         self.navigationController?.popViewController(animated: true)
+        
     }
 }

@@ -45,6 +45,7 @@
 		5BBC76B72884FE340088C187 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC76B62884FE340088C187 /* SettingTableViewController.swift */; };
 		5BBC76B928850FCD0088C187 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBC76B828850FCD0088C187 /* Setting.storyboard */; };
 		5BBC76BB28850FDF0088C187 /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBC76BA28850FDF0088C187 /* AssignmentTableViewController.swift */; };
+		5BD580A4288A3F8D005DE6DE /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD580A3288A3F8D005DE6DE /* MyViewController.swift */; };
 		5BFF353E28891EF400984F86 /* BookSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF353D28891EF400984F86 /* BookSearchViewController.swift */; };
 		5BFF354128891F0800984F86 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF354028891F0800984F86 /* BookDetailViewController.swift */; };
 		5BFF354328891F1600984F86 /* BookWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF354228891F1600984F86 /* BookWebViewController.swift */; };
@@ -89,6 +90,7 @@
 		5BBC76B62884FE340088C187 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		5BBC76B828850FCD0088C187 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		5BBC76BA28850FDF0088C187 /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
+		5BD580A3288A3F8D005DE6DE /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		5BFF353D28891EF400984F86 /* BookSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchViewController.swift; sourceTree = "<group>"; };
 		5BFF354028891F0800984F86 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		5BFF354228891F1600984F86 /* BookWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookWebViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				5B150FE928879AA8001705E4 /* TableView */,
 				5B150FE628879A61001705E4 /* CollectionView */,
+				5BD580A3288A3F8D005DE6DE /* MyViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				5B150FEB28879DE9001705E4 /* RecommendCollectionViewCell.swift in Sources */,
 				5BBC76A12884DDD40088C187 /* AppDelegate.swift in Sources */,
 				5B60D6F528874886000431AA /* MovieTableViewCell.swift in Sources */,
+				5BD580A4288A3F8D005DE6DE /* MyViewController.swift in Sources */,
 				5B150FF82887FDDD001705E4 /* BookCollectionViewController.swift in Sources */,
 				5B150FFA2887FEAE001705E4 /* BookInfo.swift in Sources */,
 				5BBC76A32884DDD40088C187 /* SceneDelegate.swift in Sources */,
