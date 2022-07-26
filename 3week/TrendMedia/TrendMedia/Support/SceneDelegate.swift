@@ -27,7 +27,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let vc = sb.instantiateViewController(withIdentifier: "MyViewController") as! MyViewController
             
             window?.rootViewController = UINavigationController(rootViewController: vc)
-            window?.makeKeyAndVisible() // window에 실제로 이 rootViewController를 보여주는 역할
         } else {
             
             let sb = UIStoryboard(name: "Trend", bundle: nil)
@@ -36,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.rootViewController = UINavigationController(rootViewController: vc)
         }
         
-        window?.makeKeyAndVisible()
+        window?.makeKeyAndVisible() // window에 실제로 이 rootViewController를 보여주는 역할
 
         
     }

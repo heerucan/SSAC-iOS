@@ -1,6 +1,7 @@
 //: [Previous](@previous)
 
 import UIKit
+import Darwin
 
 enum DrinkSize {
     case short, tall, grande, venti
@@ -53,17 +54,37 @@ print(drinkStruct.name, drinkClass.count, drinkClass.size)
 
 
 struct Poster {
+    // 구조체를 인스턴스로 생성을 해야만, 그 인스턴스를 통해서 Image 프로퍼티에 접근할 수 있다.
     var image: UIImage = UIImage(named: "star") ?? UIImage()
     
+    // init 초기화 구문을 작성할 수 있는 이유?
+    // 멤버와이즈 이니셜라이저를 갖고 있지만, 추가적인 구현도 가능하기 때문에 아래 init 초기화 구문을 작성할 수 있다.
     init() { // 작성하지 않아도 되는데 초기화되는지 궁금해서 쓴 것임
         print("Poster initialized")
     }
+    
+    // 필요에 따라 초기화 구문을 여러 가지로 만들어서 사용할 수 있다
+    // 메서드 오버로딩 특성을 활용해 하나의 초기화 구문인데 여러 구문처럼 쓸 수도 있다
+    init(defaultImage: UIImage) {
+        self.image = defaultImage
+    }
+    
+    init(customImage: UIImage) {
+        self.image = customImage
+    }
 }
+
+// 3개의 인스턴스를 만들었음 - 인스턴스마다 image 프로퍼티가 다른 값을 가질 수 있는가 - 그렇다!
+// 왜냐하면 구조체라서! 값타입이기에
+var one = Poster()
+var two = Poster()
+var three = Poster()
+
 
 struct MediaInfo {
     var mediaTitle: String
     var mediaRuntime: Int
-    lazy var mediaPoster: Poster = Poster()
+    lazy var mediaPoster: Poster = Poster() // 지연저장 프로퍼티
 }
 
 var media = MediaInfo(mediaTitle: "오징어게임", mediaRuntime: 123)
