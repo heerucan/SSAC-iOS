@@ -21,13 +21,16 @@ struct ExchangeRate {
     }
     
     var KRW: Double {
-        didSet {
-            USD = KRW / currencyRate
+        get {
+            return USD
+        }
+        set {
+            USD = newValue / currencyRate
         }
     }
 }
 
-var rate = ExchangeRate(currencyRate: 1100, USD: 1, KRW: 1000)
+var rate = ExchangeRate(currencyRate: 1100, USD: 1)
 rate.KRW = 500000
 rate.currencyRate = 1350
 rate.KRW = 500000
