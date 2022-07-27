@@ -184,3 +184,18 @@ TypeFoodRestaurant.nowOrder
 
 // Property Observer : 저장 프로퍼티에서 주로 사용되고, 저장 프로퍼티 값을 관찰하다가 변경이 될 것 같을 때 또는 변경이 되었을 때 호출됨 - willSet / didSet
 
+
+struct Ruhee {
+    var dream: String {
+        willSet {
+            print("변경되기 직전 \(dream)->\(newValue)로 변경될 예정이다.")
+        }
+        didSet {
+            print("변경되고 난후 \(oldValue)->\(dream)로 변경되었다")
+        }
+    }
+}
+
+var nowRuhee = Ruhee(dream: "Designer")
+print(nowRuhee.dream)
+nowRuhee.dream = "iOS Developer"

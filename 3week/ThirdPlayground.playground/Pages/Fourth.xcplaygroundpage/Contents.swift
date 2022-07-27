@@ -11,7 +11,7 @@ struct Coffee {
     
     // 구조체 내에 있는 프로퍼티 값을 변경하려고 하면 mutating 키워드를 붙여줘야 한다.
     mutating func plusShot() {
-//        shot += 1
+        //        shot += 1
         price += 300
     }
     
@@ -28,3 +28,4 @@ struct Coffee {
 //
 //    }
 //}
+
