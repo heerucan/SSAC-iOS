@@ -34,10 +34,16 @@ func optionalBindingFunction() {
               return
           }
     
-//    print("\(jack), \(value) 완료")
+    print("\(jack), \(value) 완료")
 }
 
 // 2. 인스턴스 프로퍼티 vs 타입 프로퍼티
+
+class IceCream {
+    var flavor = "뉴욕치즈케이크"
+    
+    static var ingredient = "우유"
+}
 
 class User { // 값을 가지고 있는 상태에서 만들어줘야 함
     var nickname = "고래밥" // 저장 프로퍼티, 인스턴스 프로퍼티

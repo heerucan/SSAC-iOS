@@ -96,7 +96,7 @@ var media = MediaInfo(mediaTitle: "오징어게임", mediaRuntime: 123)
 // lazy let은 불가능함
 // ㄴ let은 인스턴스가 생성되기 전에 값을 가지고 있어야 함 -> 메모리에 올라갈 때
 // ㄴ 근데 lazy는 값을 갖고 있음 안돼! 실제로 호출되어 사용되기 전까지는 nil인 상태로 유지되니까!
-media.mediaPoster
+print(media.mediaPoster)
 
 
 // 타입 프로퍼티
