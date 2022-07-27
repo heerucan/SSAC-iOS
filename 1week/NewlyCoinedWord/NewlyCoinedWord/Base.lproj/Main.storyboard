@@ -52,21 +52,33 @@
                                 <rect key="frame" x="20" y="129" width="20" height="28"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tagButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0oY-ND-aDh"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzd-lC-OMd">
                                 <rect key="frame" x="50" y="129" width="20" height="28"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tagButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EvO-Mg-HCk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PtX-se-JKb">
                                 <rect key="frame" x="80" y="129" width="20" height="28"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tagButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1bi-Qo-BtM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiw-hV-Jr7">
                                 <rect key="frame" x="110" y="129" width="20" height="28"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <connections>
+                                    <action selector="tagButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iN1-OX-aip"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -104,9 +116,9 @@
                         <outlet property="resultLabel" destination="524-nZ-565" id="dVa-L2-ngC"/>
                         <outlet property="searchTextField" destination="ybn-Bj-bq0" id="Zz1-S9-SAx"/>
                         <outletCollection property="tagButtonList" destination="dpR-0u-9wK" collectionClass="NSMutableArray" id="kGo-Ga-o5w"/>
-                        <outletCollection property="tagButtonList" destination="Kzd-lC-OMd" collectionClass="NSMutableArray" id="atT-VE-B7T"/>
                         <outletCollection property="tagButtonList" destination="PtX-se-JKb" collectionClass="NSMutableArray" id="cC6-3X-SQM"/>
-                        <outletCollection property="tagButtonList" destination="aiw-hV-Jr7" collectionClass="NSMutableArray" id="9qD-SI-Toy"/>
+                        <outletCollection property="tagButtonList" destination="aiw-hV-Jr7" collectionClass="NSMutableArray" id="f8r-5k-pB2"/>
+                        <outletCollection property="tagButtonList" destination="Kzd-lC-OMd" collectionClass="NSMutableArray" id="zAr-Zk-ks1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
