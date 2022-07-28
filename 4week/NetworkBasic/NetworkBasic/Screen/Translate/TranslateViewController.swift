@@ -7,23 +7,58 @@
 
 import UIKit
 
-class TranslateViewController: UIViewController {
+final class TranslateViewController: UIViewController {
+    
+    // MARK: - Property
+    
+    let textViewPlaceholderText = "번역하고 싶은 문장을 작성해보세요."
 
+    // MARK: - IBOutlet
+    
+    @IBOutlet weak var userInputTextView: UITextView!
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTextView()
+    }
 
-        // Do any additional setup after loading the view.
+    // MARK: - Custom Method
+    
+    func configureTextView() {
+        userInputTextView.delegate = self
+        userInputTextView.text = textViewPlaceholderText
+        userInputTextView.textColor = .lightGray
+    }
+}
+
+// MARK: - UITextViewDelegate
+
+extension TranslateViewController: UITextViewDelegate {
+    
+    // 텍스트뷰의 텍스트가 변할 때마다 호출
+    func textViewDidChange(_ textView: UITextView) {
+        print(textView.text!)
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // 편집이 시작될 때, 커서가 시작될 때
+    // 텍스트뷰 글자: 플레이스 홀더랑 글자가 같으면 clear
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("🥳Begin")
     }
-    */
-
+    
+    // 편집이 끝났을 때, 커서가 없어지는 순간
+    // 텍스트뷰 글자: 사용자가 아무 글자도 안 썼으면 플레이스 홀더 글자 보이게 해라
+    func textViewDidEndEditing(_ textView: UITextView) {
+        print("End")
+        if textView.text.isEmpty {
+            textView.text = textViewPlaceholderText
+            textView.textColor = .lightGray
+        }
+    }
 }

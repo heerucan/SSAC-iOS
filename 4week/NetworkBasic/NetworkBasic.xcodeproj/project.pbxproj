@@ -12,9 +12,11 @@
 		5B2363402890DE1B0046014D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B23633E2890DE1B0046014D /* Main.storyboard */; };
 		5B2363422890DE1E0046014D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2363412890DE1E0046014D /* Assets.xcassets */; };
 		5B2363452890DE1E0046014D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2363432890DE1E0046014D /* LaunchScreen.storyboard */; };
+		5BAF57A728923A9A00F612B1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAF57A628923A9A00F612B1 /* WebViewController.swift */; };
 		5BB7DD4428920CCE00F6BB45 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */; };
 		5BB7DD46289211B000F6BB45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD45289211AF00F6BB45 /* ViewController.swift */; };
 		5BB7DD4A2892236800F6BB45 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD492892236800F6BB45 /* LottoViewController.swift */; };
+		5BBA19D82892307700ECBDFB /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA19D72892307700ECBDFB /* TranslateViewController.swift */; };
 		5BC4FCE72890E2980001CB67 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCE62890E2980001CB67 /* SearchViewController.swift */; };
 		5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */; };
 		5BC4FCED2890E50F0001CB67 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC4FCEB2890E50F0001CB67 /* ListTableViewCell.xib */; };
@@ -28,9 +30,11 @@
 		5B2363412890DE1E0046014D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2363442890DE1E0046014D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2363462890DE1E0046014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BAF57A628923A9A00F612B1 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		5BB7DD45289211AF00F6BB45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BB7DD492892236800F6BB45 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		5BBA19D72892307700ECBDFB /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		5BC4FCE62890E2980001CB67 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		5BC4FCEB2890E50F0001CB67 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
@@ -98,10 +102,20 @@
 		5B23634E2890DEE60046014D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				5BB7DD482892224C00F6BB45 /* Lotto */,
 				5BB7DD472892224200F6BB45 /* Search */,
+				5BB7DD482892224C00F6BB45 /* Lotto */,
+				5BBA19D62892306300ECBDFB /* Translate */,
+				5BAF57A52892393700F612B1 /* WebView */,
 			);
 			path = Screen;
+			sourceTree = "<group>";
+		};
+		5BAF57A52892393700F612B1 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				5BAF57A628923A9A00F612B1 /* WebViewController.swift */,
+			);
+			path = WebView;
 			sourceTree = "<group>";
 		};
 		5BB7DD4128920CB000F6BB45 /* Global */ = {
@@ -136,6 +150,14 @@
 				5BB7DD492892236800F6BB45 /* LottoViewController.swift */,
 			);
 			path = Lotto;
+			sourceTree = "<group>";
+		};
+		5BBA19D62892306300ECBDFB /* Translate */ = {
+			isa = PBXGroup;
+			children = (
+				5BBA19D72892307700ECBDFB /* TranslateViewController.swift */,
+			);
+			path = Translate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,10 +233,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB7DD46289211B000F6BB45 /* ViewController.swift in Sources */,
+				5BAF57A728923A9A00F612B1 /* WebViewController.swift in Sources */,
 				5B2363392890DE1B0046014D /* AppDelegate.swift in Sources */,
 				5BC4FCE72890E2980001CB67 /* SearchViewController.swift in Sources */,
 				5BB7DD4A2892236800F6BB45 /* LottoViewController.swift in Sources */,
 				5BB7DD4428920CCE00F6BB45 /* ViewPresentableProtocol.swift in Sources */,
+				5BBA19D82892307700ECBDFB /* TranslateViewController.swift in Sources */,
 				5B23633B2890DE1B0046014D /* SceneDelegate.swift in Sources */,
 				5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */,
 			);
