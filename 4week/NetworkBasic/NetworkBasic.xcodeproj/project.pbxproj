@@ -12,6 +12,9 @@
 		5B2363402890DE1B0046014D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B23633E2890DE1B0046014D /* Main.storyboard */; };
 		5B2363422890DE1E0046014D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2363412890DE1E0046014D /* Assets.xcassets */; };
 		5B2363452890DE1E0046014D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2363432890DE1E0046014D /* LaunchScreen.storyboard */; };
+		5BB7DD4428920CCE00F6BB45 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */; };
+		5BB7DD46289211B000F6BB45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD45289211AF00F6BB45 /* ViewController.swift */; };
+		5BB7DD4A2892236800F6BB45 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD492892236800F6BB45 /* LottoViewController.swift */; };
 		5BC4FCE72890E2980001CB67 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCE62890E2980001CB67 /* SearchViewController.swift */; };
 		5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */; };
 		5BC4FCED2890E50F0001CB67 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC4FCEB2890E50F0001CB67 /* ListTableViewCell.xib */; };
@@ -25,6 +28,9 @@
 		5B2363412890DE1E0046014D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2363442890DE1E0046014D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B2363462890DE1E0046014D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
+		5BB7DD45289211AF00F6BB45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BB7DD492892236800F6BB45 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		5BC4FCE62890E2980001CB67 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		5BC4FCEB2890E50F0001CB67 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
@@ -60,6 +66,7 @@
 		5B2363372890DE1B0046014D /* NetworkBasic */ = {
 			isa = PBXGroup;
 			children = (
+				5BB7DD4128920CB000F6BB45 /* Global */,
 				5B23634E2890DEE60046014D /* Screen */,
 				5B23634D2890DEDC0046014D /* Storyboard */,
 				5B23634C2890DEB70046014D /* Support */,
@@ -71,6 +78,7 @@
 		5B23634C2890DEB70046014D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5BB7DD45289211AF00F6BB45 /* ViewController.swift */,
 				5B2363382890DE1B0046014D /* AppDelegate.swift */,
 				5B23633A2890DE1B0046014D /* SceneDelegate.swift */,
 				5B2363412890DE1E0046014D /* Assets.xcassets */,
@@ -90,11 +98,44 @@
 		5B23634E2890DEE60046014D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5BB7DD482892224C00F6BB45 /* Lotto */,
+				5BB7DD472892224200F6BB45 /* Search */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5BB7DD4128920CB000F6BB45 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				5BB7DD4228920CB700F6BB45 /* Protocol */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		5BB7DD4228920CB700F6BB45 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		5BB7DD472892224200F6BB45 /* Search */ = {
+			isa = PBXGroup;
+			children = (
 				5BC4FCE62890E2980001CB67 /* SearchViewController.swift */,
 				5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */,
 				5BC4FCEB2890E50F0001CB67 /* ListTableViewCell.xib */,
 			);
-			path = Screen;
+			path = Search;
+			sourceTree = "<group>";
+		};
+		5BB7DD482892224C00F6BB45 /* Lotto */ = {
+			isa = PBXGroup;
+			children = (
+				5BB7DD492892236800F6BB45 /* LottoViewController.swift */,
+			);
+			path = Lotto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,8 +210,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BB7DD46289211B000F6BB45 /* ViewController.swift in Sources */,
 				5B2363392890DE1B0046014D /* AppDelegate.swift in Sources */,
 				5BC4FCE72890E2980001CB67 /* SearchViewController.swift in Sources */,
+				5BB7DD4A2892236800F6BB45 /* LottoViewController.swift in Sources */,
+				5BB7DD4428920CCE00F6BB45 /* ViewPresentableProtocol.swift in Sources */,
 				5B23633B2890DE1B0046014D /* SceneDelegate.swift in Sources */,
 				5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */,
 			);
