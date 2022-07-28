@@ -30,7 +30,7 @@ final class SearchViewController: UIViewController {
     // MARK: - InitUI
     
     private func configureUI() {
-        view.backgroundColor = .white
+        
     }
     
     private func configureTableView() {
