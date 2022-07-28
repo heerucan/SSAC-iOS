@@ -6,7 +6,6 @@
 //
 
 import UIKit
-
 import WebKit
 
 class WebViewController: UIViewController {
@@ -21,13 +20,32 @@ class WebViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var webView: WKWebView!
     
-    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         openWebPage(url: destinationURL)
         searchBar.delegate = self
     }
+    
+    // MARK: - IBAction
+        
+    @IBAction func backButtonClicked(_ sender: Any) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    @IBAction func reloadButtonClicked(_ sender: Any) {
+        webView.reload()
+    }
+    
+    @IBAction func forwardButtonClicked(_ sender: Any) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+    
+    // MARK: - Custom Method
     
     func openWebPage(url: String) {
         guard let url = URL(string: url) else {
