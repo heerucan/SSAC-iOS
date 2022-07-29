@@ -41,6 +41,7 @@ final class LottoViewController: UIViewController {
         numberTextField.inputView = lottoPickerView
         numberTextField.delegate = self
         numberTextField.resignFirstResponder()
+        numberTextField.textContentType = .oneTimeCode // 인증번호
     }
     
     func configureToolbar() {
