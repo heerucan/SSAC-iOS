@@ -194,7 +194,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bonusLabel" destination="EEv-bz-G32" id="xrX-ag-VPv"/>
                         <outlet property="numberTextField" destination="edR-le-nMq" id="qzN-r7-dtL"/>
+                        <outletCollection property="lottoNumberList" destination="k3h-bm-jvT" collectionClass="NSMutableArray" id="iLL-Pq-VOG"/>
+                        <outletCollection property="lottoNumberList" destination="h6X-yI-SLD" collectionClass="NSMutableArray" id="r8O-fc-JCD"/>
+                        <outletCollection property="lottoNumberList" destination="KGC-2f-4Gq" collectionClass="NSMutableArray" id="KqQ-ON-o3E"/>
+                        <outletCollection property="lottoNumberList" destination="IkF-lV-cxS" collectionClass="NSMutableArray" id="Tjb-hV-knx"/>
+                        <outletCollection property="lottoNumberList" destination="f1c-Mt-xDQ" collectionClass="NSMutableArray" id="VNV-gF-LGu"/>
+                        <outletCollection property="lottoNumberList" destination="aoU-Lq-PPv" collectionClass="NSMutableArray" id="Rzi-a1-4BT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="di3-mL-k7P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

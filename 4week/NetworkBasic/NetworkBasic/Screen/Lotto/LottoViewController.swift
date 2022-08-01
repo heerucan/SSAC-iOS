@@ -15,14 +15,15 @@ final class LottoViewController: UIViewController {
     // MARK: - Property
     
     let numberList: [Int] = Array(1...1025).reversed()
+    var lottoPickerView = UIPickerView()
+        var toolBar = UIToolbar()
+        let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(touchupDoneButton))
         
     // MARK: - IBOutlet
     
+    @IBOutlet weak var bonusLabel: UILabel!
     @IBOutlet weak var numberTextField: UITextField!
-    
-    var lottoPickerView = UIPickerView()
-    var toolBar = UIToolbar()
-    let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(touchupDoneButton))
+    @IBOutlet var lottoNumberList: [UILabel]!
     
     // MARK: - LifeCycle
     
@@ -67,12 +68,16 @@ final class LottoViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
                 
                 // int면 옵셔널 / intValue면 항상 값이 있음
                 let date = json["drwNoDate"].stringValue
-                let bonus = json["bnusNo"].intValue
-
+                let bonus = json["bnusNo"].stringValue
+                
+                for (index, element) in self.lottoNumberList.enumerated() {
+                    element.text = json["drwtNo\(index+1)"].stringValue
+                }
+                
+                self.bonusLabel.text = bonus
                 self.numberTextField.text = date
 
             case .failure(let error):
