@@ -8,7 +8,7 @@
 import UIKit
 
 final class LottoViewController: UIViewController {
-    
+        
     // MARK: - Property
     
     let numberList: [Int] = Array(1...1025).reversed()

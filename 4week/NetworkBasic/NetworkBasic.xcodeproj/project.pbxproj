@@ -20,6 +20,9 @@
 		5BC4FCE72890E2980001CB67 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCE62890E2980001CB67 /* SearchViewController.swift */; };
 		5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */; };
 		5BC4FCED2890E50F0001CB67 /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC4FCEB2890E50F0001CB67 /* ListTableViewCell.xib */; };
+		5BE296492897528300A126E0 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE296482897528300A126E0 /* ReusableViewProtocol.swift */; };
+		5BE2964C2897579700A126E0 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2964B2897579700A126E0 /* Constant.swift */; };
+		5BE2964E28975FA700A126E0 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE2964D28975FA700A126E0 /* UserDefaultsHelper.swift */; };
 		5BE883BB28935D4F005D96FE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE883BA28935D4F005D96FE /* MapViewController.swift */; };
 		5BE883BF289384C9005D96FE /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BE883BC289384C8005D96FE /* Pretendard-SemiBold.otf */; };
 		5BE883C0289384C9005D96FE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5BE883BD289384C8005D96FE /* Pretendard-Bold.otf */; };
@@ -42,6 +45,9 @@
 		5BC4FCE62890E2980001CB67 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		5BC4FCEB2890E50F0001CB67 /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		5BE296482897528300A126E0 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		5BE2964B2897579700A126E0 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5BE2964D28975FA700A126E0 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		5BE883BA28935D4F005D96FE /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5BE883BC289384C8005D96FE /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
 		5BE883BD289384C8005D96FE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
@@ -131,6 +137,7 @@
 		5BB7DD4128920CB000F6BB45 /* Global */ = {
 			isa = PBXGroup;
 			children = (
+				5BE2964A2897578900A126E0 /* Constant */,
 				5BB7DD4228920CB700F6BB45 /* Protocol */,
 			);
 			path = Global;
@@ -140,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */,
+				5BE296482897528300A126E0 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -168,6 +176,15 @@
 				5BBA19D72892307700ECBDFB /* TranslateViewController.swift */,
 			);
 			path = Translate;
+			sourceTree = "<group>";
+		};
+		5BE2964A2897578900A126E0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				5BE2964B2897579700A126E0 /* Constant.swift */,
+				5BE2964D28975FA700A126E0 /* UserDefaultsHelper.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		5BE883B928935D3D005D96FE /* Map */ = {
@@ -264,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BB7DD46289211B000F6BB45 /* ViewController.swift in Sources */,
+				5BE2964E28975FA700A126E0 /* UserDefaultsHelper.swift in Sources */,
 				5BAF57A728923A9A00F612B1 /* WebViewController.swift in Sources */,
 				5B2363392890DE1B0046014D /* AppDelegate.swift in Sources */,
 				5BE883BB28935D4F005D96FE /* MapViewController.swift in Sources */,
@@ -272,7 +290,9 @@
 				5BB7DD4428920CCE00F6BB45 /* ViewPresentableProtocol.swift in Sources */,
 				5BBA19D82892307700ECBDFB /* TranslateViewController.swift in Sources */,
 				5B23633B2890DE1B0046014D /* SceneDelegate.swift in Sources */,
+				5BE296492897528300A126E0 /* ReusableViewProtocol.swift in Sources */,
 				5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */,
+				5BE2964C2897579700A126E0 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
