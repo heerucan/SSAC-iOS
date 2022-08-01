@@ -12,7 +12,7 @@ class ViewController: UIViewController, RuheeTableViewProtocol, ViewPresentableP
     var navigationTitleString: String = "루희의 다마고치"
     
     var backgroundColor: UIColor = .blue
-    
+        
     func configureView() {
         navigationTitleString = "고래밥님의 다마고치"
         title = navigationTitleString
@@ -30,7 +30,11 @@ class ViewController: UIViewController, RuheeTableViewProtocol, ViewPresentableP
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // UserDefaultsHelper 클래스의 nickname 안 nickname 연산프로퍼티의 newValue로 들어간다.
+        UserDefaultsHelper.standard.nickname = "고래밥"
+        title = UserDefaultsHelper.standard.nickname
+        UserDefaultsHelper.standard.age = 80
+        print(UserDefaultsHelper.standard.age)
     }
     
 }
