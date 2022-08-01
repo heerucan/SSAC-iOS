@@ -7,12 +7,15 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 final class LottoViewController: UIViewController {
         
     // MARK: - Property
     
     let numberList: [Int] = Array(1...1025).reversed()
-    
+        
     // MARK: - IBOutlet
     
     @IBOutlet weak var numberTextField: UITextField!
@@ -28,6 +31,7 @@ final class LottoViewController: UIViewController {
         configurePickerView()
         configureTextField()
         configureToolbar()
+        requestLotto(number: 1025)
     }
     
     // MARK: - Custom Method
@@ -54,6 +58,29 @@ final class LottoViewController: UIViewController {
         numberTextField.inputAccessoryView = toolBar
     }
     
+    func requestLotto(number: Int) {
+        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+        
+        // AF : 기본적으로 200 ~ 299 status Code 성공
+        // 따로 399까지 성공으로 주고 싶으면 아래처럼 매개변수를 주면 된다. .validate(statusCode: 200..<400)
+        AF.request(url, method: .get).validate(statusCode: 200..<400).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                // int면 옵셔널 / intValue면 항상 값이 있음
+                let date = json["drwNoDate"].stringValue
+                let bonus = json["bnusNo"].intValue
+
+                self.numberTextField.text = date
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     // MARK: - @objc
     
     @objc func touchupDoneButton() {
@@ -77,7 +104,7 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        numberTextField.text = "\(numberList[row])회차 로또"
+        requestLotto(number: numberList[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
