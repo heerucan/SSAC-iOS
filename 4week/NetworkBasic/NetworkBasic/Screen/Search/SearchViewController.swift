@@ -45,7 +45,7 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureTableView()
-        requestBoxOffice(text: "20220801")
+        requestBoxOffice(text: calculateDate())
     }
     
     // MARK: - InitUI
@@ -66,13 +66,22 @@ final class SearchViewController: UIViewController {
     
     // MARK: - Custom Method
     
+    func calculateDate() -> String {
+        let now = Date()
+        let yesterday = now.addingTimeInterval(-86400)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let date = formatter.string(from: yesterday)
+        return date
+    }
+    
     func requestBoxOffice(text: String) {
         
         // 서버 요청 시에 배열에 데이터를 지워줘야 새로운 데이터를 담을 수 있어 보기 좋다.
         boxOfficeList.removeAll()
                 
-        let url = "\(EndPoint.boxOfficeURL)?key=\(APIKey.MOVIE_KEY)=\(text)"
-        
+        let url = "\(EndPoint.boxOfficeURL)?key=\(APIKey.MOVIE_KEY)&targetDt=\(text)"
+
         AF.request(url, method: .get).validate(statusCode: 200..<400).responseJSON { response in
             switch response.result {
             case .success(let value):
