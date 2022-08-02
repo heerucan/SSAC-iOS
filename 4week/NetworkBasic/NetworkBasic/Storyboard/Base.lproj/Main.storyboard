@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9DO-V3-5bY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VPu-0H-Xoz">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -161,6 +161,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btD-vU-evs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="716" y="905"/>
+        </scene>
+        <!--Beer Table View Controller-->
+        <scene sceneID="67g-S0-XXE">
+            <objects>
+                <tableViewController storyboardIdentifier="BeerTableViewController" id="VPu-0H-Xoz" customClass="BeerTableViewController" customModule="NetworkBasic" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="V0U-7z-bMx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeerTableViewCell" rowHeight="120" id="GUy-hk-boc" customClass="BeerTableViewCell" customModule="NetworkBasic" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUy-hk-boc" id="aBp-Cz-M0m">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZJM-Ww-e5X">
+                                            <rect key="frame" x="10" y="10" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ZJM-Ww-e5X" secondAttribute="height" id="ETN-ac-82a"/>
+                                                <constraint firstAttribute="width" constant="100" id="QIP-4N-1de"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkT-Xp-8Eo">
+                                            <rect key="frame" x="120" y="10" width="264" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xR8-Ai-sNH">
+                                            <rect key="frame" x="120" y="41" width="264" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xR8-Ai-sNH" firstAttribute="leading" secondItem="zkT-Xp-8Eo" secondAttribute="leading" id="I6U-SH-piF"/>
+                                        <constraint firstItem="xR8-Ai-sNH" firstAttribute="trailing" secondItem="zkT-Xp-8Eo" secondAttribute="trailing" id="Pai-Ra-idV"/>
+                                        <constraint firstItem="zkT-Xp-8Eo" firstAttribute="top" secondItem="aBp-Cz-M0m" secondAttribute="top" constant="10" id="Qr8-PM-9zv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="zkT-Xp-8Eo" secondAttribute="trailing" constant="10" id="Zk6-KD-0Nh"/>
+                                        <constraint firstItem="xR8-Ai-sNH" firstAttribute="top" secondItem="zkT-Xp-8Eo" secondAttribute="bottom" constant="10" id="dEF-RG-88J"/>
+                                        <constraint firstItem="ZJM-Ww-e5X" firstAttribute="top" secondItem="aBp-Cz-M0m" secondAttribute="top" constant="10" id="h3j-Gm-KV3"/>
+                                        <constraint firstAttribute="bottom" secondItem="ZJM-Ww-e5X" secondAttribute="bottom" constant="10" id="kLj-pu-QwG"/>
+                                        <constraint firstItem="zkT-Xp-8Eo" firstAttribute="leading" secondItem="ZJM-Ww-e5X" secondAttribute="trailing" constant="10" id="lEw-3B-yz5"/>
+                                        <constraint firstItem="ZJM-Ww-e5X" firstAttribute="leading" secondItem="aBp-Cz-M0m" secondAttribute="leading" constant="10" id="xqZ-Vi-w4p"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="beerImageView" destination="ZJM-Ww-e5X" id="zDi-lI-TCs"/>
+                                    <outlet property="beerLabel" destination="zkT-Xp-8Eo" id="cT9-Rp-lZ6"/>
+                                    <outlet property="descriptionLabel" destination="xR8-Ai-sNH" id="4zx-00-NTI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VPu-0H-Xoz" id="ckO-aA-H2x"/>
+                            <outlet property="delegate" destination="VPu-0H-Xoz" id="kS9-xK-mk5"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2vr-EN-1LU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1505.7971014492755" y="904.6875"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="VN6-aR-IZm">

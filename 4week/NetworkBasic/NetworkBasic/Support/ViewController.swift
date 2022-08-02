@@ -30,6 +30,7 @@ class ViewController: UIViewController, RuheeTableViewProtocol, ViewPresentableP
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ViewController.identifier
         // UserDefaultsHelper 클래스의 nickname 안 nickname 연산프로퍼티의 newValue로 들어간다.
         UserDefaultsHelper.standard.nickname = "고래밥"
         title = UserDefaultsHelper.standard.nickname

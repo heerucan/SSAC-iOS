@@ -13,10 +13,14 @@ import SwiftyJSON
 
 class BeerViewController: UIViewController {
     
+    // MARK: - @IBOutlet
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var imageLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +28,8 @@ class BeerViewController: UIViewController {
         configureUI(label: imageLabel)
         configureUI(label: descriptionLabel)
     }
+    
+    // MARK: - InitUI
     
     func configureUI(label: UILabel) {
         label.numberOfLines = 0
@@ -35,8 +41,12 @@ class BeerViewController: UIViewController {
         print("눌럿니?")
     }
     
+    // MARK: - Custom Method
+    
     func requestApi() {
-        let url = "https://api.punkapi.com/v2/beers/random"
+        
+        let url = EndPoint.beerURL
+        
         AF.request(url, method: .get).validate(statusCode: 200..<400).responseJSON { response in
             switch response.result {
             case .success(let value):
