@@ -34,8 +34,21 @@ enum Storyboard {
     static let setting = "Setting"
 }
 
+enum EndPoint {
+    static let lottoURL = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
+    static let boxOfficeURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
+    static let translateURL = "https://openapi.naver.com/v1/papago/n2mt"
+}
+
 enum APIKey {
-    static let movie = "f5eef3421c602c6cb7ea224104795888&targetDt"
+    static let MOVIE_KEY = "f5eef3421c602c6cb7ea224104795888&targetDt"
+    
+    static let NAVER_ID = "ev9JmEDwu1NDrZ2DrMXq"
+    static let NAVER_KEY = "WwwWS2z8vm"
+    
+    static let WEATHER_KEY = "cea1d8866a0ca2c205c2b5e2a30f160c"
+    
+    static let KAKAO_KEY = "c866f35743067337038b4ad3a561db9d"
 }
 // 열거형 내에서 타입 프로퍼티를 쓸 경우의 장점은?
 /*

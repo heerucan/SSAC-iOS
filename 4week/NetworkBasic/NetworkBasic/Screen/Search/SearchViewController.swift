@@ -71,7 +71,7 @@ final class SearchViewController: UIViewController {
         // 서버 요청 시에 배열에 데이터를 지워줘야 새로운 데이터를 담을 수 있어 보기 좋다.
         boxOfficeList.removeAll()
                 
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKey.movie)=\(text)"
+        let url = "\(EndPoint.boxOfficeURL)?key=\(APIKey.MOVIE_KEY)=\(text)"
         
         AF.request(url, method: .get).validate(statusCode: 200..<400).responseJSON { response in
             switch response.result {
