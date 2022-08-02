@@ -34,6 +34,9 @@ enum Storyboard {
     static let setting = "Setting"
 }
 
+enum APIKey {
+    static let movie = "f5eef3421c602c6cb7ea224104795888&targetDt"
+}
 // 열거형 내에서 타입 프로퍼티를 쓸 경우의 장점은?
 /*
  1. struct 안에서 타입 프로퍼티 vs enum 내에서 타입 프로퍼티 -> 인스턴스 생성 방지
