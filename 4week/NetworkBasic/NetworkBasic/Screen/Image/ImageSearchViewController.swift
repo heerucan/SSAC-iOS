@@ -87,6 +87,8 @@ final class ImageSearchViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout, UICollectionViewDataSource
+
 extension ImageSearchViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

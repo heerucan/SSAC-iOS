@@ -16,8 +16,6 @@
 		5BB8E9732899F7A4006815FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5BB8E9722899F7A4006815FD /* .gitignore */; };
 		5BB8E9762899F894006815FD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8E9752899F894006815FD /* APIKey.swift */; };
 		5BB8E9782899F9CF006815FD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8E9772899F9CF006815FD /* Constant.swift */; };
-		5BB8E97C2899FA97006815FD /* GoogleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8E97B2899FA97006815FD /* GoogleKey.swift */; };
-		5BB8E9802899FAAF006815FD /* AppleKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8E97F2899FAAF006815FD /* AppleKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +30,6 @@
 		5BB8E9722899F7A4006815FD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5BB8E9752899F894006815FD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5BB8E9772899F9CF006815FD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		5BB8E97B2899FA97006815FD /* GoogleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleKey.swift; sourceTree = "<group>"; };
-		5BB8E97F2899FAAF006815FD /* AppleKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +111,6 @@
 		5BB8E97A2899FA72006815FD /* Key */ = {
 			isa = PBXGroup;
 			children = (
-				5BB8E97B2899FA97006815FD /* GoogleKey.swift */,
-				5BB8E97F2899FAAF006815FD /* AppleKey.swift */,
 				5BB8E9752899F894006815FD /* APIKey.swift */,
 			);
 			path = Key;
@@ -196,9 +190,7 @@
 			files = (
 				5BB8E9602899F6C2006815FD /* ViewController.swift in Sources */,
 				5BB8E95C2899F6C2006815FD /* AppDelegate.swift in Sources */,
-				5BB8E97C2899FA97006815FD /* GoogleKey.swift in Sources */,
 				5BB8E9782899F9CF006815FD /* Constant.swift in Sources */,
-				5BB8E9802899FAAF006815FD /* AppleKey.swift in Sources */,
 				5BB8E9762899F894006815FD /* APIKey.swift in Sources */,
 				5BB8E95E2899F6C2006815FD /* SceneDelegate.swift in Sources */,
 			);
