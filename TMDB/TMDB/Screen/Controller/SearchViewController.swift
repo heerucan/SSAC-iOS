@@ -11,7 +11,7 @@ import Alamofire
 import Kingfisher
 import SwiftyJSON
 
-class SearchViewController: UIViewController {
+final class SearchViewController: UIViewController {
 
     // MARK: - Property
     
@@ -57,12 +57,10 @@ class SearchViewController: UIViewController {
         searchTableView.separatorStyle = .none
         searchTableView.allowsSelection = false
     }
-
-    // MARK: - Custom Method
     
     // MARK: - Network
     
-    func requestMovie() {
+    private func requestMovie() {
         let url = EndPoint.movieURL + "?api_key=\(APIKey.movieKey)"
     
         AF.request(url, method: .get).validate(statusCode: 200...500).responseJSON { response in
@@ -99,7 +97,6 @@ class SearchViewController: UIViewController {
     // MARK: - @objc
     
     @objc func touchupLeftButton() { }
-
     @objc func touchupRightButton() { }
 }
 
