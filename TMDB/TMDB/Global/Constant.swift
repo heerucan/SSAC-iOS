@@ -12,5 +12,5 @@ enum Storyboard {
 }
 
 enum EndPoint {
-    static let movieURL = "https://developers.themoviedb.org/3/trending/get-trending"
+    static let movieURL = "https://api.themoviedb.org/3/trending/movie/day"
 }
