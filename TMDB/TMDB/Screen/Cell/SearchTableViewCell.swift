@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 class SearchTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
@@ -15,7 +17,7 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var rateNumberLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var actorLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var backView: UIView!
     
     override func awakeFromNib() {
@@ -23,13 +25,20 @@ class SearchTableViewCell: UITableViewCell {
         configureUI()
     }
 
-    func configureUI() {
+    private func configureUI() {
         contentView.makeShadow()
         backView.makeRound()
         posterImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        overviewLabel.numberOfLines = 1
+        posterImageView.contentMode = .scaleAspectFill
     }
     
-    func setData() {
-        
+    public func setData(data: Movie) {
+        dateLabel.text = data.date
+        tagLabel.text = data.genre
+        posterImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(data.image)"))
+        rateNumberLabel.text = "\(data.rate)"
+        titleLabel.text = data.title
+        overviewLabel.text = data.overview
     }
 }
