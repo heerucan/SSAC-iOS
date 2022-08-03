@@ -68,9 +68,14 @@ final class SearchViewController: UIViewController {
     
     func calculateDate() -> String {
         let now = Date()
-        let yesterday = now.addingTimeInterval(-86400)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyyMMdd"
+        
+        // 첫 번째 방법
+        let yesterday = now.addingTimeInterval(-86400)
+        // 두 번째 방법
+        let yesterday2 = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        
         let date = formatter.string(from: yesterday)
         return date
     }

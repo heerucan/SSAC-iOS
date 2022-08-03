@@ -16,6 +16,7 @@
 		5BB7DD4428920CCE00F6BB45 /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */; };
 		5BB7DD46289211B000F6BB45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD45289211AF00F6BB45 /* ViewController.swift */; };
 		5BB7DD4A2892236800F6BB45 /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB7DD492892236800F6BB45 /* LottoViewController.swift */; };
+		5BB8E983289A094B006815FD /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8E982289A094B006815FD /* ImageSearchViewController.swift */; };
 		5BBA19D82892307700ECBDFB /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBA19D72892307700ECBDFB /* TranslateViewController.swift */; };
 		5BC4FCE72890E2980001CB67 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCE62890E2980001CB67 /* SearchViewController.swift */; };
 		5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */; };
@@ -49,6 +50,7 @@
 		5BB7DD4328920CCE00F6BB45 /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		5BB7DD45289211AF00F6BB45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BB7DD492892236800F6BB45 /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
+		5BB8E982289A094B006815FD /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
 		5BBA19D72892307700ECBDFB /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		5BC4FCE62890E2980001CB67 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5BC4FCEA2890E50F0001CB67 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		5B23634E2890DEE60046014D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5BB8E981289A0935006815FD /* Image */,
 				5BCAE866289841020041E5D9 /* Beer */,
 				5BE883B928935D3D005D96FE /* Map */,
 				5BB7DD472892224200F6BB45 /* Search */,
@@ -186,6 +189,14 @@
 				5BB7DD492892236800F6BB45 /* LottoViewController.swift */,
 			);
 			path = Lotto;
+			sourceTree = "<group>";
+		};
+		5BB8E981289A0935006815FD /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5BB8E982289A094B006815FD /* ImageSearchViewController.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		5BBA19D62892306300ECBDFB /* Translate */ = {
@@ -352,6 +363,7 @@
 				5BCAE8702899560A0041E5D9 /* BeerTableViewController.swift in Sources */,
 				5BCAE872289956F60041E5D9 /* BeerTableViewCell.swift in Sources */,
 				5BC4FCEC2890E50F0001CB67 /* ListTableViewCell.swift in Sources */,
+				5BB8E983289A094B006815FD /* ImageSearchViewController.swift in Sources */,
 				5BE2964C2897579700A126E0 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

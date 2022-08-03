@@ -40,6 +40,7 @@ enum EndPoint {
     static let translateURL = "https://openapi.naver.com/v1/papago/n2mt"
     static let beerURL = "https://api.punkapi.com/v2/beers/random"
     static let beerURL2 = "https://api.punkapi.com/v2/beers"
+    static let imageSearchURL = "https://openapi.naver.com/v1/search/image.json?"
 }
 
 enum APIKey {
@@ -47,6 +48,8 @@ enum APIKey {
     
     static let NAVER_ID = "degUlDyKRwPBPgaMBO4y"
     static let NAVER_KEY = "D9SccyNN12"
+    static let NAVER_SEARCH_ID = "w4cEY6JBmHVmP5SMdVlm"
+    static let NAVER_SEARCH_KEY = "qA6s7txboe"
     
     static let WEATHER_KEY = "cea1d8866a0ca2c205c2b5e2a30f160c"
     
