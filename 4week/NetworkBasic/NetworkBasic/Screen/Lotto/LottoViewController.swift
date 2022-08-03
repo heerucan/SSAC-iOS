@@ -33,9 +33,10 @@ final class LottoViewController: UIViewController {
         configureTextField()
         configureToolbar()
         requestLotto(number: 1025)
+//        calculateDate()
     }
     
-    // MARK: - Custom Method
+    // MARK: - ConfigureUI
     
     private func configurePickerView() {
         lottoPickerView.delegate = self
@@ -59,6 +60,17 @@ final class LottoViewController: UIViewController {
         numberTextField.inputAccessoryView = toolBar
     }
     
+    // MARK: - Custom Method
+    
+    func calculateDate() -> String {
+        let now = Date()
+        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyyMMdd"
+        let date = formatter.string(from: now)
+        print(date)
+        return date
+    }
+
     func requestLotto(number: Int) {
         let url = "\(EndPoint.lottoURL)&drwNo=\(number)"
         
@@ -68,7 +80,7 @@ final class LottoViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                
+                print(json)
                 // int면 옵셔널 / intValue면 항상 값이 있음
                 let date = json["drwNoDate"].stringValue
                 let bonus = json["bnusNo"].stringValue
@@ -81,7 +93,7 @@ final class LottoViewController: UIViewController {
                 self.numberTextField.text = date
 
             case .failure(let error):
-                print(error)
+                print("=============", error)
             }
         }
     }

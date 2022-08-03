@@ -47,7 +47,9 @@ final class TranslateViewController: UIViewController {
         // Body : 실질적인 데이터
         
         // Naver 개발 가이드에서 제공하는 걸 보고 따라하자
-        let parameter = ["source": "ko", "target": "en", "text": userInputTextView.text!]
+        let parameter = ["source": "ko",
+                         "target": "en",
+                         "text": userInputTextView.text!]
         
         let header: HTTPHeaders = [
             "X-Naver-Client-Id": APIKey.NAVER_ID,
@@ -63,10 +65,9 @@ final class TranslateViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 
-
                 // 상태코드 - 값이 없으면 500
                 let statusCode = response.response?.statusCode ?? 500
-                
+
                 if statusCode == 200 {
                     self.userOutputTextView.text = json["message"]["result"]["translatedText"].stringValue
                 } else {

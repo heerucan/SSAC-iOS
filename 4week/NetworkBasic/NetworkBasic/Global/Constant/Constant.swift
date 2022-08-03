@@ -36,15 +36,17 @@ enum Storyboard {
 
 enum EndPoint {
     static let lottoURL = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber"
-    static let boxOfficeURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
+    static let boxOfficeURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
     static let translateURL = "https://openapi.naver.com/v1/papago/n2mt"
+    static let beerURL = "https://api.punkapi.com/v2/beers/random"
+    static let beerURL2 = "https://api.punkapi.com/v2/beers"
 }
 
 enum APIKey {
-    static let MOVIE_KEY = "f5eef3421c602c6cb7ea224104795888&targetDt"
+    static let MOVIE_KEY = "f5eef3421c602c6cb7ea224104795888"
     
-    static let NAVER_ID = "ev9JmEDwu1NDrZ2DrMXq"
-    static let NAVER_KEY = "WwwWS2z8vm"
+    static let NAVER_ID = "degUlDyKRwPBPgaMBO4y"
+    static let NAVER_KEY = "D9SccyNN12"
     
     static let WEATHER_KEY = "cea1d8866a0ca2c205c2b5e2a30f160c"
     
