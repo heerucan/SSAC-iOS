@@ -9,21 +9,45 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    // MARK: - Property
+    
+    
+    // MARK: - @IBOutlet
+    
+    @IBOutlet weak var searchTableView: UITableView!
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - configureUI
+    
+    private func configureUI() {
+        view.backgroundColor = .clear
     }
-    */
+    
+    private func configureTableView() {
+        searchTableView.delegate = self
+        searchTableView.dataSource = self
+    }
 
+    // MARK: - Custom Method
+
+}
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
+
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        
+        return cell
+    }
 }
