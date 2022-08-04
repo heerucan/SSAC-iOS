@@ -278,6 +278,7 @@
                     </view>
                     <connections>
                         <outlet property="imageCollectionView" destination="pcw-nZ-1N5" id="hBf-RD-E4T"/>
+                        <outlet property="searchBar" destination="cRD-cj-ulC" id="aeM-R6-5Ue"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D0r-MU-1c1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

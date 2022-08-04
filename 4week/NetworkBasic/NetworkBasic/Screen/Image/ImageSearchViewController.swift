@@ -23,6 +23,8 @@ final class ImageSearchViewController: UIViewController {
     
     // MARK: - @IBOutlet
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
     // MARK: - LifeCycle
@@ -31,7 +33,7 @@ final class ImageSearchViewController: UIViewController {
         super.viewDidLoad()
         setupCollectionView()
         configureUI()
-        fetchImage()
+        setupSearchBar()
     }
     
     // MARK: - ConfigureUI
@@ -55,12 +57,16 @@ final class ImageSearchViewController: UIViewController {
         imageCollectionView.prefetchDataSource = self
     }
     
+    func setupSearchBar() {
+        searchBar.delegate = self
+    }
+    
     // MARK: - Network
     
-    func fetchImage() {
+    func fetchImage(query: String) {
         
         // 한글이 안되는 경우 : utf-8로 인코딩 하기 때문에 내부 처리가 필요함
-        guard let text = "클클클".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        guard let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
         let url = EndPoint.imageSearchURL + "query=\(text)&display=30&start=\(startPage)"
         
         // Header : 메타정보
@@ -127,20 +133,29 @@ extension ImageSearchViewController: UICollectionViewDelegateFlowLayout, UIColle
 // iOS10 이상, 스크롤 성능 향상됨
 extension ImageSearchViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        print("===",indexPaths)
-//        if indexPaths[0][1] >
-            
         for indexPath in indexPaths {
             if imageList.count - 1 == indexPath.item && imageList.count < totalCount {
                 startPage += 30
-                fetchImage()
+                guard let text = searchBar.text else { return }
+                fetchImage(query: text)
             }
-            
         }
-        
     }
     
-    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
-        print("########",indexPaths)
+//    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+//        print("########",indexPaths)
+//    }
+}
+
+extension ImageSearchViewController: UISearchBarDelegate {
+    
+    // 검색 버튼 클릭 시 실행
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            // 검색 버튼을 누를 경우에 초기화시켜줘야 하기 때문
+            imageList.removeAll()
+            startPage = 1
+            fetchImage(query: text)
+        }
     }
 }
