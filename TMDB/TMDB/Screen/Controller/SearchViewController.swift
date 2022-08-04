@@ -48,6 +48,7 @@ final class SearchViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = leftBarButton
         navigationItem.rightBarButtonItem = rightBarButton
+        navigationItem.backButtonTitle = nil
     }
     
     private func configureTableView() {
@@ -99,6 +100,7 @@ final class SearchViewController: UIViewController {
                     let overview = movie["overview"].stringValue
                     let date = movie["release_date"].stringValue
                     let genre = movie["genre_ids"][0].intValue
+                    let id = movie["id"].intValue
                     
                     self.requestGenre(genre: genre)
                     
@@ -107,7 +109,8 @@ final class SearchViewController: UIViewController {
                                      genre: self.genreString,
                                      image: poster,
                                      overview: overview,
-                                     rate: rate)
+                                     rate: rate,
+                                     id: id)
                                         
                     self.movieList.append(data)
                 }
@@ -117,11 +120,7 @@ final class SearchViewController: UIViewController {
                 print(error)
             }
         }
-        
-        
     }
-    
-    
     
     // MARK: - @objc
     
@@ -147,9 +146,10 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         
         let sb = UIStoryboard(name: Storyboard.main, bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
-//        vc.image.kf.setImage(with: URL(string: movieList[indexPath.row].image))
+        vc.image = movieList[indexPath.row].image
         vc.movieTitle = movieList[indexPath.row].title
         vc.overview = movieList[indexPath.row].overview
+        vc.movieID = movieList[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
