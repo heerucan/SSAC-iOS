@@ -36,7 +36,7 @@ class SearchTableViewCell: UITableViewCell {
     public func setData(data: Movie) {
         dateLabel.text = data.date
         tagLabel.text = data.genre
-        posterImageView.kf.setImage(with: URL(string: "https://image.tmdb.org/t/p/w500\(data.image)"))
+        posterImageView.kf.setImage(with: data.image)
         rateNumberLabel.text = "\(data.rate)"
         titleLabel.text = data.title
         overviewLabel.text = data.overview

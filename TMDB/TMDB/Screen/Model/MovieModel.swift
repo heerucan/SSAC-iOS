@@ -11,7 +11,7 @@ struct Movie {
     var title: String
     var date: String
     var genre: String
-    var image: String
+    var image: URL?
     var overview: String
     var rate: Double
 }
