@@ -156,6 +156,24 @@ extension ImageSearchViewController: UISearchBarDelegate {
             imageList.removeAll()
             startPage = 1
             fetchImage(query: text)
+            if !imageList.isEmpty {
+                imageCollectionView.scrollsToTop = true
+//                imageCollectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: true)
+            }
         }
+        
+    }
+    
+    // 취소 버튼 눌렀을 때 실행
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        imageList.removeAll()
+        imageCollectionView.reloadData()
+        searchBar.text = ""
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    // 서치바에 커서가 깜빡이기 시작할 때 실행
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
     }
 }
