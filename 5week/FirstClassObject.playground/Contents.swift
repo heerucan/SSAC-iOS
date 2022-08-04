@@ -9,9 +9,9 @@ var greeting = "Hello, playground"
 /*
  일급 객체
  
- 1. 변수나 상수에 함수를 대입할 수 있다.
- 
- 2. 함수의 인자값(매개변수)으로 함수를 사용할 수 있다.
+ 1. 변수나 상수에 함수(클로저)를 대입할 수 있다.
+ 2. 함수의 반환타입으로 함수(클로저)를 사용할 수 있다.
+ 3. 함수의 인자값(매개변수)으로 함수(클로저)를 사용할 수 있다.
  
  */
 
@@ -71,8 +71,66 @@ let result2 = hello(nickname:) // 함수 표기법
 result2("상어밥")
 
 
-
 // 2번 특성
+
+func currentAccount() -> String { // () -> String
+    return "계좌 있음"
+}
+
+func noCurrentAccount() -> String { // () -> String
+    return "계좌 없음"
+}
+
+
+// 가장 왼쪽에 위치한 -> 를 기준으로 오른쪽에 놓인 모든 타입은 반환값을 의미한다.
+func checkBank(bank: String) -> () -> String {
+    let bankArray = ["우리", "신한", "국민"]
+    return bankArray.contains(bank) ? currentAccount : noCurrentAccount // 함수를 호출하는 것은 아니고 함수를 던져줌
+}
+
+let jack = checkBank(bank: "농협")
+jack()
+
+
+// 2-1. Calculate
+
+func plus(a: Int, b: Int) -> Int { // (Int, Int) -> Int
+    return a + b
+}
+
+func minus(a: Int, b: Int) -> Int { // (Int, Int) -> Int
+    return a - b
+}
+
+func multiply(a: Int, b: Int) -> Int { // (Int, Int) -> Int
+    return a * b
+}
+
+func divide(a: Int, b: Int) -> Int { // (Int, Int) -> Int
+    return a / b
+}
+
+
+
+func calculate(operand: String) -> (Int, Int) -> Int {
+    
+    switch operand {
+    case "+": return plus
+    case "-": return minus
+    case "*": return multiply
+    case "/": return divide
+    default: return plus
+    }
+}
+
+calculate(operand: "+")(4, 3)
+
+let resultCalculate = calculate(operand: "-")
+resultCalculate(4,1)
+
+
+
+// 3번 특성
 // () -> ()
 func oddNumber() {
     print("홀수")
@@ -85,16 +143,22 @@ func evenNumber() {
 
 evenNumber
 
+// 어떤 함수가 들어가던 상관이 없고, 타입만 잘 맞으면 된다.
+// 실질적 연산이 인자값에 들어가는 함수에 달려 있어, 중계 역할만 담당하고 있어서 브로커라고 부름.
 func resultNumber(number: Int, odd: () -> (), even: () -> ()) {
     return number.isMultiple(of: 2) ? even() : odd()
 }
 
 // 매개변수로 함수를 전달한다.
+// 의도하지 않은 함수가 들어갈 수 있음. 필요 이상의 함수가 자꾸 생김
 resultNumber(number: 9, odd: oddNumber, even: evenNumber)
 
+
+// 이름 없는 함수 == 익명함수라고 부름 = 클로저
 resultNumber(number: 2) {
     print("홀수")
 } even: {
     print("짝수")
 }
+
 
