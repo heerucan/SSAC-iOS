@@ -76,7 +76,7 @@ final class LottoViewController: UIViewController {
         
         // AF : 기본적으로 200 ~ 299 status Code 성공
         // 따로 399까지 성공으로 주고 싶으면 아래처럼 매개변수를 주면 된다. .validate(statusCode: 200..<400)
-        AF.request(url, method: .get).validate(statusCode: 200..<400).responseJSON { response in
+        AF.request(url, method: .get).validate(statusCode: 200..<400).responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)

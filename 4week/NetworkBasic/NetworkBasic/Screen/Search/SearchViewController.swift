@@ -8,6 +8,7 @@
 import UIKit
 
 import Alamofire
+import JGProgressHUD
 import SwiftyJSON
 
 /*
@@ -32,9 +33,13 @@ import SwiftyJSON
 
 final class SearchViewController: UIViewController {
     
-    var boxOfficeList: [BoxOfficeModel] = []
-
     // MARK: - Properties
+    
+    var boxOfficeList: [BoxOfficeModel] = []
+    
+    let hud = JGProgressHUD()
+    
+    // MARK: - IBOutlet
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var searchTableView: UITableView!
@@ -74,7 +79,7 @@ final class SearchViewController: UIViewController {
         // 첫 번째 방법
         let yesterday = now.addingTimeInterval(-86400)
         // 두 번째 방법
-        let yesterday2 = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+//        let yesterday2 = Calendar.current.date(byAdding: .day, value: -1, to: Date())
         
         let date = formatter.string(from: yesterday)
         return date
@@ -82,12 +87,14 @@ final class SearchViewController: UIViewController {
     
     func requestBoxOffice(text: String) {
         
+        hud.show(in: view)
+        
         // 서버 요청 시에 배열에 데이터를 지워줘야 새로운 데이터를 담을 수 있어 보기 좋다.
         boxOfficeList.removeAll()
                 
         let url = "\(EndPoint.boxOfficeURL)?key=\(APIKey.MOVIE_KEY)&targetDt=\(text)"
 
-        AF.request(url, method: .get).validate(statusCode: 200..<400).responseJSON { response in
+        AF.request(url, method: .get).validate(statusCode: 200..<400).responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -101,7 +108,7 @@ final class SearchViewController: UIViewController {
                     self.boxOfficeList.append(data)
                 }
                 self.searchTableView.reloadData()
-                
+                self.hud.dismiss()
             case .failure(let error):
                 print(error)
             }

@@ -59,7 +59,7 @@ final class TranslateViewController: UIViewController {
         AF.request(url,
                    method: .post,
                    parameters: parameter,
-                   headers: header).validate(statusCode: 200..<400).responseJSON { response in
+                   headers: header).validate(statusCode: 200..<400).responseData { response in
             
             switch response.result {
             case .success(let value):
