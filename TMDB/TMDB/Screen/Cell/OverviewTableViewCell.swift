@@ -9,15 +9,19 @@ import UIKit
 
 class OverviewTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var overviewLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        configureUI()
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureUI() {
+        overviewLabel.numberOfLines = 2
+        overviewLabel.font = .systemFont(ofSize: 13)
     }
     
+    func setupData() {
+        
+    }
 }
