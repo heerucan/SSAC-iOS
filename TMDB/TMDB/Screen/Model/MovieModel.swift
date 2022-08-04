@@ -14,4 +14,5 @@ struct Movie {
     var image: URL?
     var overview: String
     var rate: Double
+    var id: Int
 }
