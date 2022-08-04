@@ -15,6 +15,8 @@ final class SearchViewController: UIViewController {
 
     // MARK: - Property
     
+    var genreString = ""
+
     var movieList: [Movie] = []
     
     let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "list.triangle"),
@@ -55,15 +57,35 @@ final class SearchViewController: UIViewController {
         searchTableView.dataSource = self
         searchTableView.backgroundColor = .white
         searchTableView.separatorStyle = .none
-        searchTableView.allowsSelection = false
     }
     
     // MARK: - Network
     
+    func requestGenre(genre: Int) {
+        
+        let genreURL = EndPoint.genreURL + "?api_key=\(APIKey.movieKey)&language=en-US"
+        
+        AF.request(genreURL, method: .get).validate(statusCode: 200...500).responseData { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                                
+                for i in json["genres"].arrayValue {
+                    if genre == i["id"].intValue {
+                        self.genreString = i["name"].stringValue
+                        print(self.genreString, genre)
+                    }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     private func requestMovie() {
         let url = EndPoint.movieURL + "?api_key=\(APIKey.movieKey)"
-    
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseJSON { response in
+        
+        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
             
             switch response.result {
             case .success(let value):
@@ -72,18 +94,21 @@ final class SearchViewController: UIViewController {
                 for movie in json["results"].arrayValue {
                     
                     let title = movie["title"].stringValue
-                    let poster = movie["poster_path"].stringValue
+                    let poster = URL(string: EndPoint.imageURL + movie["poster_path"].stringValue)
                     let rate = movie["vote_average"].doubleValue
                     let overview = movie["overview"].stringValue
                     let date = movie["release_date"].stringValue
+                    let genre = movie["genre_ids"][0].intValue
+                    
+                    self.requestGenre(genre: genre)
                     
                     let data = Movie(title: title,
                                      date: date,
-                                     genre: "#Movie",
+                                     genre: self.genreString,
                                      image: poster,
                                      overview: overview,
                                      rate: rate)
-                    
+                                        
                     self.movieList.append(data)
                 }
                 self.searchTableView.reloadData()
@@ -92,7 +117,11 @@ final class SearchViewController: UIViewController {
                 print(error)
             }
         }
+        
+        
     }
+    
+    
     
     // MARK: - @objc
     
@@ -111,5 +140,16 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         cell.setData(data: movieList[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let sb = UIStoryboard(name: Storyboard.main, bundle: nil)
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
+//        vc.image.kf.setImage(with: URL(string: movieList[indexPath.row].image))
+        vc.movieTitle = movieList[indexPath.row].title
+        vc.overview = movieList[indexPath.row].overview
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
