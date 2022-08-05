@@ -64,39 +64,11 @@ final class ImageSearchViewController: UIViewController {
     // MARK: - Network
     
     func fetchImage(query: String) {
-        
-        // 한글이 안되는 경우 : utf-8로 인코딩 하기 때문에 내부 처리가 필요함
-        guard let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
-        let url = EndPoint.imageSearchURL + "query=\(text)&display=30&start=\(startPage)"
-        
-        // Header : 메타정보
-        // Body : 실질적인 데이터
-        
-        let header: HTTPHeaders = [
-            "X-Naver-Client-Id": APIKey.NAVER_SEARCH_ID,
-            "X-Naver-Client-Secret": APIKey.NAVER_SEARCH_KEY
-        ]
-       
-        AF.request(url,
-                   method: .get,
-                   headers: header).validate(statusCode: 200...500).responseData { response in
-            
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("=========================",json["start"])
-                
-                self.totalCount = json["total"].intValue
-                
-                for image in json["items"].arrayValue {
-                    let image = image["link"].stringValue
-                    self.imageList.append(image)
-                }
-                self.imageCollectionView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
+        // 파라미터 부분은 값을 전달받는 것이고, 클로저부분은 값을 빼오는 것
+        ImageSearchAPIManager.shared.fetchImageData(query: query, startPage: startPage) { totalCount, list in
+            self.totalCount = totalCount
+            self.imageList.append(contentsOf: list)
+            self.imageCollectionView.reloadData()
         }
     }
 }

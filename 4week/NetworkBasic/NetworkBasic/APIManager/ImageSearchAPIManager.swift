@@ -15,10 +15,12 @@ class ImageSearchAPIManager {
     
     static let shared = ImageSearchAPIManager()
     
+    // 기존에 매개변수 타입과 반환타입으로 들어가야 할 것을 typealias로 붙여줌으로써 좀 더 이쁜 코드로 보임
+    typealias completionHandler = (Int, [String]) -> Void
+    
     // @escaping 클로저 : 밖에서 사용하겠다.
-    func fetchImageData(query: String,
-                        startPage: Int,
-                        completionHandler: @escaping (Int, [String]) -> Void) {
+    func fetchImageData(query: String, startPage: Int,
+                        completionHandler: @escaping completionHandler) {
         
         // 한글이 안되는 경우 : utf-8로 인코딩 하기 때문에 내부 처리가 필요함
         guard let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
