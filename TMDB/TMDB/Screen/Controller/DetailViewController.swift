@@ -20,12 +20,13 @@ final class DetailViewController: UIViewController {
     var image: URL?
     var overview = ""
     
+    var castList: [Cast] = []
+    
     // MARK: - @IBOutlet
 
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    
     @IBOutlet weak var detailTableView: UITableView!
     
     override func viewDidLoad() {
@@ -67,14 +68,17 @@ final class DetailViewController: UIViewController {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print(json)
                                 
                 for crew in json["crew"].arrayValue {
                     let name = crew["name"].stringValue
                     let castName = crew["original_name"].stringValue
                     let character = crew["character"].stringValue
                     let image = URL(string: EndPoint.imageURL + crew["profile_path"].stringValue)
+                    
+                    let data = Cast(name: name, castName: castName, character: character, image: image)
+                    self.castList.append(data)
                 }
+                self.detailTableView.reloadData()
                 
             case .failure(let error):
                 print(error)
@@ -106,7 +110,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0: return 1
-        default: return 1
+        default: return castList.count
         }
     }
     
@@ -119,7 +123,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             
         default:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
-            
+            cell.setData(data: castList[indexPath.row])
             return cell
         }
     }

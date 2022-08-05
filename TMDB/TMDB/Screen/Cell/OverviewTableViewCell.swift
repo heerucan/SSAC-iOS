@@ -16,12 +16,8 @@ class OverviewTableViewCell: UITableViewCell {
         configureUI()
     }
 
-    func configureUI() {
+    private func configureUI() {
         overviewLabel.numberOfLines = 2
         overviewLabel.font = .systemFont(ofSize: 13)
-    }
-    
-    func setupData() {
-        
     }
 }
