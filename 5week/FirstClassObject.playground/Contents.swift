@@ -162,3 +162,67 @@ resultNumber(number: 2) {
 }
 
 
+
+
+
+/*
+ 클로저 : 이름없는 함수
+ */
+
+func studyiOS() {
+    print("주말에도 공부하기")
+}
+
+let studyiOSHarder: () -> () = {
+    print("주말에도 공부하기")
+}
+
+// in을 기준으로 앞을 클로저 헤더 / 그 뒤를 클로저 바디
+// 클로저 헤더 in 클로저 바디
+let studyiOSHarder2 = { () -> () in
+    print("주말에도 공부하기")
+}()
+
+func getStudyWithMe(study: () -> ()) {
+    study()
+    print(#function)
+}
+
+// 코드를 생략하지 않고 클로저 구문 씀. 함수의 매개변수 내에 클로저가 그대로 들어간 형태
+// => 인라인 클로저 (Inline Closure)
+getStudyWithMe(study: { () -> () in
+    print("주말에도 공부하기")
+})
+
+// 함수 뒤에 클로저가 실행
+// => 트레일링 클로저 (후행 클로저)
+getStudyWithMe() { () -> () in
+    print("주말에도 공부하기")
+}
+
+
+
+
+func randomNumber(result: (Int) -> String) {
+    result(Int.random(in: 1...100))
+}
+
+// 인라인 클로저 상태임
+randomNumber(result: { (number: Int) -> String in
+    return "행운의 숫자는 \(number)이다."
+})
+
+// 인라인 클로저를 축약하면 후행 클로저 상태가 된다.
+
+// 매개변수가 생략되면 할당되어 있는 내부 상수 $0를 사용할 수 있다.
+randomNumber(result: {
+    "행운의 숫자는 \($0)이다."
+})
+
+randomNumber() {
+    "행운의 숫자는 \($0)이다."
+}
+
+randomNumber {
+    "행운의 숫자는\($0)이다."
+}
