@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 class DetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var castImageView: UIImageView!
@@ -18,13 +20,17 @@ class DetailTableViewCell: UITableViewCell {
         configureUI()
     }
 
-    func configureUI() {
+    private func configureUI() {
         castImageView.makeRound()
+        castImageView.contentMode = .scaleAspectFill
+        castImageView.backgroundColor = .lightGray
         subLabel.textColor = .lightGray
         subLabel.font = .systemFont(ofSize: 13)
     }
     
-    func setData() {
-        
+    func setData(data: Cast) {
+        castImageView.kf.setImage(with: data.image)
+        nameLabel.text = data.name
+        subLabel.text = data.castName + " / " + data.character
     }
 }
