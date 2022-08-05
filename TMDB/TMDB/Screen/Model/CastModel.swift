@@ -11,5 +11,5 @@ struct Cast {
     var name: String
     var castName: String
     var character: String
-    var image: String
+    var image: URL?
 }
