@@ -226,3 +226,125 @@ randomNumber() {
 randomNumber {
     "행운의 숫자는\($0)이다."
 }
+
+// 고차함수 : filter map reduce
+
+// for문과 filter 중 어떤 게 더 성능이 좋은지 속도 비교해주는 함수
+func processTime(code: () -> ()) {
+    let start = CFAbsoluteTimeGetCurrent()
+    code()
+    let end = CFAbsoluteTimeGetCurrent() - start
+    print(end)
+}
+
+let student = [2.2, 3.3, 2.1, 4.2, 3.1, 4.3]
+
+
+processTime {
+    var newStudent: [Double] = []
+
+    for student in student {
+        if student >= 4.0 {
+            newStudent.append(student)
+        }
+    }
+    
+    print(newStudent)
+}
+
+// ex. 4.0 이상인 학생 고르기
+
+
+// 학생들을 필터링할 건데 4.0 이상인 사람들을 필터링할 거임
+let filterStudent = student.filter { value in
+    value >= 4.0
+}
+
+
+processTime {
+    let filterStudent2 = student.filter { $0 >= 4.0 } // 클로저 축약 사용
+
+    print(filterStudent2)
+
+}
+
+
+// 2. map : 기존 요소를 클로저를 통해 원하는 결과값으로 변경
+let number = [Int](1...100)
+var newNumber: [Int] = []
+
+for number in number {
+    newNumber.append(number * 3)
+}
+
+print(newNumber)
+
+
+let mapNumber = number.map { $0 * 3 }
+print(mapNumber)
+
+
+let movieList = [
+    "괴물": "박찬욱",
+    "기생충": "봉준호",
+    "인터스텔라": "크리스토퍼 놀란",
+    "인셉션": "크리스토퍼 놀란",
+    "옥자": "봉준호"
+]
+
+// 특정 감독의 영화만 출력
+
+let movieResult = movieList.filter { $0.value == "봉준호" }
+print(movieResult)
+
+
+// 영화 이름 배열로 변환
+let movieResult2 = movieList.filter { $0.value == "봉준호" }.map { $0.key }
+print(movieResult2)
+
+
+// 3. reduce :
+let examScore: [Double] = [100, 39, 20, 89, 30, 95, 88]
+var totalCount: Double = 0
+
+for score in examScore {
+    totalCount += score
+}
+
+print(totalCount / 8)
+
+let totalCountUsingReduce = examScore.reduce(0) { return $0 + $1 }
+print(totalCountUsingReduce / 8)
+
+
+// drawingGame : 외부함수, luckyNumber: 내부함수
+func drawingGame(item: Int) -> String {
+    
+    func luckyNumber(number: Int) -> String {
+        return "\(number * Int.random(in: 1...10))"
+    }
+    
+    let result = luckyNumber(number: item)
+    return result
+}
+
+drawingGame(item: 10) // 외부함수의 생명 주기가 끝났다. -> 내부 함수의 생명 주기도 끝났다!
+
+// 내부 함수를 반환하는 외부 함수도 만들 수 있다.
+func drawingGame2(item: Int) -> () -> String {
+    func luckyNumber() -> String {
+        return "\(item * Int.random(in: 1...10))"
+    }
+    
+    return luckyNumber
+}
+
+drawingGame2(item: 10)
+
+let numberResult = drawingGame2(item: 10)
+numberResult()
+
+// 외부 함수의 생명주기가 끝나도 내부 함수는 동작을 하면서 내부 함수의 item이 살아서 메모리에 남아있는 상황이 발생
+// 그러면서 클로저에 의해 내부 함수 주변의 지역변수나 상수도 함께 저장이 됨 -> 값이 캡처되었다고 표현됨
+// 이게 캡처리스트인데 -> weak, strong, unowned를 통해 해결
+
