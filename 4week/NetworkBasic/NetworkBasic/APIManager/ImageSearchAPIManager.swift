@@ -34,9 +34,10 @@ class ImageSearchAPIManager {
             "X-Naver-Client-Secret": APIKey.NAVER_SEARCH_KEY
         ]
        
+        // 네트워크 통신이 진행되는 동안에 비동기로 진행되도록 요청할 것. global로 진행!
         AF.request(url,
                    method: .get,
-                   headers: header).validate(statusCode: 200...500).responseData { response in
+                   headers: header).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             
             switch response.result {
             case .success(let value):
