@@ -1,5 +1,5 @@
 //
-//  APIManager.swift
+//  MovieManager.swift
 //  TMDB
 //
 //  Created by heerucan on 2022/08/06.
@@ -10,15 +10,12 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-struct APIManager {
+struct MovieManager {
     
-    static let shared = APIManager()
+    static let shared = MovieManager()
     
     typealias completionHandler = (Movie) -> Void
-    typealias completionH
-    
-    // MARK: - GET : GENRE
-    
+        
     // MARK: - GET : MOVIE List
     
     func requestMovie(completionHandler: @escaping completionHandler) {
@@ -30,6 +27,7 @@ struct APIManager {
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
+                print(json)
                 
                 for movie in json["results"].arrayValue {
                     
@@ -57,31 +55,4 @@ struct APIManager {
             }
         }
     }
-    
-    // MARK: - GET : CREDIT
-    
-    func requestCredit(movieID: Int, completionHandler: @escaping completionHandler) {
-        let url = EndPoint.castURL + "\(movieID)/credits?api_key=\(APIKey.movieKey)&language=en-US"
-
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                                
-                for crew in json["crew"].arrayValue {
-                    let name = crew["name"].stringValue
-                    let castName = crew["original_name"].stringValue
-                    let character = crew["character"].stringValue
-                    let image = URL(string: EndPoint.imageURL + crew["profile_path"].stringValue)
-                    
-                    let castList = Cast(name: name, castName: castName, character: character, image: image)
-                }
-                
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
 }
