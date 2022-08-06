@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,11 +33,21 @@
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" image="chevron.down" catalog="system"/>
                     </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZaV-Co-Oig">
+                        <rect key="frame" x="15" y="81" width="305" height="1"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="GaL-n5-HjA"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="JLc-f1-c3H" secondAttribute="bottom" constant="3" id="0zh-J8-R9X"/>
+                    <constraint firstAttribute="trailing" secondItem="ZaV-Co-Oig" secondAttribute="trailing" id="6SA-0T-bfE"/>
+                    <constraint firstItem="ZaV-Co-Oig" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="9IZ-zc-0zv"/>
                     <constraint firstItem="szS-np-eEb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="Gix-IT-O05"/>
                     <constraint firstItem="szS-np-eEb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Ifc-HL-b1r"/>
+                    <constraint firstAttribute="bottom" secondItem="ZaV-Co-Oig" secondAttribute="bottom" id="Yjq-Dy-TO2"/>
                     <constraint firstItem="JLc-f1-c3H" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="clX-jZ-F8S"/>
                     <constraint firstAttribute="trailing" secondItem="szS-np-eEb" secondAttribute="trailing" constant="17" id="je2-G1-6b1"/>
                     <constraint firstItem="JLc-f1-c3H" firstAttribute="top" secondItem="szS-np-eEb" secondAttribute="bottom" constant="5" id="wa7-1a-onB"/>
@@ -51,5 +62,8 @@
     </objects>
     <resources>
         <image name="chevron.down" catalog="system" width="128" height="72"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
