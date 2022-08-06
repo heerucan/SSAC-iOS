@@ -32,17 +32,10 @@ class SearchTableViewCell: UITableViewCell {
         overviewLabel.numberOfLines = 1
         posterImageView.contentMode = .scaleAspectFill
     }
-    
-    func formatDate(date: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yy"
-        guard let convertDate = dateFormatter.date(from: date) else { return "" }
-        return dateFormatter.string(from: convertDate)
-    }
-  
+
     public func setData(data: Movie) {
         dateLabel.text = data.date
-        tagLabel.text = data.genre
+        tagLabel.text = "#Movie" // data.genre
         posterImageView.kf.setImage(with: data.backImage)
         rateNumberLabel.text = "\(round(data.rate*10)/10)"
         titleLabel.text = data.title

@@ -23,14 +23,20 @@ class DetailTableViewCell: UITableViewCell {
     private func configureUI() {
         castImageView.makeRound()
         castImageView.contentMode = .scaleAspectFill
-        castImageView.backgroundColor = .lightGray
+        castImageView.backgroundColor = .systemGray5
         subLabel.textColor = .lightGray
         subLabel.font = .systemFont(ofSize: 13)
     }
     
-    func setData(data: Cast) {
+    func setCastData(data: Cast) {
         castImageView.kf.setImage(with: data.image)
         nameLabel.text = data.name
-        subLabel.text = data.castName + " / " + data.character
+        subLabel.text = data.character
+    }
+    
+    func setCrewData(data: Crew) {
+        castImageView.kf.setImage(with: data.image)
+        nameLabel.text = data.name
+        subLabel.text = data.department + " / " + data.job
     }
 }

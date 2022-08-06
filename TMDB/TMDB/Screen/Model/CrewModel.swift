@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct Crew {
+    var name: String
+    var department: String
+    var job: String
+    var image: URL
+}

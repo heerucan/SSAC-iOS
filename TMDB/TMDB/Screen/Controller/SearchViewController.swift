@@ -74,7 +74,6 @@ final class SearchViewController: UIViewController {
                 for i in json["genres"].arrayValue {
                     if genre == i["id"].intValue {
                         self.genreString = i["name"].stringValue
-                        print(self.genreString, genre)
                     }
                 }
             case .failure(let error):
@@ -106,7 +105,8 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         
         let sb = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as?
+                DetailViewController else { return }
         vc.image = movieList[indexPath.row].image
         vc.backImage = movieList[indexPath.row].backImage
         vc.movieTitle = movieList[indexPath.row].title
@@ -116,12 +116,24 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+// MARK: - UITableViewDataSourcePrefetching
+
+extension SearchViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if movieList.count - 1 == indexPath.row && indexPath.row < movieList.count {
+                
+            }
+        }
+    }
+}
+
 // MARK: - Network
 
 extension SearchViewController {
     private func requestMovie() {
         MovieManager.shared.requestMovie { list in
-            self.movieList.append(contentsOf: [list])
+            self.movieList.append(contentsOf: list)
             DispatchQueue.main.async {
                 self.searchTableView.reloadData()
             }

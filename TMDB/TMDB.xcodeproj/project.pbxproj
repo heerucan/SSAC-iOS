@@ -34,6 +34,7 @@
 		5BC6C6B3289ABC5D00BA3F89 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 5BC6C6B2289ABC5D00BA3F89 /* SwiftyJSON */; };
 		5BC6C6B7289ABE9000BA3F89 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6C6B6289ABE9000BA3F89 /* MovieModel.swift */; };
 		5BCAF77A289ED2EE00DEC8F9 /* DetailTextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAF779289ED2EE00DEC8F9 /* DetailTextHeaderView.swift */; };
+		5BCAF77C289EDBF200DEC8F9 /* CrewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAF77B289EDBF200DEC8F9 /* CrewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		5BC6C6A8289AB2FE00BA3F89 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		5BC6C6B6289ABE9000BA3F89 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		5BCAF779289ED2EE00DEC8F9 /* DetailTextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextHeaderView.swift; sourceTree = "<group>"; };
+		5BCAF77B289EDBF200DEC8F9 /* CrewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			children = (
 				5BC6C6B6289ABE9000BA3F89 /* MovieModel.swift */,
 				5B8EBAE3289C945A00970347 /* CastModel.swift */,
+				5BCAF77B289EDBF200DEC8F9 /* CrewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				5B63D0E3289A520300F369FE /* ReusableViewProtocol.swift in Sources */,
 				5BAACB52289EB30100D66B8E /* MovieManager.swift in Sources */,
 				5BCAF77A289ED2EE00DEC8F9 /* DetailTextHeaderView.swift in Sources */,
+				5BCAF77C289EDBF200DEC8F9 /* CrewModel.swift in Sources */,
 				5BAACB54289EBC0600D66B8E /* CreditManager.swift in Sources */,
 				5BAACB57289EC24D00D66B8E /* DetailHeaderView.swift in Sources */,
 				5BC6C6A6289AA32000BA3F89 /* SearchTableViewCell.swift in Sources */,

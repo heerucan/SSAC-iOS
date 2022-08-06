@@ -9,7 +9,6 @@ import Foundation
 
 struct Cast {
     var name: String
-    var castName: String
     var character: String
-    var image: URL?
+    var image: URL
 }
