@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import Kingfisher
 import SwiftyJSON
+import SwiftUI
 
 final class DetailViewController: UIViewController {
     
@@ -24,9 +25,6 @@ final class DetailViewController: UIViewController {
     
     // MARK: - @IBOutlet
 
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var detailTableView: UITableView!
     
     override func viewDidLoad() {
@@ -40,11 +38,6 @@ final class DetailViewController: UIViewController {
     
     func configureUI() {
         navigationItem.title = "출연/제작"
-        titleLabel.font = .boldSystemFont(ofSize: 15)
-        titleLabel.textColor = .white
-        titleLabel.text = movieTitle
-        posterImageView.contentMode = .scaleAspectFill
-        posterImageView.kf.setImage(with: image)
     }
     
     private func configureTableView() {
@@ -54,38 +47,9 @@ final class DetailViewController: UIViewController {
                                  forCellReuseIdentifier: DetailTableViewCell.identifier)
         detailTableView.delegate = self
         detailTableView.dataSource = self
-        detailTableView.separatorStyle = .none
         detailTableView.backgroundColor = .white
+        detailTableView.sectionHeaderTopPadding = 0
     }
-    
-    // MARK: - Network
-    
-    private func requestCredit() {
-        print(movieID)
-        let url = EndPoint.castURL + "\(movieID)/credits?api_key=\(APIKey.movieKey)&language=en-US"
-
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                                
-                for crew in json["crew"].arrayValue {
-                    let name = crew["name"].stringValue
-                    let castName = crew["original_name"].stringValue
-                    let character = crew["character"].stringValue
-                    let image = URL(string: EndPoint.imageURL + crew["profile_path"].stringValue)
-                    
-                    let data = Cast(name: name, castName: castName, character: character, image: image)
-                    self.castList.append(data)
-                }
-                self.detailTableView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -93,30 +57,49 @@ final class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return posterImageView
+        switch section {
+        case 0:
+            let headerView = DetailHeaderView()
+            headerView.titleLabel.text = movieTitle
+            headerView.posterImageView.kf.setImage(with: image)
+            headerView.backImageView.kf.setImage(with: image)
+            return headerView
+        case 1:
+            let textView = DetailTextHeaderView()
+            textView.title = "OverView"
+            return textView
+        case 2:
+            let textView = DetailTextHeaderView()
+            textView.title = "Cast"
+            return textView
+        default:
+            return nil
+        }
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch section {
-        case 0: return "Overview"
-        default: return "Cast"
+        case 0: return 150
+        default: return 40
         }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
-        case 0: return 1
-        default: return castList.count
+        case 1: return 1
+        case 2: return castList.count
+        default: return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
-        case 0:
+        case 0: return UITableViewCell()
+        case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
             cell.overviewLabel.text = overview
             return cell
@@ -125,6 +108,19 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
             cell.setData(data: castList[indexPath.row])
             return cell
+        }
+    }
+}
+
+// MARK: - Network
+
+extension DetailViewController {
+    private func requestCredit() {
+        CreditManager.shared.requestCredit(movieID: movieID) { list in
+            self.castList.append(contentsOf: [list])
+            DispatchQueue.main.async {
+                self.detailTableView.reloadData()
+            }
         }
     }
 }
