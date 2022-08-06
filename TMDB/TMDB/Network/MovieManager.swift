@@ -32,6 +32,7 @@ struct MovieManager {
                 for movie in json["results"].arrayValue {
                     
                     let title = movie["title"].stringValue
+                    let backPoster = URL(string: EndPoint.imageURL + movie["backdrop_path"].stringValue)
                     let poster = URL(string: EndPoint.imageURL + movie["poster_path"].stringValue)
                     let rate = movie["vote_average"].doubleValue
                     let overview = movie["overview"].stringValue
@@ -40,6 +41,7 @@ struct MovieManager {
                     let id = movie["id"].intValue
                                                                                 
                     let movieList = Movie(title: title,
+                                          backImage: backPoster,
                                           date: date,
                                           genre: "#Movie",
                                           image: poster,

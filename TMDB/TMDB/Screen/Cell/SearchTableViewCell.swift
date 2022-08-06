@@ -43,7 +43,7 @@ class SearchTableViewCell: UITableViewCell {
     public func setData(data: Movie) {
         dateLabel.text = data.date
         tagLabel.text = data.genre
-        posterImageView.kf.setImage(with: data.image)
+        posterImageView.kf.setImage(with: data.backImage)
         rateNumberLabel.text = "\(round(data.rate*10)/10)"
         titleLabel.text = data.title
         overviewLabel.text = data.overview  

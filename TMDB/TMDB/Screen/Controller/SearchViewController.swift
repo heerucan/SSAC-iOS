@@ -83,45 +83,6 @@ final class SearchViewController: UIViewController {
         }
     }
     
-    private func requestMovie() {
-        let url = EndPoint.movieURL + "?api_key=\(APIKey.movieKey)"
-        
-        AF.request(url, method: .get).validate(statusCode: 200...500).responseData { response in
-            
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                for movie in json["results"].arrayValue {
-                    
-                    let title = movie["title"].stringValue
-                    let poster = URL(string: EndPoint.imageURL + movie["poster_path"].stringValue)
-                    let rate = movie["vote_average"].doubleValue
-                    let overview = movie["overview"].stringValue
-                    let date = movie["release_date"].stringValue
-                    let genre = movie["genre_ids"][0].intValue
-                    let id = movie["id"].intValue
-                    
-                    self.requestGenre(genre: genre)
-                    
-                    let data = Movie(title: title,
-                                     date: date,
-                                     genre: self.genreString,
-                                     image: poster,
-                                     overview: overview,
-                                     rate: rate,
-                                     id: id)
-                                        
-                    self.movieList.append(data)
-                }
-                self.searchTableView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
     // MARK: - @objc
     
     @objc func touchupLeftButton() { }
@@ -147,9 +108,23 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let sb = UIStoryboard(name: Storyboard.main, bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as? DetailViewController else { return }
         vc.image = movieList[indexPath.row].image
+        vc.backImage = movieList[indexPath.row].backImage
         vc.movieTitle = movieList[indexPath.row].title
         vc.overview = movieList[indexPath.row].overview
         vc.movieID = movieList[indexPath.row].id
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+// MARK: - Network
+
+extension SearchViewController {
+    private func requestMovie() {
+        MovieManager.shared.requestMovie { list in
+            self.movieList.append(contentsOf: [list])
+            DispatchQueue.main.async {
+                self.searchTableView.reloadData()
+            }
+        }
     }
 }

@@ -317,6 +317,8 @@ let totalCountUsingReduce = examScore.reduce(0) { return $0 + $1 }
 print(totalCountUsingReduce / 8)
 
 
+
+
 // drawingGame : 외부함수, luckyNumber: 내부함수
 func drawingGame(item: Int) -> String {
     
@@ -329,6 +331,7 @@ func drawingGame(item: Int) -> String {
 }
 
 drawingGame(item: 10) // 외부함수의 생명 주기가 끝났다. -> 내부 함수의 생명 주기도 끝났다!
+
 
 // 내부 함수를 반환하는 외부 함수도 만들 수 있다.
 func drawingGame2(item: Int) -> () -> String {

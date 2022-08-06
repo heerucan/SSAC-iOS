@@ -33,6 +33,7 @@ class DetailHeaderView: UIView {
     func configureUI() {
         titleLabel.font = .boldSystemFont(ofSize: 18)
         titleLabel.textColor = .white
+        titleLabel.numberOfLines = 1
         backImageView.clipsToBounds = true
         backImageView.contentMode = .scaleAspectFill
         posterImageView.contentMode = .scaleAspectFit
@@ -54,6 +55,7 @@ class DetailHeaderView: UIView {
         
         titleLabel.topAnchor.constraint(equalTo: backImageView.topAnchor, constant: 10).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: backImageView.leadingAnchor, constant: 20).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: backImageView.trailingAnchor, constant: -20).isActive = true
         
         posterImageView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
         posterImageView.leadingAnchor.constraint(equalTo: backImageView.leadingAnchor, constant: 20).isActive = true

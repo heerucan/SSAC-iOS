@@ -19,6 +19,7 @@ final class DetailViewController: UIViewController {
     var movieID = 0
     var movieTitle = ""
     var image: URL?
+    var backImage: URL?
     var overview = ""
     
     var castList: [Cast] = []
@@ -62,7 +63,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             let headerView = DetailHeaderView()
             headerView.titleLabel.text = movieTitle
             headerView.posterImageView.kf.setImage(with: image)
-            headerView.backImageView.kf.setImage(with: image)
+            headerView.backImageView.kf.setImage(with: backImage)
             return headerView
         case 1:
             let textView = DetailTextHeaderView()
@@ -118,6 +119,7 @@ extension DetailViewController {
     private func requestCredit() {
         CreditManager.shared.requestCredit(movieID: movieID) { list in
             self.castList.append(contentsOf: [list])
+            print(self.castList)
             DispatchQueue.main.async {
                 self.detailTableView.reloadData()
             }
