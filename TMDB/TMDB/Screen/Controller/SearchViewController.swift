@@ -16,7 +16,7 @@ final class SearchViewController: UIViewController {
     // MARK: - Property
     
     var genreString = ""
-
+    var pageNumber = 1
     var movieList: [Movie] = []
     
     let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "list.triangle"),
@@ -39,7 +39,7 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureTableView()
-        requestMovie()
+        requestMovie(pageNumber: pageNumber)
     }
     
     // MARK: - configureUI
@@ -56,6 +56,7 @@ final class SearchViewController: UIViewController {
                                  forCellReuseIdentifier: SearchTableViewCell.identifier)
         searchTableView.delegate = self
         searchTableView.dataSource = self
+        searchTableView.prefetchDataSource = self
         searchTableView.backgroundColor = .white
         searchTableView.separatorStyle = .none
     }
@@ -120,9 +121,13 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print(#function)
         for indexPath in indexPaths {
+            print(movieList.count, indexPath.row)
             if movieList.count - 1 == indexPath.row && indexPath.row < movieList.count {
-                
+                // TMDB는 2페이지가 최대라고 함
+                pageNumber += 1
+                requestMovie(pageNumber: pageNumber)
             }
         }
     }
@@ -131,8 +136,8 @@ extension SearchViewController: UITableViewDataSourcePrefetching {
 // MARK: - Network
 
 extension SearchViewController {
-    private func requestMovie() {
-        MovieManager.shared.requestMovie { list in
+    private func requestMovie(pageNumber: Int) {
+        MovieManager.shared.requestMovie(pageNumber: pageNumber) { list in
             self.movieList.append(contentsOf: list)
             DispatchQueue.main.async {
                 self.searchTableView.reloadData()

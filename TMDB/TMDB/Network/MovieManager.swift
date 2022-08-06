@@ -18,9 +18,9 @@ struct MovieManager {
         
     // MARK: - GET : MOVIE List
     
-    func requestMovie(completionHandler: @escaping completionHandler) {
+    func requestMovie(pageNumber:Int, completionHandler: @escaping completionHandler) {
         
-        let url = EndPoint.movieURL + "?api_key=\(APIKey.movieKey)"
+        let url = EndPoint.movieURL + "?api_key=\(APIKey.movieKey)&page=\(pageNumber)"
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             
