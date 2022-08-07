@@ -19,12 +19,13 @@ class SearchTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var linkButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
     }
-
+    
     private func configureUI() {
         contentView.makeShadow()
         backView.makeRound()

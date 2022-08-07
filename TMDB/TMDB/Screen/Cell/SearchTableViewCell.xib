@@ -166,6 +166,7 @@
             <connections>
                 <outlet property="backView" destination="JSt-7d-Ok2" id="fIy-OZ-dWZ"/>
                 <outlet property="dateLabel" destination="RbH-fg-Z17" id="nb3-oS-7F2"/>
+                <outlet property="linkButton" destination="4ff-mC-KWR" id="MNo-16-1Pn"/>
                 <outlet property="overviewLabel" destination="06y-83-1rX" id="whJ-ue-qxY"/>
                 <outlet property="posterImageView" destination="tC6-Gh-LLX" id="MZA-tw-ZQG"/>
                 <outlet property="rateLabel" destination="8BV-rw-UWf" id="PUV-X3-eIN"/>

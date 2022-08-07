@@ -87,6 +87,15 @@ final class SearchViewController: UIViewController {
     
     @objc func touchupLeftButton() { }
     @objc func touchupRightButton() { }
+    
+    @objc func touchupLinkButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier)
+                as? WebViewController else { return }
+        viewController.modalPresentationStyle = .overFullScreen
+        viewController.movieID = movieList[sender.tag].id
+        present(viewController, animated: true)
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -99,6 +108,8 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         cell.setData(data: movieList[indexPath.row])
+        cell.linkButton.tag = indexPath.row
+        cell.linkButton.addTarget(self, action: #selector(touchupLinkButton(_:)), for: .touchUpInside)
         return cell
     }
     
@@ -121,11 +132,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension SearchViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        print(#function)
         for indexPath in indexPaths {
-            print(movieList.count, indexPath.row)
+            // 항상 인덱스는 0부터 시작하니까 전체 개수에서 1을 빼줘야 똑같아짐
             if movieList.count - 1 == indexPath.row && indexPath.row < movieList.count {
-                // TMDB는 2페이지가 최대라고 함
                 pageNumber += 1
                 requestMovie(pageNumber: pageNumber)
             }
