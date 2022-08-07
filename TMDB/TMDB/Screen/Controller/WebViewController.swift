@@ -27,6 +27,8 @@ class WebViewController: UIViewController {
         requestVideo(movieID: movieID)
     }
     
+    // MARK: - @IBAction
+    
     @IBAction func closeBarButtonClicked(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -63,7 +65,11 @@ class WebViewController: UIViewController {
         let request = URLRequest(url: url)
         webView.load(request)
     }
+}
 
+// MARK: - Network
+
+extension WebViewController {
     func requestVideo(movieID: Int) {
         VideoManager.shared.requestVideo(movieID: movieID) { link in
             let detinationURL = "https://www.youtube.com/watch?v=\(link)"
