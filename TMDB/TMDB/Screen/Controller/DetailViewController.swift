@@ -40,6 +40,7 @@ final class DetailViewController: UIViewController {
     
     func configureUI() {
         navigationItem.title = "출연/제작"
+        navigationItem.backButtonTitle = nil
     }
     
     private func configureTableView() {

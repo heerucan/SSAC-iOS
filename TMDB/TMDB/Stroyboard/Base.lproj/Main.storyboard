@@ -68,6 +68,72 @@
             </objects>
             <point key="canvasLocation" x="918.84057971014499" y="114.50892857142857"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="qEu-pS-Y6Z">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="1rw-A1-l89" customClass="WebViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="41c-C5-tpK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UbM-Jg-gLa">
+                                <rect key="frame" x="0.0" y="44" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F10-kq-Evf">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8hC-UF-rqg"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="엑스" width="90.5" id="6iy-yJ-xKc">
+                                        <connections>
+                                            <action selector="closeBarButtonClicked:" destination="1rw-A1-l89" id="Er8-CK-hF0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="뒤로" id="mhr-LF-oVM">
+                                        <connections>
+                                            <action selector="backBarButtonClicked:" destination="1rw-A1-l89" id="dZt-5q-Nq3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sdK-LX-Ttz"/>
+                                    <barButtonItem title="앞으로" width="102.5" id="wsh-KM-rot">
+                                        <connections>
+                                            <action selector="ForwardBarButtonClicked:" destination="1rw-A1-l89" id="KIf-gb-eFW"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="새로고침" id="fD9-gR-aSc">
+                                        <connections>
+                                            <action selector="refreshBarButtonClicked:" destination="1rw-A1-l89" id="y3j-hr-gWb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1HB-P6-prS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UbM-Jg-gLa" firstAttribute="top" secondItem="1HB-P6-prS" secondAttribute="top" id="DTy-yg-UUG"/>
+                            <constraint firstItem="1HB-P6-prS" firstAttribute="trailing" secondItem="UbM-Jg-gLa" secondAttribute="trailing" id="LpL-nw-bVl"/>
+                            <constraint firstItem="F10-kq-Evf" firstAttribute="leading" secondItem="1HB-P6-prS" secondAttribute="leading" id="RDp-jn-5kO"/>
+                            <constraint firstItem="F10-kq-Evf" firstAttribute="top" secondItem="UbM-Jg-gLa" secondAttribute="bottom" id="RMd-fy-yvv"/>
+                            <constraint firstItem="F10-kq-Evf" firstAttribute="bottom" secondItem="1HB-P6-prS" secondAttribute="bottom" id="ZR1-xO-MHE"/>
+                            <constraint firstItem="UbM-Jg-gLa" firstAttribute="leading" secondItem="1HB-P6-prS" secondAttribute="leading" id="hSD-yL-b5P"/>
+                            <constraint firstItem="F10-kq-Evf" firstAttribute="trailing" secondItem="1HB-P6-prS" secondAttribute="trailing" id="yye-4b-ZvV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="UbM-Jg-gLa" id="tBY-Y4-Xat"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OFw-lp-Kxd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.68115942029" y="114.50892857142857"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

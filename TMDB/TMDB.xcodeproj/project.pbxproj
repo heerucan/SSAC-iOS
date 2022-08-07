@@ -35,6 +35,8 @@
 		5BC6C6B7289ABE9000BA3F89 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6C6B6289ABE9000BA3F89 /* MovieModel.swift */; };
 		5BCAF77A289ED2EE00DEC8F9 /* DetailTextHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAF779289ED2EE00DEC8F9 /* DetailTextHeaderView.swift */; };
 		5BCAF77C289EDBF200DEC8F9 /* CrewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCAF77B289EDBF200DEC8F9 /* CrewModel.swift */; };
+		5BE6C1A1289F5BDB0044A53A /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE6C1A0289F5BDB0044A53A /* WebViewController.swift */; };
+		5BE6C1A3289F60760044A53A /* VideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE6C1A2289F60760044A53A /* VideoManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		5BC6C6B6289ABE9000BA3F89 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		5BCAF779289ED2EE00DEC8F9 /* DetailTextHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTextHeaderView.swift; sourceTree = "<group>"; };
 		5BCAF77B289EDBF200DEC8F9 /* CrewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewModel.swift; sourceTree = "<group>"; };
+		5BE6C1A0289F5BDB0044A53A /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		5BE6C1A2289F60760044A53A /* VideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			children = (
 				5BAACB51289EB30100D66B8E /* MovieManager.swift */,
 				5BAACB53289EBC0600D66B8E /* CreditManager.swift */,
+				5BE6C1A2289F60760044A53A /* VideoManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 			children = (
 				5B9FFC9A289A537D00FE83A5 /* SearchViewController.swift */,
 				5B8EBAD7289C80C900970347 /* DetailViewController.swift */,
+				5BE6C1A0289F5BDB0044A53A /* WebViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,12 +301,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE6C1A1289F5BDB0044A53A /* WebViewController.swift in Sources */,
 				5B9FFC9B289A537D00FE83A5 /* SearchViewController.swift in Sources */,
 				5BC6C6B7289ABE9000BA3F89 /* MovieModel.swift in Sources */,
 				5BB8E95C2899F6C2006815FD /* AppDelegate.swift in Sources */,
 				5BB8E9782899F9CF006815FD /* Constant.swift in Sources */,
 				5B8EBAE1289C866B00970347 /* OverviewTableViewCell.swift in Sources */,
 				5B63D0E3289A520300F369FE /* ReusableViewProtocol.swift in Sources */,
+				5BE6C1A3289F60760044A53A /* VideoManager.swift in Sources */,
 				5BAACB52289EB30100D66B8E /* MovieManager.swift in Sources */,
 				5BCAF77A289ED2EE00DEC8F9 /* DetailTextHeaderView.swift in Sources */,
 				5BCAF77C289EDBF200DEC8F9 /* CrewModel.swift in Sources */,

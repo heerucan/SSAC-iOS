@@ -7,23 +7,69 @@
 
 import UIKit
 
+import WebKit
+
 class WebViewController: UIViewController {
 
+    // MARK: - Property
+    
+    var movieID = 0
+    
+    // MARK: - @IBOutlet
+    
+    @IBOutlet weak var webView: WKWebView!
+    
+    // MARK: - LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        configureUI()
+        requestVideo(movieID: movieID)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func closeBarButtonClicked(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
-    */
+    
+    @IBAction func backBarButtonClicked(_ sender: Any) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    @IBAction func ForwardBarButtonClicked(_ sender: Any) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+    }
+    
+    @IBAction func refreshBarButtonClicked(_ sender: Any) {
+        webView.reload()
+    }
+    
+    // MARK: - InitUI
+    
+    private func configureUI() {
+        view.backgroundColor = .white
+    }
+    
+    // MARK: - Custom Method
+    
+    func openWebView(url: String) {
+        guard let url = URL(string: url) else {
+            print("Invalid URL")
+            return
+        }
+        let request = URLRequest(url: url)
+        webView.load(request)
+    }
 
+    func requestVideo(movieID: Int) {
+        VideoManager.shared.requestVideo(movieID: movieID) { link in
+            let detinationURL = "https://www.youtube.com/watch?v=\(link)"
+            DispatchQueue.main.async {
+                self.openWebView(url: detinationURL)
+            }
+        }
+    }
 }
