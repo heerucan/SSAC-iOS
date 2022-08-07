@@ -15,6 +15,8 @@ struct MovieManager {
     static let shared = MovieManager()
     
     typealias completionHandler = ([Movie]) -> Void
+    
+    private init() { }
         
     // MARK: - GET : MOVIE List
     

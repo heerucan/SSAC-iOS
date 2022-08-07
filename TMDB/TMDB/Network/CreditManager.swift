@@ -15,6 +15,8 @@ struct CreditManager {
     static let shared = CreditManager()
     
     typealias completionHandler = ([Cast], [Crew]) -> Void
+    
+    private init() { }
         
     // MARK: - GET : CREDIT
     
