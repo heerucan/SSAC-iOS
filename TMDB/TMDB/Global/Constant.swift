@@ -17,4 +17,6 @@ enum EndPoint {
     static let imageURL = "https://image.tmdb.org/t/p/w500"
     static let castURL = "https://api.themoviedb.org/3/movie/"
     static let youtubeURL = "https://api.themoviedb.org/3/movie/"
+    
+    static let enUS = "&language=en-US"
 }
