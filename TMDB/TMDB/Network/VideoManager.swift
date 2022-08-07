@@ -17,6 +17,8 @@ struct VideoManager {
     
     private init() { }
     
+    // MARK: - GET : GET VIDEO LINK
+    
     func requestVideo(movieID: Int, completionHandler: @escaping completionHandler) {
         
         let url = EndPoint.youtubeURL + "\(movieID)/videos?api_key=\(APIKey.movieKey)&language=en-US"
@@ -24,7 +26,7 @@ struct VideoManager {
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             switch response.result {
             case .success(let value):
-                let json = JSON(value)                
+                let json = JSON(value)
                 let link = json["results"][0]["key"].stringValue
                 
                 completionHandler(link)
