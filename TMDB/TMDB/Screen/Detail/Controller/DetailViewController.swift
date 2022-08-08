@@ -15,6 +15,7 @@ final class DetailViewController: UIViewController {
     
     // MARK: - Property
     
+    var isExpand = false
     var movieID = 0
     var movieTitle = ""
     var image: URL?
@@ -23,7 +24,7 @@ final class DetailViewController: UIViewController {
     
     var castList: [Cast] = []
     var crewList: [Crew] = []
-    
+        
     // MARK: - @IBOutlet
 
     @IBOutlet weak var detailTableView: UITableView!
@@ -111,7 +112,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
+            cell.overviewLabel.numberOfLines = isExpand ? 0 : 2
             cell.overviewLabel.text = overview
+            cell.downButton
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }

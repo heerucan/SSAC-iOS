@@ -15,7 +15,6 @@ final class SearchViewController: UIViewController {
 
     // MARK: - Property
     
-    var genreString = ""
     var pageNumber = 1
     var movieList: [Movie] = []
     
@@ -74,7 +73,6 @@ final class SearchViewController: UIViewController {
                                 
                 for i in json["genres"].arrayValue {
                     if genre == i["id"].intValue {
-                        self.genreString = i["name"].stringValue
                     }
                 }
             case .failure(let error):
@@ -149,3 +147,4 @@ extension SearchViewController {
         }
     }
 }
+

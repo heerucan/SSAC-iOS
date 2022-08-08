@@ -40,6 +40,6 @@ class SearchTableViewCell: UITableViewCell {
         posterImageView.kf.setImage(with: data.backImage)
         rateNumberLabel.text = "\(round(data.rate*10)/10)"
         titleLabel.text = data.title
-        overviewLabel.text = data.overview
+        overviewLabel.text = ""
     }
 }
