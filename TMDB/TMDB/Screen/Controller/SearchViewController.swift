@@ -48,7 +48,7 @@ final class SearchViewController: UIViewController {
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = leftBarButton
         navigationItem.rightBarButtonItem = rightBarButton
-        navigationItem.backButtonTitle = nil
+        navigationItem.backButtonTitle = ""
     }
     
     private func configureTableView() {
@@ -114,16 +114,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
+        tableView.deselectRow(at: indexPath, animated: false)
         let sb = UIStoryboard(name: Storyboard.main, bundle: nil)
         guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as?
                 DetailViewController else { return }
-        vc.image = movieList[indexPath.row].image
-        vc.backImage = movieList[indexPath.row].backImage
-        vc.movieTitle = movieList[indexPath.row].title
-        vc.overview = movieList[indexPath.row].overview
-        vc.movieID = movieList[indexPath.row].id
+        vc.setupData(data: movieList[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -135,7 +130,7 @@ extension SearchViewController: UITableViewDataSourcePrefetching {
         for indexPath in indexPaths {
             // 항상 인덱스는 0부터 시작하니까 전체 개수에서 1을 빼줘야 똑같아짐
             if movieList.count - 1 == indexPath.row && indexPath.row < movieList.count {
-                pageNumber += 1
+                pageNumber += 10
                 requestMovie(pageNumber: pageNumber)
             }
         }
