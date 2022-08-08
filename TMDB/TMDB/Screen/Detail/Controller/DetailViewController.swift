@@ -14,7 +14,7 @@ import SwiftyJSON
 final class DetailViewController: UIViewController {
     
     // MARK: - Property
-    
+        
     var isExpand = false
     var movieID = 0
     var movieTitle = ""

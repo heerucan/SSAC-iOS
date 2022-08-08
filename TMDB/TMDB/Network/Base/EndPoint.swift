@@ -15,7 +15,7 @@ enum EndPoint {
     
     var url: String {
         switch self {
-        case .movie: return URL.makeURL("trending/movie/day")
+        case .movie: return URL.makeURL("trending/\(MediaType.movie.rawValue)/\(TimeWindow.day.rawValue)")
         case .genre: return URL.makeURL("genre/movie/list")
         case .cast, .web: return URL.makeURL("movie/")
         }

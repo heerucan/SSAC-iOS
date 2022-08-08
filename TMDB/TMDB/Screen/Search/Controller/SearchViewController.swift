@@ -17,6 +17,7 @@ final class SearchViewController: UIViewController {
     
     var pageNumber = 1
     var movieList: [Movie] = []
+    var genreList: [Genre] = []
     
     let leftBarButton = UIBarButtonItem(image: UIImage(systemName: "list.triangle"),
                                      style: .plain,
@@ -36,9 +37,10 @@ final class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        requestMovie(pageNumber: pageNumber)
         configureUI()
         configureTableView()
+        requestMovie(pageNumber: pageNumber)
+        requestGenre()
     }
     
     // MARK: - configureUI
@@ -48,6 +50,7 @@ final class SearchViewController: UIViewController {
         navigationItem.leftBarButtonItem = leftBarButton
         navigationItem.rightBarButtonItem = rightBarButton
         navigationItem.backButtonTitle = ""
+        navigationController?.navigationBar.tintColor = .black
     }
     
     private func configureTableView() {
@@ -58,27 +61,6 @@ final class SearchViewController: UIViewController {
         searchTableView.prefetchDataSource = self
         searchTableView.backgroundColor = .white
         searchTableView.separatorStyle = .none
-    }
-    
-    // MARK: - Network
-    
-    func requestGenre(genre: Int) {
-        
-        let genreURL = EndPoint.genre.url + "?api_key=\(APIKey.movieKey)" + EndPoint.enUS
-        
-        AF.request(genreURL, method: .get).validate(statusCode: 200...500).responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                                
-                for i in json["genres"].arrayValue {
-                    if genre == i["id"].intValue {
-                    }
-                }
-            case .failure(let error):
-                print(error)
-            }
-        }
     }
     
     // MARK: - @objc
@@ -105,6 +87,12 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        let genreID = movieList[indexPath.row].genre
+        for movie in self.genreList {
+            if movie.id == genreID {
+                cell.tagLabel.text = "#\(movie.genre)"
+            }
+        }
         cell.setData(data: movieList[indexPath.row])
         cell.linkButton.tag = indexPath.row
         cell.linkButton.addTarget(self, action: #selector(touchupLinkButton(_:)), for: .touchUpInside)
@@ -144,6 +132,12 @@ extension SearchViewController {
             DispatchQueue.main.async {
                 self.searchTableView.reloadData()
             }
+        }
+    }
+    
+    private func requestGenre() {
+        MovieManager.shared.requestGenre { list in
+            self.genreList.append(contentsOf: list)
         }
     }
 }

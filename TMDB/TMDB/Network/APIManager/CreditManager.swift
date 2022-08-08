@@ -22,8 +22,7 @@ struct CreditManager {
     
     func requestCredit(movieID: Int, completionHandler: @escaping completionHandler) {
         let url = EndPoint.cast.url +
-        "\(movieID)/credits?api_key=\(APIKey.movieKey)" +
-        EndPoint.enUS
+        "\(movieID)/credits?api_key=\(APIKey.movieKey)" + EndPoint.enUS
 
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             switch response.result {
@@ -42,7 +41,6 @@ struct CreditManager {
                          job: $0["job"].stringValue,
                          image: URL(string: EndPoint.imageURL + $0["profile_path"].stringValue)!)
                 }
-                
                 completionHandler(castList, crewList)
                                 
             case .failure(let error):
