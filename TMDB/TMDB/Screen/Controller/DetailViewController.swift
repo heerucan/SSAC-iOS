@@ -40,7 +40,7 @@ final class DetailViewController: UIViewController {
     
     func configureUI() {
         navigationItem.title = "출연/제작"
-        navigationItem.backButtonTitle = nil
+        navigationController?.navigationBar.tintColor = .black
     }
     
     private func configureTableView() {
@@ -53,6 +53,17 @@ final class DetailViewController: UIViewController {
         detailTableView.dataSource = self
         detailTableView.backgroundColor = .white
         detailTableView.sectionHeaderTopPadding = 0
+        detailTableView.allowsSelection = false
+    }
+    
+    // MARK: - Custom Method
+    
+    func setupData(data: Movie) {
+        image = data.image
+        backImage = data.backImage
+        movieTitle = data.title
+        overview = data.overview
+        movieID = data.id
     }
 }
 
@@ -68,17 +79,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             headerView.posterImageView.kf.setImage(with: image)
             headerView.backImageView.kf.setImage(with: backImage)
             return headerView
-        case 1:
+        case 1, 2, 3:
             let textView = DetailTextHeaderView()
-            textView.title = "OverView"
-            return textView
-        case 2:
-            let textView = DetailTextHeaderView()
-            textView.title = "Cast"
-            return textView
-        case 3:
-            let textView = DetailTextHeaderView()
-            textView.title = "Crew"
+            textView.title = textView.headerList[section-1]
             return textView
         default:
             return nil
