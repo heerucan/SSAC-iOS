@@ -35,11 +35,11 @@ class SearchTableViewCell: UITableViewCell {
     }
 
     public func setData(data: Movie) {
-        dateLabel.text = data.date
+        dateLabel.text = data.date.toDate()?.toString()
         tagLabel.text = "#Movie" // data.genre
         posterImageView.kf.setImage(with: data.backImage)
         rateNumberLabel.text = "\(round(data.rate*10)/10)"
         titleLabel.text = data.title
-        overviewLabel.text = ""
+        overviewLabel.text = data.overview
     }
 }
