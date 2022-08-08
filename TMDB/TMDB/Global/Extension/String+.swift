@@ -8,11 +8,10 @@
 import Foundation
 
 extension String {
-    func changeDateFormat() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yyyy"
-        let currentDate = formatter.date(from: self)
-        let stringDate = formatter.string(from: currentDate!)
-        return stringDate
+    func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ko_KR")
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.date(from: self)
     }
 }

@@ -10,3 +10,11 @@ import Foundation
 enum Storyboard {
     static let main = "Main"
 }
+
+enum MediaType: String {
+    case all, movie, tv, person
+}
+
+enum TimeWindow: String {
+    case day, week
+}
