@@ -26,7 +26,7 @@ class SearchTableViewCell: UITableViewCell {
         configureUI()
     }
     
-    private func configureUI() {
+    public func configureUI() {
         contentView.makeShadow()
         backView.makeRound()
         posterImageView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
@@ -40,6 +40,6 @@ class SearchTableViewCell: UITableViewCell {
         posterImageView.kf.setImage(with: data.backImage)
         rateNumberLabel.text = "\(round(data.rate*10)/10)"
         titleLabel.text = data.title
-        overviewLabel.text = data.overview  
+        overviewLabel.text = data.overview
     }
 }

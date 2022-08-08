@@ -21,7 +21,7 @@ struct VideoManager {
     
     func requestVideo(movieID: Int, completionHandler: @escaping completionHandler) {
         
-        let url = EndPoint.youtubeURL +
+        let url = EndPoint.web.url +
         "\(movieID)/videos?api_key=\(APIKey.movieKey)" +
         EndPoint.enUS
 

@@ -21,7 +21,7 @@ struct CreditManager {
     // MARK: - GET : CREDIT
     
     func requestCredit(movieID: Int, completionHandler: @escaping completionHandler) {
-        let url = EndPoint.castURL +
+        let url = EndPoint.cast.url +
         "\(movieID)/credits?api_key=\(APIKey.movieKey)" +
         EndPoint.enUS
 

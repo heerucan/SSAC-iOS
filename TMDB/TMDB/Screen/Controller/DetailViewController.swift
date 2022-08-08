@@ -10,7 +10,6 @@ import UIKit
 import Alamofire
 import Kingfisher
 import SwiftyJSON
-import SwiftUI
 
 final class DetailViewController: UIViewController {
     
@@ -28,6 +27,8 @@ final class DetailViewController: UIViewController {
     // MARK: - @IBOutlet
 
     @IBOutlet weak var detailTableView: UITableView!
+    
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,6 @@ final class DetailViewController: UIViewController {
                                  forCellReuseIdentifier: OverviewTableViewCell.identifier)
         detailTableView.register(UINib(nibName: DetailTableViewCell.identifier, bundle: nil),
                                  forCellReuseIdentifier: DetailTableViewCell.identifier)
-        
         detailTableView.delegate = self
         detailTableView.dataSource = self
         detailTableView.backgroundColor = .white
@@ -70,7 +70,6 @@ final class DetailViewController: UIViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:

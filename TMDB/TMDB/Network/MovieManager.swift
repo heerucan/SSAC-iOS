@@ -22,7 +22,7 @@ struct MovieManager {
     
     func requestMovie(pageNumber:Int, completionHandler: @escaping completionHandler) {
         
-        let url = EndPoint.movieURL + "?api_key=\(APIKey.movieKey)&page=\(pageNumber)"
+        let url = EndPoint.movie.url + "?api_key=\(APIKey.movieKey)&page=\(pageNumber)"
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             
@@ -48,4 +48,5 @@ struct MovieManager {
             }
         }
     }
+
 }

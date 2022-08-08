@@ -13,7 +13,7 @@ class DetailTextHeaderView: UIView {
         
     var headerList = ["OverView", "Cast", "Crew"]
     
-    lazy var title: String = "" {
+    var title: String = "" {
         didSet {
             titleLabel.text = title
         }

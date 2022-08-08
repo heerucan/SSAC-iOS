@@ -33,13 +33,13 @@ final class SearchViewController: UIViewController {
     
     @IBOutlet weak var searchTableView: UITableView!
     
-    // MARK: - Life Cycle
+    // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestMovie(pageNumber: pageNumber)
         configureUI()
         configureTableView()
-        requestMovie(pageNumber: pageNumber)
     }
     
     // MARK: - configureUI
@@ -65,7 +65,7 @@ final class SearchViewController: UIViewController {
     
     func requestGenre(genre: Int) {
         
-        let genreURL = EndPoint.genreURL + "?api_key=\(APIKey.movieKey)&language=en-US"
+        let genreURL = EndPoint.genre.url + "?api_key=\(APIKey.movieKey)" + EndPoint.enUS
         
         AF.request(genreURL, method: .get).validate(statusCode: 200...500).responseData { response in
             switch response.result {
@@ -95,7 +95,7 @@ final class SearchViewController: UIViewController {
         viewController.modalPresentationStyle = .overFullScreen
         viewController.movieID = movieList[sender.tag].id
         present(viewController, animated: true)
-    }
+    }  
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
