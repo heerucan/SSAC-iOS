@@ -10,8 +10,10 @@ import UIKit
 class DetailTextHeaderView: UIView {
 
     // MARK: - Property
+        
+    var headerList = ["OverView", "Cast", "Crew"]
     
-    var title: String = "" {
+    lazy var title: String = "" {
         didSet {
             titleLabel.text = title
         }
