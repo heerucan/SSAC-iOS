@@ -22,8 +22,8 @@ final class DetailViewController: UIViewController {
     var backImage: URL?
     var overview = ""
     
-    var castList: [Cast] = []
-    var crewList: [Crew] = []
+    private var castList: [Cast] = []
+    private var crewList: [Crew] = []
         
     // MARK: - @IBOutlet
 
@@ -40,7 +40,7 @@ final class DetailViewController: UIViewController {
     
     // MARK: - ConfigureUI
     
-    func configureUI() {
+    private func configureUI() {
         navigationItem.title = "출연/제작"
         navigationController?.navigationBar.tintColor = .black
     }
@@ -59,12 +59,19 @@ final class DetailViewController: UIViewController {
     
     // MARK: - Custom Method
     
-    func setupData(data: Movie) {
+    public func setupData(data: Movie) {
         image = data.image
         backImage = data.backImage
         movieTitle = data.title
         overview = data.overview
         movieID = data.id
+    }
+    
+    // MARK: - @objc
+    
+    @objc func touchupDownButton(_ sender: UIButton) {
+        isExpand = !isExpand
+        self.detailTableView.reloadData()
     }
 }
 
@@ -112,9 +119,10 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
-            cell.overviewLabel.numberOfLines = isExpand ? 0 : 2
             cell.overviewLabel.text = overview
-            cell.downButton
+            cell.isExpand = isExpand
+            cell.configureUI()
+            cell.downButton.addTarget(self, action: #selector(touchupDownButton(_:)), for: .touchUpInside)
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }

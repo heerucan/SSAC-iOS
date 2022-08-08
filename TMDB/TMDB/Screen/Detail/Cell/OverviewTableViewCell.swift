@@ -8,16 +8,18 @@
 import UIKit
 
 class OverviewTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var overviewLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configureUI()
-    }
-
-    private func configureUI() {
-        overviewLabel.numberOfLines = 0
+    public var isExpand = false
+    
+    @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var downButton: UIButton!
+    
+    public func configureUI() {
+        overviewLabel.numberOfLines = isExpand ? 0 : 2
         overviewLabel.font = .systemFont(ofSize: 13)
+        
+        let buttonImage = isExpand
+        ? UIImage(systemName: "chevron.up") : UIImage(systemName: "chevron.down")
+        downButton.setImage(buttonImage, for: .normal)
     }
 }
