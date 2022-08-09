@@ -9,9 +9,12 @@ import UIKit
 
 class ClosureViewController: UIViewController {
 
+    @IBOutlet weak var cardView: CardView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        cardView.posterImageView.backgroundColor = .yellow
+        cardView.likeButton.backgroundColor = .orange
+        cardView.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
     }
    
     @IBAction func colorPickerButtonClicked(_ sender: UIButton) {
@@ -25,5 +28,9 @@ class ClosureViewController: UIViewController {
         showAlert(title: "컬러피커를 띄울까?", message: "우오오오아아앙ㅇ", okTitle: "좋앙") {
             self.view.backgroundColor = .orange
         }
+    }
+    
+    @objc func likeButtonClicked() {
+        print("버튼 클릭")
     }
 }
