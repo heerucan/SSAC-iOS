@@ -11,6 +11,11 @@ enum Storyboard {
     static let main = "Main"
 }
 
+enum Nib {
+    static let poster = "PosterView"
+    static let content = "ContentCollectionViewCell"
+}
+
 enum MediaType: String {
     case all, movie, tv, person
 }

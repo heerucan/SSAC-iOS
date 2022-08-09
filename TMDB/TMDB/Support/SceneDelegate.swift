@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: SearchViewController.identifier)
-                as? SearchViewController else { return }
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: ContentViewController.identifier)
+                as? ContentViewController else { return }
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()
     }
