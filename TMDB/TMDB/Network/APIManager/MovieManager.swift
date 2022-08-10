@@ -16,6 +16,7 @@ struct MovieManager {
     
     typealias completionHandler = ([Movie]) -> Void
     typealias genreCompletionHandler = ([Genre]) -> Void
+    typealias similarCompletionHandler = ([String]) -> Void
     
     private init() { }
         
@@ -23,7 +24,7 @@ struct MovieManager {
     
     func requestMovie(pageNumber:Int, completionHandler: @escaping completionHandler) {
         
-        let url = EndPoint.movie.url + "?api_key=\(APIKey.movieKey)&page=\(pageNumber)"
+        let url = EndPoint.movie.url + APIKey.movieKey + "&page=\(pageNumber)"
         
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             switch response.result {
@@ -51,9 +52,9 @@ struct MovieManager {
     
     func requestGenre(_ genreCompletionHandler: @escaping genreCompletionHandler) {
         
-        let genreURL = EndPoint.genre.url + "?api_key=\(APIKey.movieKey)" + EndPoint.enUS
+        let genreURL = EndPoint.genre.url + APIKey.movieKey + EndPoint.enUS
         
-        AF.request(genreURL, method: .get).validate(statusCode: 200...500).responseData { response in
+        AF.request(genreURL, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -69,4 +70,24 @@ struct MovieManager {
         }
     }
 
+    // MARK: - GET : EPISODE LIST
+    
+    func requestSimilarMovie(movieID: Int, pageNumber: Int,
+                             similarCompletionHandler: @escaping similarCompletionHandler) {
+
+        let similarURL = EndPoint.similar.url + "\(movieID)/similar"
+        + APIKey.movieKey + EndPoint.enUS + "&page=\(pageNumber)"
+        
+        AF.request(similarURL, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                let posterList = json["results"].arrayValue.map { EndPoint.imageURL + $0["poster_path"].stringValue }
+                similarCompletionHandler(posterList)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
