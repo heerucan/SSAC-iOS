@@ -12,12 +12,13 @@ enum EndPoint {
     case genre
     case cast
     case web
-    
+    case similar
+        
     var url: String {
         switch self {
         case .movie: return URL.makeURL("trending/\(MediaType.movie.rawValue)/\(TimeWindow.day.rawValue)")
         case .genre: return URL.makeURL("genre/movie/list")
-        case .cast, .web: return URL.makeURL("movie/")
+        case .cast, .web, .similar: return URL.makeURL("movie/")
         }
     }
     
