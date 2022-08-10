@@ -24,6 +24,11 @@ final class DetailViewController: UIViewController {
     
     private var castList: [Cast] = []
     private var crewList: [Crew] = []
+    
+    lazy var rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+                                        style: .plain,
+                                        target: self,
+                                        action: #selector(touchupRightBarButton))
         
     // MARK: - @IBOutlet
 
@@ -43,6 +48,8 @@ final class DetailViewController: UIViewController {
     private func configureUI() {
         navigationItem.title = "출연/제작"
         navigationController?.navigationBar.tintColor = .black
+        navigationItem.backButtonTitle = ""
+        navigationItem.rightBarButtonItem = rightBarButtonItem
     }
     
     private func configureTableView() {
@@ -72,6 +79,14 @@ final class DetailViewController: UIViewController {
     @objc func touchupDownButton(_ sender: UIButton) {
         isExpand = !isExpand
         self.detailTableView.reloadData()
+    }
+
+    @objc func touchupRightBarButton() {
+        let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: ContentViewController.identifier)
+                as? ContentViewController else { return }
+        viewController.movieID = movieID
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
 
