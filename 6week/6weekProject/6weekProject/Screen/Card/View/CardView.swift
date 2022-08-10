@@ -29,5 +29,10 @@ class CardView: UIView {
         view.frame = bounds // 카드뷰의 크기를 똑같이 맞춰주는 작업
         view.backgroundColor = .clear
         self.addSubview(view)
+        
+        // 카드뷰를 인터페이스 빌더 기반으로 만들고, 레이아웃도 설정했는데 false가 아닌 true로 나오는 이유는 윗 부분의 UINib~ addSubview 부분이 코드로 추가한 부분이기에
+        // true가 나오는 것이다.
+        // 따라서, true가 나오는 것은 오토레이아웃 적용이 되는 관점보다 오토리사이징이 내부적으로 constraints 처리가 된다.
+        print(view.translatesAutoresizingMaskIntoConstraints)
     }
 }

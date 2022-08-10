@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Kingfisher
+
 class CardViewController: UIViewController {
     
     // MARK: - Property
@@ -21,6 +23,8 @@ class CardViewController: UIViewController {
         [Int](81...90)
     ]
     
+    var categoryList: [[String]] = [[]]
+    var episodeList: [[String]] = [[]]
 
     // MARK: - @IBOutlet
 
@@ -33,6 +37,7 @@ class CardViewController: UIViewController {
         super.viewDidLoad()
         configureCollectionView()
         configureTableView()
+        requestEpisode()
     }
     
     // MARK: - ConfigureUI
@@ -40,7 +45,7 @@ class CardViewController: UIViewController {
     func configureCollectionView() {
         bannerCollectionView.delegate = self
         bannerCollectionView.dataSource = self
-        bannerCollectionView.register(UINib(nibName: "CardCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CardCollectionViewCell")
+        bannerCollectionView.register(UINib(nibName: CardCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
         bannerCollectionView.isPagingEnabled = true
         bannerCollectionView.collectionViewLayout = collectionViewLayout()
     }
@@ -67,18 +72,25 @@ class CardViewController: UIViewController {
 
 extension CardViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == bannerCollectionView ? color.count : numberList[collectionView.tag].count
+        return collectionView == bannerCollectionView ? color.count : episodeList[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CardCollectionViewCell.identifier, for: indexPath) as? CardCollectionViewCell else { return UICollectionViewCell() }
         if collectionView == bannerCollectionView {
             cell.cardView.posterImageView.backgroundColor = color[indexPath.item]
         } else {
+            cell.cardView.contentLabel.text = ""
             cell.cardView.posterImageView.backgroundColor = collectionView.tag.isMultiple(of: 2) ? .white : .yellow
-            cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
-            cell.cardView.posterImageView.backgroundColor = .black
-            cell.cardView.contentLabel.textColor = .white
+            let url = URL(string: episodeList[collectionView.tag][indexPath.item])
+            cell.cardView.posterImageView.kf.setImage(with: url)
+            
+            // 화면과 데이터는 별개, 모든 indexPath.item에 대한 조건이 없다면 재사용 시 오류가 발생할 수 있다.
+//            if indexPath.item < 2 {
+//                cell.cardView.contentLabel.text = "\(numberList[collectionView.tag][indexPath.item])"
+//            } else {
+//                cell.cardView.contentLabel.text = "Happy"
+//            }
         }
         return cell
     }
@@ -87,7 +99,7 @@ extension CardViewController: UICollectionViewDelegate, UICollectionViewDataSour
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension CardViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 10
+        return episodeList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,17 +107,34 @@ extension CardViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CardTableViewCell", for: indexPath) as? CardTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier, for: indexPath) as? CardTableViewCell else { return UITableViewCell() }
+        cell.titleLabel.text = TMDBAPIManager.shared.tvList[indexPath.section].0
         cell.contentCollectionView.tag = indexPath.section // 각 셀 구분 짓기
         cell.contentCollectionView.delegate = self
         cell.contentCollectionView.dataSource = self
         cell.contentCollectionView.register(
-            UINib(nibName: "CardCollectionViewCell", bundle: nil),
-            forCellWithReuseIdentifier: "CardCollectionViewCell")
+            UINib(nibName: CardCollectionViewCell.identifier, bundle: nil),
+            forCellWithReuseIdentifier: CardCollectionViewCell.identifier)
+        cell.contentCollectionView.reloadData() // index out of range 오류를 해결할 수 있다.
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 198
+        return 240
+    }
+}
+
+// MARK: - Network
+
+extension CardViewController {
+    func requestEpisode() {
+        TMDBAPIManager.shared.requestImage { value in
+            // 1. 네트워크 통신 2. 배열 생성 3. 배열 담기
+            // 4. 뷰에 표현 5. 뷰 갱신
+            self.episodeList = value
+            DispatchQueue.main.async {
+                self.mainTableView.reloadData()
+            }
+        }
     }
 }

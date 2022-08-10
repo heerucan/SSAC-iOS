@@ -141,6 +141,11 @@
                                     <constraint firstAttribute="width" constant="100" id="zHO-SL-saH"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NvS-OD-vM3">
+                                <rect key="frame" x="87" y="684" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uSA-gB-e3N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -160,6 +165,7 @@
                     </view>
                     <connections>
                         <outlet property="cardView" destination="jLq-0P-F1r" id="XuE-iS-8hO"/>
+                        <outlet property="purpleView" destination="NvS-OD-vM3" id="fd3-yh-v5V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkU-Af-M1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -175,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZJW-Z0-4xI">
-                                <rect key="frame" x="0.0" y="44" width="414" height="179"/>
+                                <rect key="frame" x="0.0" y="54" width="414" height="179"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kcZ-sh-KIF">
                                     <size key="itemSize" width="128" height="128"/>
@@ -195,7 +201,7 @@
                                 </cells>
                             </collectionView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Daw-W0-0Md">
-                                <rect key="frame" x="0.0" y="223" width="414" height="639"/>
+                                <rect key="frame" x="0.0" y="243" width="414" height="619"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardTableViewCell" rowHeight="378" id="Gi1-Ch-8sV" customClass="CardTableViewCell" customModule="_weekProject" customModuleProvider="target">
@@ -254,8 +260,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="tVq-gZ-V6C" firstAttribute="trailing" secondItem="Daw-W0-0Md" secondAttribute="trailing" id="5JR-Dx-xxh"/>
-                            <constraint firstItem="ZJW-Z0-4xI" firstAttribute="top" secondItem="tVq-gZ-V6C" secondAttribute="top" id="EOh-ew-gXJ"/>
-                            <constraint firstItem="Daw-W0-0Md" firstAttribute="top" secondItem="ZJW-Z0-4xI" secondAttribute="bottom" id="bC0-r0-d81"/>
+                            <constraint firstItem="ZJW-Z0-4xI" firstAttribute="top" secondItem="tVq-gZ-V6C" secondAttribute="top" constant="10" id="EOh-ew-gXJ"/>
+                            <constraint firstItem="Daw-W0-0Md" firstAttribute="top" secondItem="ZJW-Z0-4xI" secondAttribute="bottom" constant="10" id="bC0-r0-d81"/>
                             <constraint firstItem="ZJW-Z0-4xI" firstAttribute="trailing" secondItem="tVq-gZ-V6C" secondAttribute="trailing" id="f5d-ug-e6y"/>
                             <constraint firstItem="tVq-gZ-V6C" firstAttribute="bottom" secondItem="Daw-W0-0Md" secondAttribute="bottom" id="hvW-r6-BgF"/>
                             <constraint firstItem="ZJW-Z0-4xI" firstAttribute="leading" secondItem="tVq-gZ-V6C" secondAttribute="leading" id="uGP-Nf-5lh"/>
@@ -299,6 +305,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

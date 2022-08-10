@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     
     var isExpanded = false // false면 2줄, true면 0줄
     
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -69,8 +70,6 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
-            print(self.blogList)
         }
     }
 }
@@ -102,7 +101,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 class KakaoTableViewCell: UITableViewCell {
-    static let identifier = "KakaoTableViewCell"
     
     @IBOutlet weak var testLabel: UILabel!
 }

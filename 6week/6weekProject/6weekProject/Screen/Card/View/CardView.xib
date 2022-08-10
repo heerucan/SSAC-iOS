@@ -20,13 +20,13 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6va-AJ-DfN">
-                    <rect key="frame" x="8" y="8" width="118" height="144"/>
+                    <rect key="frame" x="10" y="10" width="114" height="140"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlU-EA-ild">
-                    <rect key="frame" x="78" y="8" width="48" height="48"/>
+                    <rect key="frame" x="80" y="10" width="44" height="44"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="48" id="Jnd-Qf-4To"/>
-                        <constraint firstAttribute="width" constant="48" id="wGj-Vn-f7B"/>
+                        <constraint firstAttribute="width" constant="44" id="B07-AE-zbK"/>
+                        <constraint firstAttribute="height" constant="44" id="mjy-7m-E4a"/>
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system">
@@ -42,14 +42,14 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="6va-AJ-DfN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="32r-AI-0bH"/>
-                <constraint firstAttribute="trailing" secondItem="ZlU-EA-ild" secondAttribute="trailing" constant="8" id="C9P-QU-q0N"/>
-                <constraint firstAttribute="trailing" secondItem="6va-AJ-DfN" secondAttribute="trailing" constant="8" id="Edf-KC-Q93"/>
                 <constraint firstItem="jx8-Nv-lJL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Jh0-zb-yVV"/>
+                <constraint firstItem="ZlU-EA-ild" firstAttribute="top" secondItem="6va-AJ-DfN" secondAttribute="top" id="TOB-Eg-2KJ"/>
+                <constraint firstItem="ZlU-EA-ild" firstAttribute="trailing" secondItem="6va-AJ-DfN" secondAttribute="trailing" id="UgN-Bv-xAo"/>
                 <constraint firstItem="jx8-Nv-lJL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WDt-o0-GxO"/>
-                <constraint firstAttribute="bottom" secondItem="6va-AJ-DfN" secondAttribute="bottom" constant="8" id="Yel-Fn-7Kh"/>
-                <constraint firstItem="6va-AJ-DfN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="j90-aU-rUR"/>
-                <constraint firstItem="ZlU-EA-ild" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="yNx-Zt-v4d"/>
+                <constraint firstAttribute="trailing" secondItem="6va-AJ-DfN" secondAttribute="trailing" constant="10" id="hZk-iE-Fec"/>
+                <constraint firstItem="6va-AJ-DfN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="jul-wZ-ZvW"/>
+                <constraint firstAttribute="bottom" secondItem="6va-AJ-DfN" secondAttribute="bottom" constant="10" id="pkJ-Vp-kGr"/>
+                <constraint firstItem="6va-AJ-DfN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="vt0-MP-yEy"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="37.681159420289859" y="14.732142857142856"/>

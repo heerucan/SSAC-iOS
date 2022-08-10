@@ -17,8 +17,14 @@ class CardCollectionViewCell: UICollectionViewCell {
         configureUI()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cardView.contentLabel.text = nil
+    }
+    
     func configureUI() {
         cardView.backgroundColor = .clear
+        cardView.posterImageView.contentMode = .scaleAspectFill
         cardView.posterImageView.backgroundColor = .clear
         cardView.posterImageView.layer.cornerRadius = 10
         cardView.likeButton.tintColor = .systemPink
