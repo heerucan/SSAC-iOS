@@ -7,9 +7,16 @@
 
 import UIKit
 
+import Kingfisher
+
 final class ContentViewController: UIViewController {
     
     // MARK: - Property
+    
+    public var movieID = 0
+    private let pageNumber = 1
+    
+    var posterList: [String] = []
     
     let colorList: [UIColor] = [.systemPink, .systemOrange, .systemYellow, .systemGreen, .systemPurple]
     
@@ -29,10 +36,17 @@ final class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         configureTableView()
+        requestSimilarMovie()
     }
     
     // MARK: - ConfigureUI
+    
+    private func configureUI() {
+        navigationItem.title = "추천 및 비슷한 콘텐츠"
+        navigationController?.navigationBar.tintColor = .black
+    }
     
     func configureTableView() {
         contentTableView.delegate = self
@@ -66,7 +80,7 @@ extension ContentViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ContentViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return colorList.count
+        return posterList.count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,11 +90,25 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.identifier, for: indexPath) as? ContentCollectionViewCell
         else { return UICollectionViewCell() }
-        cell.posterView.backgroundColor = colorList[indexPath.row]
+        let url = URL(string: posterList[indexPath.item])
+        cell.posterView.posterImageView.kf.setImage(with: url)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 10 + 10 + 20 + 120
+    }
+}
+
+// MARK: - Network
+
+extension ContentViewController {
+    func requestSimilarMovie() {
+        MovieManager.shared.requestSimilarMovie(movieID: movieID, pageNumber: 1) { list in
+            self.posterList = list
+            DispatchQueue.main.async {
+                self.contentTableView.reloadData()
+            }
+        }
     }
 }

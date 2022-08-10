@@ -17,6 +17,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     }
 
     func configureUI() {
-        posterView.backgroundColor = .red
+        posterView.backgroundColor = .systemGray6
+        posterView.posterImageView.contentMode = .scaleAspectFill
     }
 }
