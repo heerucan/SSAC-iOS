@@ -91,7 +91,7 @@
                                     <constraint firstAttribute="height" constant="44" id="8hC-UF-rqg"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="엑스" width="90.5" id="6iy-yJ-xKc">
+                                    <barButtonItem title="닫기" width="90.5" id="6iy-yJ-xKc">
                                         <connections>
                                             <action selector="closeBarButtonClicked:" destination="1rw-A1-l89" id="Er8-CK-hF0"/>
                                         </connections>
