@@ -23,7 +23,7 @@ struct VideoManager {
     func requestVideo(movieID: Int, completionHandler: @escaping completionHandler) {
         
         let url = EndPoint.web.url +
-        "\(movieID)/videos?api_key=\(APIKey.movieKey)" + EndPoint.enUS
+        "\(movieID)/videos\(APIKey.movieKey)" + EndPoint.enUS
 
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             switch response.result {

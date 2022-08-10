@@ -22,7 +22,7 @@ struct CreditManager {
     
     func requestCredit(movieID: Int, completionHandler: @escaping completionHandler) {
         let url = EndPoint.cast.url +
-        "\(movieID)/credits?api_key=\(APIKey.movieKey)" + EndPoint.enUS
+        "\(movieID)/credits\(APIKey.movieKey)" + EndPoint.enUS
 
         AF.request(url, method: .get).validate(statusCode: 200...500).responseData(queue: .global()) { response in
             switch response.result {
