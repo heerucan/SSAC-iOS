@@ -14,19 +14,7 @@ final class ContentViewController: UIViewController {
     // MARK: - Property
     
     public var movieID = 0
-    private let pageNumber = 1
-    
-    var posterList: [String] = []
-    
-    let colorList: [UIColor] = [.systemPink, .systemOrange, .systemYellow, .systemGreen, .systemPurple]
-    
-    let categoryList = ["인기 콘텐츠",
-                        "우영우와 비슷한 콘텐츠",
-                        "액션 SF",
-                        "미국 TV 프로그램",
-                        "비포선라이즈와 비슷한 영화",
-                        "박은빈이 나오는 한국 영화",
-                        "해리포터 시리즈 몰아보기"]
+    private var posterList: [[String]] = [[]]
     
     // MARK: - @IBOutlet
     
@@ -44,7 +32,7 @@ final class ContentViewController: UIViewController {
     // MARK: - ConfigureUI
     
     private func configureUI() {
-        navigationItem.title = "추천 및 비슷한 콘텐츠"
+        navigationItem.title = "Similar Contents"
         navigationController?.navigationBar.tintColor = .black
     }
     
@@ -60,18 +48,21 @@ final class ContentViewController: UIViewController {
 
 extension ContentViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryList.count
+        return posterList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier, for: indexPath) as? ContentTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier,
+                                                       for: indexPath) as? ContentTableViewCell
         else { return UITableViewCell() }
-        cell.categoryLabel.text = categoryList[indexPath.row]
+        cell.categoryLabel.text = "\(indexPath.row+1)번째 추천 콘텐츠"
+        cell.contentCollectionView.tag = indexPath.row
         cell.contentCollectionView.delegate = self
         cell.contentCollectionView.dataSource = self
         cell.contentCollectionView.register(
             UINib(nibName: Nib.content, bundle: nil),
             forCellWithReuseIdentifier: ContentCollectionViewCell.identifier)
+        cell.contentCollectionView.reloadData()
         return cell
     }
 }
@@ -80,7 +71,7 @@ extension ContentViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ContentViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return posterList.count
+        return posterList[collectionView.tag].count
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,9 +79,10 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.identifier, for: indexPath) as? ContentCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.identifier,
+                                                            for: indexPath) as? ContentCollectionViewCell
         else { return UICollectionViewCell() }
-        let url = URL(string: posterList[indexPath.item])
+        let url = URL(string: posterList[collectionView.tag][indexPath.item])
         cell.posterView.posterImageView.kf.setImage(with: url)
         return cell
     }
@@ -105,9 +97,22 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
 extension ContentViewController {
     func requestSimilarMovie() {
         MovieManager.shared.requestSimilarMovie(movieID: movieID, pageNumber: 1) { list in
-            self.posterList = list
-            DispatchQueue.main.async {
-                self.contentTableView.reloadData()
+            self.posterList.append(list)
+            MovieManager.shared.requestSimilarMovie(movieID: self.movieID, pageNumber: 2) { list in
+                self.posterList.append(list)
+                MovieManager.shared.requestSimilarMovie(movieID: self.movieID, pageNumber: 3) { list in
+                    self.posterList.append(list)
+                    MovieManager.shared.requestSimilarMovie(movieID: self.movieID, pageNumber: 4) { list in
+                        self.posterList.append(list)
+                        MovieManager.shared.requestSimilarMovie(movieID: self.movieID, pageNumber: 5) { list in
+                            self.posterList.append(list)
+                            DispatchQueue.main.async {
+                                self.contentTableView.reloadData()
+                            }
+                            self.posterList.removeFirst()
+                        }
+                    }
+                }
             }
         }
     }
