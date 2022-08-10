@@ -72,7 +72,7 @@ final class WebViewController: UIViewController {
 extension WebViewController {
     func requestVideo(movieID: Int) {
         VideoManager.shared.requestVideo(movieID: movieID) { link in
-            let detinationURL = "https://www.youtube.com/watch?v=\(link)"
+            let detinationURL = EndPoint.youtubeURL + "\(link)"
             DispatchQueue.main.async {
                 self.openWebView(url: detinationURL)
             }

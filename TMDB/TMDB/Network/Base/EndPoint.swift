@@ -24,4 +24,5 @@ enum EndPoint {
     
     static let imageURL = "https://image.tmdb.org/t/p/w500"
     static let enUS = "&language=en-US"
+    static let youtubeURL = "https://www.youtube.com/watch?v="
 }
