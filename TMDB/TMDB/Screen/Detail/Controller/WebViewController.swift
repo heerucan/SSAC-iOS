@@ -13,7 +13,7 @@ final class WebViewController: UIViewController {
 
     // MARK: - Property
     
-    var movieID = 0
+    public var movieID = 0
     
     // MARK: - @IBOutlet
     
