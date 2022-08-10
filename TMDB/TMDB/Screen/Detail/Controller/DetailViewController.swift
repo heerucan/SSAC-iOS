@@ -133,18 +133,24 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier, for: indexPath) as? OverviewTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier,
+                                                           for: indexPath) as? OverviewTableViewCell
+            else { return UITableViewCell() }
             cell.overviewLabel.text = overview
             cell.isExpand = isExpand
             cell.configureUI()
             cell.downButton.addTarget(self, action: #selector(touchupDownButton(_:)), for: .touchUpInside)
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier,
+                                                           for: indexPath) as? DetailTableViewCell
+            else { return UITableViewCell() }
             cell.setCastData(data: castList[indexPath.row])
             return cell
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell else { return UITableViewCell() }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier,
+                                                           for: indexPath) as? DetailTableViewCell
+            else { return UITableViewCell() }
             cell.setCrewData(data: crewList[indexPath.row])
             return cell
         default:
@@ -160,9 +166,7 @@ extension DetailViewController {
         CreditManager.shared.requestCredit(movieID: movieID) { castList, crewList in
             self.castList = castList
             self.crewList = crewList
-            DispatchQueue.main.async {
-                self.detailTableView.reloadData()
-            }
+            DispatchQueue.main.async { self.detailTableView.reloadData() }
         }
     }
 }
