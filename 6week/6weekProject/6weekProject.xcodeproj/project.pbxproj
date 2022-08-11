@@ -32,6 +32,7 @@
 		5B6F0A6228A1F37A001EB18B /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6F0A6028A1F37A001EB18B /* CardCollectionViewCell.xib */; };
 		5B6F0A6628A1F519001EB18B /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F0A6528A1F519001EB18B /* CardViewController.swift */; };
 		5B6F0A6B28A1FC64001EB18B /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F0A6928A1FC64001EB18B /* CardTableViewCell.swift */; };
+		5BF79CEF28A4939E00EA972F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF79CEE28A4939E00EA972F /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		5B6F0A6028A1F37A001EB18B /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
 		5B6F0A6528A1F519001EB18B /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		5B6F0A6928A1FC64001EB18B /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		5BF79CEE28A4939E00EA972F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +121,9 @@
 		5B47E11428A08FF900EA5F7D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				5B47E10328A08FE900EA5F7D /* ViewController.swift */,
-				5B47E12B28A0ABFF00EA5F7D /* ClosureViewController.swift */,
 				5B6F0A6428A1F461001EB18B /* Card */,
+				5BF79CED28A4938F00EA972F /* Map */,
+				5BF79CF028A493C900EA972F /* Etc */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -215,6 +217,23 @@
 				5B6F0A6528A1F519001EB18B /* CardViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5BF79CED28A4938F00EA972F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				5BF79CEE28A4939E00EA972F /* MapViewController.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		5BF79CF028A493C900EA972F /* Etc */ = {
+			isa = PBXGroup;
+			children = (
+				5B47E10328A08FE900EA5F7D /* ViewController.swift */,
+				5B47E12B28A0ABFF00EA5F7D /* ClosureViewController.swift */,
+			);
+			path = Etc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +336,7 @@
 				5B47E10228A08FE900EA5F7D /* SceneDelegate.swift in Sources */,
 				5B6F0A6B28A1FC64001EB18B /* CardTableViewCell.swift in Sources */,
 				5B3644BB28A3307F001EAC17 /* Protocol.swift in Sources */,
+				5BF79CEF28A4939E00EA972F /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
