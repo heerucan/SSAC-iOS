@@ -27,6 +27,7 @@
 		5B47E12E28A0AE4300EA5F7D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47E12D28A0AE4300EA5F7D /* UIViewController+.swift */; };
 		5B6036FF28A5D691002D4DA5 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6036FE28A5D691002D4DA5 /* YPImagePicker */; };
 		5B60370328A5DD21002D4DA5 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60370228A5DD21002D4DA5 /* CameraViewController.swift */; };
+		5B60370528A5F9E9002D4DA5 /* ClovaAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60370428A5F9E9002D4DA5 /* ClovaAPIManager.swift */; };
 		5B6F0A5A28A1E042001EB18B /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F0A5928A1E042001EB18B /* SeSACButton.swift */; };
 		5B6F0A5C28A1E604001EB18B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6F0A5B28A1E604001EB18B /* CardView.xib */; };
 		5B6F0A5E28A1E62E001EB18B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F0A5D28A1E62E001EB18B /* CardView.swift */; };
@@ -56,6 +57,7 @@
 		5B47E12B28A0ABFF00EA5F7D /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		5B47E12D28A0AE4300EA5F7D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		5B60370228A5DD21002D4DA5 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		5B60370428A5F9E9002D4DA5 /* ClovaAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClovaAPIManager.swift; sourceTree = "<group>"; };
 		5B6F0A5928A1E042001EB18B /* SeSACButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButton.swift; sourceTree = "<group>"; };
 		5B6F0A5B28A1E604001EB18B /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		5B6F0A5D28A1E62E001EB18B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				5B47E12928A0A78A00EA5F7D /* KakaoAPIManager.swift */,
 				5B3644BC28A343EE001EAC17 /* TMDBAPIManager.swift */,
+				5B60370428A5F9E9002D4DA5 /* ClovaAPIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -358,6 +361,7 @@
 				5B6F0A5E28A1E62E001EB18B /* CardView.swift in Sources */,
 				5B47E10228A08FE900EA5F7D /* SceneDelegate.swift in Sources */,
 				5B6F0A6B28A1FC64001EB18B /* CardTableViewCell.swift in Sources */,
+				5B60370528A5F9E9002D4DA5 /* ClovaAPIManager.swift in Sources */,
 				5B3644BB28A3307F001EAC17 /* Protocol.swift in Sources */,
 				5BF79CEF28A4939E00EA972F /* MapViewController.swift in Sources */,
 				5B60370328A5DD21002D4DA5 /* CameraViewController.swift in Sources */,
