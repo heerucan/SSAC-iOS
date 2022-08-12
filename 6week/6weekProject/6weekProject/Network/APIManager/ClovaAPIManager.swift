@@ -16,7 +16,7 @@ struct ClovaAPIManager {
     static let shared = ClovaAPIManager()
     private init() { }
     
-    typealias completionHandler = (String) -> Void
+    typealias completionHandler = (String) -> ()
     
     // MARK: - POST : POST IMAGE
     
@@ -31,7 +31,7 @@ struct ClovaAPIManager {
                                    "X-Naver-Client-Secret": APIKey.NAVER_KEY]
         
         // UIImage를 텍스트 형태 (바이너리 타입)로 변환해서 전달
-        guard let imageData = image.pngData() else { return }
+        guard let imageData = image.jpegData(compressionQuality: 0.0) else { return }
 
         AF.upload(multipartFormData: { multipartFormData in
             multipartFormData.append(imageData, withName: "image")

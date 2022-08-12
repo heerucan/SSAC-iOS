@@ -109,7 +109,9 @@ final class CameraViewController: UIViewController {
     @IBAction func clovaFaceButtonClicked(_ sender: UIButton) {
         guard let image = imageView.image else { return }
         ClovaAPIManager.shared.postImage(image: image) { result in
-            DispatchQueue.main.async { self.resultLabel.text = result }
+            DispatchQueue.main.async {
+                self.resultLabel.text = result
+            }
         }
     }
 }
