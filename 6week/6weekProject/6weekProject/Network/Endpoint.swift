@@ -10,6 +10,7 @@ import Foundation
 enum Endpoint {
     case blog
     case cafe
+    case clova
     
     var requestURL: String {
         switch self {
@@ -17,6 +18,8 @@ enum Endpoint {
             return URL.makeURL("blog?query=")
         case .cafe:
             return URL.makeURL("cafe?query=")
+        case .clova:
+            return "https://openapi.naver.com/v1/vision/celebrity"
         }
     }
 }
