@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
 import YPImagePicker
 
 final class CameraViewController: UIViewController {
@@ -94,6 +96,37 @@ final class CameraViewController: UIViewController {
         if let image = imageView.image {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
             print("🥳사진 저장했다")
+        }
+    }
+    
+    // 이미지뷰 > 네이버 > 얼굴 분석 요청 > 응답!
+    // 문자열이 아닌 파일, 이미지, PDF 파일 자체가 그대로 전송되지 않는다. 텍스트 형태로 인코딩을 해야 한다!
+    @IBAction func clovaFaceButtonClicked(_ sender: UIButton) {
+        
+        let url = "https://openapi.naver.com/v1/vision/celebrity"
+        
+        /* 어떤 파일의 종류가 서버에게 전달이 되는지 명시하는 게 필요하고,
+         이걸 Content-Type이라고 한다.
+         이 친구는 헤더에 보통 추가해서 작업한다.*/
+        let header: HTTPHeaders = ["Content-Type": "multipart/form-data",
+                                   "X-Naver-Client-Id": APIKey.NAVER_ID,
+                                   "X-Naver-Client-Secret": APIKey.NAVER_KEY]
+        
+        // UIImage를 텍스트 형태 (바이너리 타입)로 변환해서 전달
+        guard let imageData = imageView.image?.pngData() else { return }
+
+        AF.upload(multipartFormData: { multipartFormData in
+            multipartFormData.append(imageData, withName: "image")
+        }, to: url, headers: header)
+            .validate(statusCode: 200..<400).responseData(queue: .global()) { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+            case .failure(let error):
+                print(error)
+            }
         }
     }
     

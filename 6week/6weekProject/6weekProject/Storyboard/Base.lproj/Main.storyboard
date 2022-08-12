@@ -383,6 +383,19 @@
                                     <action selector="saveButtonClicked:" destination="0RJ-Be-G6u" eventType="touchUpInside" id="xkL-om-99w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzf-h7-2js">
+                                <rect key="frame" x="50" y="708" width="314" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="38y-CR-7pb"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="clova Face Button"/>
+                                <connections>
+                                    <action selector="clovaFaceButtonClicked:" destination="0RJ-Be-G6u" eventType="touchUpInside" id="hMg-rR-mN4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ASn-py-32a"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -394,7 +407,10 @@
                             <constraint firstItem="X5m-NB-4OY" firstAttribute="top" secondItem="D4r-GZ-2DT" secondAttribute="bottom" constant="20" id="NLZ-Fc-QdF"/>
                             <constraint firstItem="X5m-NB-4OY" firstAttribute="leading" secondItem="ASn-py-32a" secondAttribute="leading" constant="50" id="QYH-Z8-F4x"/>
                             <constraint firstItem="ASn-py-32a" firstAttribute="trailing" secondItem="k3C-ZJ-JBg" secondAttribute="trailing" constant="50" id="So9-hT-J7W"/>
+                            <constraint firstItem="dzf-h7-2js" firstAttribute="top" secondItem="X5m-NB-4OY" secondAttribute="bottom" constant="20" id="eBr-g1-Ap8"/>
+                            <constraint firstItem="dzf-h7-2js" firstAttribute="leading" secondItem="ASn-py-32a" secondAttribute="leading" constant="50" id="fdb-T2-TyB"/>
                             <constraint firstItem="D4r-GZ-2DT" firstAttribute="leading" secondItem="ASn-py-32a" secondAttribute="leading" constant="50" id="gkb-Zo-gPO"/>
+                            <constraint firstItem="ASn-py-32a" firstAttribute="trailing" secondItem="dzf-h7-2js" secondAttribute="trailing" constant="50" id="r8H-eo-PM7"/>
                             <constraint firstItem="ASn-py-32a" firstAttribute="trailing" secondItem="D4r-GZ-2DT" secondAttribute="trailing" constant="50" id="ymA-gP-DdH"/>
                         </constraints>
                     </view>
@@ -433,6 +449,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
