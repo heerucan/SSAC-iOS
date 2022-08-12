@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0ta-NH-wY1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0RJ-Be-G6u">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -306,6 +306,89 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKC-ox-JI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1777" y="798"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="gFp-3K-u0q">
+            <objects>
+                <viewController storyboardIdentifier="CameraViewController" id="0RJ-Be-G6u" customClass="CameraViewController" customModule="_weekProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="St6-z3-XKv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="k3C-ZJ-JBg">
+                                <rect key="frame" x="50" y="94" width="314" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FzB-8V-AYO">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="tzg-hU-KTh"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="YPImagePicker"/>
+                                        <connections>
+                                            <action selector="YPImagePickerButtonClicked:" destination="0RJ-Be-G6u" eventType="touchUpInside" id="hrX-Y7-3jL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjo-IO-9HI">
+                                        <rect key="frame" x="0.0" y="70" width="314" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="9pe-8C-Xx6"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="카메라"/>
+                                        <connections>
+                                            <action selector="cameraButtonClicked:" destination="0RJ-Be-G6u" eventType="touchUpInside" id="MRT-tW-vYM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy4-rn-hTb">
+                                        <rect key="frame" x="0.0" y="140" width="314" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="d8W-73-ksl"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="갤러리"/>
+                                        <connections>
+                                            <action selector="photoLibraryButtonClicked:" destination="0RJ-Be-G6u" eventType="touchUpInside" id="xvr-Bb-Fh5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FzB-8V-AYO" secondAttribute="trailing" id="43J-uC-Bb9"/>
+                                    <constraint firstAttribute="trailing" secondItem="dy4-rn-hTb" secondAttribute="trailing" id="X9k-7a-Uv5"/>
+                                    <constraint firstAttribute="trailing" secondItem="bjo-IO-9HI" secondAttribute="trailing" id="eG5-2h-iid"/>
+                                </constraints>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D4r-GZ-2DT">
+                                <rect key="frame" x="50" y="304" width="314" height="314"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="D4r-GZ-2DT" secondAttribute="height" id="OMC-T1-WdV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ASn-py-32a"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D4r-GZ-2DT" firstAttribute="top" secondItem="k3C-ZJ-JBg" secondAttribute="bottom" constant="20" id="0BO-SU-EkO"/>
+                            <constraint firstItem="k3C-ZJ-JBg" firstAttribute="leading" secondItem="ASn-py-32a" secondAttribute="leading" constant="50" id="625-g1-PDF"/>
+                            <constraint firstItem="k3C-ZJ-JBg" firstAttribute="top" secondItem="ASn-py-32a" secondAttribute="top" constant="50" id="Mmi-0q-bC5"/>
+                            <constraint firstItem="ASn-py-32a" firstAttribute="trailing" secondItem="k3C-ZJ-JBg" secondAttribute="trailing" constant="50" id="So9-hT-J7W"/>
+                            <constraint firstItem="D4r-GZ-2DT" firstAttribute="leading" secondItem="ASn-py-32a" secondAttribute="leading" constant="50" id="gkb-Zo-gPO"/>
+                            <constraint firstItem="ASn-py-32a" firstAttribute="trailing" secondItem="D4r-GZ-2DT" secondAttribute="trailing" constant="50" id="ymA-gP-DdH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="D4r-GZ-2DT" id="4my-RB-12m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKG-xj-31C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2674" y="798"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p89-02-GnS">

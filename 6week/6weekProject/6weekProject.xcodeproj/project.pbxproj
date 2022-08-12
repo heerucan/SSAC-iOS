@@ -26,6 +26,7 @@
 		5B47E12C28A0ABFF00EA5F7D /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47E12B28A0ABFF00EA5F7D /* ClosureViewController.swift */; };
 		5B47E12E28A0AE4300EA5F7D /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47E12D28A0AE4300EA5F7D /* UIViewController+.swift */; };
 		5B6036FF28A5D691002D4DA5 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 5B6036FE28A5D691002D4DA5 /* YPImagePicker */; };
+		5B60370328A5DD21002D4DA5 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B60370228A5DD21002D4DA5 /* CameraViewController.swift */; };
 		5B6F0A5A28A1E042001EB18B /* SeSACButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F0A5928A1E042001EB18B /* SeSACButton.swift */; };
 		5B6F0A5C28A1E604001EB18B /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B6F0A5B28A1E604001EB18B /* CardView.xib */; };
 		5B6F0A5E28A1E62E001EB18B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6F0A5D28A1E62E001EB18B /* CardView.swift */; };
@@ -54,6 +55,7 @@
 		5B47E12928A0A78A00EA5F7D /* KakaoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAPIManager.swift; sourceTree = "<group>"; };
 		5B47E12B28A0ABFF00EA5F7D /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		5B47E12D28A0AE4300EA5F7D /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		5B60370228A5DD21002D4DA5 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		5B6F0A5928A1E042001EB18B /* SeSACButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACButton.swift; sourceTree = "<group>"; };
 		5B6F0A5B28A1E604001EB18B /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		5B6F0A5D28A1E62E001EB18B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -123,7 +125,7 @@
 		5B47E11428A08FF900EA5F7D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				5B60370028A5D73E002D4DA5 /* Image */,
+				5B60370028A5D73E002D4DA5 /* Camera */,
 				5B6F0A6428A1F461001EB18B /* Card */,
 				5BF79CED28A4938F00EA972F /* Map */,
 				5BF79CF028A493C900EA972F /* Etc */,
@@ -177,17 +179,18 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		5B60370028A5D73E002D4DA5 /* Image */ = {
+		5B60370028A5D73E002D4DA5 /* Camera */ = {
 			isa = PBXGroup;
 			children = (
 				5B60370128A5D745002D4DA5 /* Controller */,
 			);
-			path = Image;
+			path = Camera;
 			sourceTree = "<group>";
 		};
 		5B60370128A5D745002D4DA5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5B60370228A5DD21002D4DA5 /* CameraViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				5B6F0A6B28A1FC64001EB18B /* CardTableViewCell.swift in Sources */,
 				5B3644BB28A3307F001EAC17 /* Protocol.swift in Sources */,
 				5BF79CEF28A4939E00EA972F /* MapViewController.swift in Sources */,
+				5B60370328A5DD21002D4DA5 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
