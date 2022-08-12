@@ -123,6 +123,7 @@
 		5B47E11428A08FF900EA5F7D /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5B60370028A5D73E002D4DA5 /* Image */,
 				5B6F0A6428A1F461001EB18B /* Card */,
 				5BF79CED28A4938F00EA972F /* Map */,
 				5BF79CF028A493C900EA972F /* Etc */,
@@ -174,6 +175,21 @@
 				5B47E12D28A0AE4300EA5F7D /* UIViewController+.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		5B60370028A5D73E002D4DA5 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5B60370128A5D745002D4DA5 /* Controller */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		5B60370128A5D745002D4DA5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5B6F0A5828A1DFE9001EB18B /* Component */ = {
