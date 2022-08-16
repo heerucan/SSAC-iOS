@@ -9,8 +9,4 @@ import Foundation
 
 extension URL {
     static let baseURL = "https://api.themoviedb.org/3/"
-    
-    static func makeURL(_ endpoint: String) -> String {
-        return baseURL + endpoint
-    }
 }

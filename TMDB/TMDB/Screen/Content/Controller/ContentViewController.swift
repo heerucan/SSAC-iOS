@@ -7,6 +7,7 @@
 
 import UIKit
 
+import HureeUIFrameWork
 import Kingfisher
 
 final class ContentViewController: UIViewController {
@@ -52,7 +53,7 @@ extension ContentViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.identifier,
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ContentTableViewCell.reuseIdentifier,
                                                        for: indexPath) as? ContentTableViewCell
         else { return UITableViewCell() }
         cell.categoryLabel.text = "\(indexPath.row+1)번째 추천 콘텐츠"
@@ -61,7 +62,7 @@ extension ContentViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentCollectionView.dataSource = self
         cell.contentCollectionView.register(
             UINib(nibName: Nib.content, bundle: nil),
-            forCellWithReuseIdentifier: ContentCollectionViewCell.identifier)
+            forCellWithReuseIdentifier: ContentCollectionViewCell.reuseIdentifier)
         cell.contentCollectionView.reloadData()
         return cell
     }
@@ -79,7 +80,7 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.identifier,
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.reuseIdentifier,
                                                             for: indexPath) as? ContentCollectionViewCell
         else { return UICollectionViewCell() }
         let url = URL(string: posterList[collectionView.tag][indexPath.item])

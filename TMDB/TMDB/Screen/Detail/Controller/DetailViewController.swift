@@ -8,6 +8,7 @@
 import UIKit
 
 import Alamofire
+import HureeUIFrameWork
 import Kingfisher
 import SwiftyJSON
 
@@ -53,10 +54,10 @@ final class DetailViewController: UIViewController {
     }
     
     private func configureTableView() {
-        detailTableView.register(UINib(nibName: OverviewTableViewCell.identifier, bundle: nil),
-                                 forCellReuseIdentifier: OverviewTableViewCell.identifier)
-        detailTableView.register(UINib(nibName: DetailTableViewCell.identifier, bundle: nil),
-                                 forCellReuseIdentifier: DetailTableViewCell.identifier)
+        detailTableView.register(UINib(nibName: OverviewTableViewCell.reuseIdentifier, bundle: nil),
+                                 forCellReuseIdentifier: OverviewTableViewCell.reuseIdentifier)
+        detailTableView.register(UINib(nibName: DetailTableViewCell.reuseIdentifier, bundle: nil),
+                                 forCellReuseIdentifier: DetailTableViewCell.reuseIdentifier)
         detailTableView.delegate = self
         detailTableView.dataSource = self
         detailTableView.backgroundColor = .white
@@ -83,7 +84,7 @@ final class DetailViewController: UIViewController {
 
     @objc func touchupRightBarButton() {
         let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: ContentViewController.identifier)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: ContentViewController.reuseIdentifier)
                 as? ContentViewController else { return }
         viewController.movieID = movieID
         navigationController?.pushViewController(viewController, animated: true)
@@ -133,7 +134,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 1:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.identifier,
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: OverviewTableViewCell.reuseIdentifier,
                                                            for: indexPath) as? OverviewTableViewCell
             else { return UITableViewCell() }
             cell.overviewLabel.text = overview
@@ -142,13 +143,13 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.downButton.addTarget(self, action: #selector(touchupDownButton(_:)), for: .touchUpInside)
             return cell
         case 2:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier,
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.reuseIdentifier,
                                                            for: indexPath) as? DetailTableViewCell
             else { return UITableViewCell() }
             cell.setCastData(data: castList[indexPath.row])
             return cell
         case 3:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier,
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.reuseIdentifier,
                                                            for: indexPath) as? DetailTableViewCell
             else { return UITableViewCell() }
             cell.setCrewData(data: crewList[indexPath.row])

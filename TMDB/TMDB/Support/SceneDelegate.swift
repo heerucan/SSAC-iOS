@@ -7,6 +7,8 @@
 
 import UIKit
 
+import HureeUIFrameWork
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -17,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         
         let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: SearchViewController.identifier)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: SearchViewController.reuseIdentifier)
                 as? SearchViewController else { return }
         window?.rootViewController = UINavigationController(rootViewController: viewController)
         window?.makeKeyAndVisible()

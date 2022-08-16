@@ -8,6 +8,7 @@
 import UIKit
 
 import Alamofire
+import HureeUIFrameWork
 import Kingfisher
 import SwiftyJSON
 
@@ -54,8 +55,8 @@ final class SearchViewController: UIViewController {
     }
     
     private func configureTableView() {
-        searchTableView.register(UINib(nibName: SearchTableViewCell.identifier, bundle: nil),
-                                 forCellReuseIdentifier: SearchTableViewCell.identifier)
+        searchTableView.register(UINib(nibName: SearchTableViewCell.reuseIdentifier, bundle: nil),
+                                 forCellReuseIdentifier: SearchTableViewCell.reuseIdentifier)
         searchTableView.delegate = self
         searchTableView.dataSource = self
         searchTableView.prefetchDataSource = self
@@ -67,7 +68,7 @@ final class SearchViewController: UIViewController {
     
     @objc func touchupLeftButton() {
         let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: LocationViewController.identifier)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: LocationViewController.reuseIdentifier)
                 as? LocationViewController
         else { return }
         navigationController?.pushViewController(viewController, animated: true)
@@ -77,7 +78,7 @@ final class SearchViewController: UIViewController {
     
     @objc func touchupLinkButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: WebViewController.reuseIdentifier)
                 as? WebViewController
         else { return }
         viewController.modalPresentationStyle = .overFullScreen
@@ -94,7 +95,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.reuseIdentifier, for: indexPath) as? SearchTableViewCell else { return UITableViewCell() }
         let genreID = movieList[indexPath.row].genre
         for movie in self.genreList {
             if movie.id == genreID {
@@ -110,7 +111,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let sb = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as?
+        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as?
                 DetailViewController else { return }
         vc.setupData(data: movieList[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
