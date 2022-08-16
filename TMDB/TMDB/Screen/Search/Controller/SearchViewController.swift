@@ -65,13 +65,21 @@ final class SearchViewController: UIViewController {
     
     // MARK: - @objc
     
-    @objc func touchupLeftButton() { }
+    @objc func touchupLeftButton() {
+        let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: LocationViewController.identifier)
+                as? LocationViewController
+        else { return }
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @objc func touchupRightButton() { }
     
     @objc func touchupLinkButton(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
         guard let viewController = storyboard.instantiateViewController(withIdentifier: WebViewController.identifier)
-                as? WebViewController else { return }
+                as? WebViewController
+        else { return }
         viewController.modalPresentationStyle = .overFullScreen
         viewController.movieID = movieList[sender.tag].id
         present(viewController, animated: true)

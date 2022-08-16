@@ -10,6 +10,21 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+struct User {
+    fileprivate let name = "후리방구"
+    private let age = 11
+    let nickname = "방구뿡"
+}
+
+struct Person {
+    func example() {
+        let user = User()
+        user.name
+        user.nickname
+        user.age
+    }
+}
+
 class KakaoAPIManager {
     
     static let shared = KakaoAPIManager()
@@ -18,7 +33,7 @@ class KakaoAPIManager {
     
     typealias completionHandler = (JSON) -> ()
     
-    let header: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.KAKAO_KEY)"]
+    private let header: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.KAKAO_KEY)"]
     
     func callRequest(_ type: Endpoint,
                      query: String,

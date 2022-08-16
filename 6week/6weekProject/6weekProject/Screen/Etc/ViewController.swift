@@ -27,11 +27,10 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     
-    var blogList: [String] = []
-    var cafeList: [String] = []
+    private var blogList: [String] = []
+    private var cafeList: [String] = []
     
-    var isExpanded = false // false면 2줄, true면 0줄
-    
+    private var isExpanded = false // false면 2줄, true면 0줄
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -39,6 +38,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         searchBlog(keyword: "Swift")
+        
+        let user = User()
+        user.nickname
+ 
     }
     
     @IBAction func expandCell(_ sender: UIBarButtonItem) {
