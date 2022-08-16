@@ -9,12 +9,12 @@ import UIKit
 
 class OverviewTableViewCell: UITableViewCell {
     
-    public var isExpand = false
+    var isExpand = false
     
     @IBOutlet weak var overviewLabel: UILabel!
     @IBOutlet weak var downButton: UIButton!
     
-    public func configureUI() {
+    func configureUI() {
         overviewLabel.numberOfLines = isExpand ? 0 : 2
         overviewLabel.font = .systemFont(ofSize: 13)
         

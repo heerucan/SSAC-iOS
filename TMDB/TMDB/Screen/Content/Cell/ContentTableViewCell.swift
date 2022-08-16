@@ -18,17 +18,17 @@ class ContentTableViewCell: UITableViewCell {
         configureCollectionView()
     }
     
-    func configureUI() {
+    private func configureUI() {
         categoryLabel.font = .systemFont(ofSize: 15)
         categoryLabel.text = "인기 콘텐츠"
     }
     
-    func configureCollectionView() {
+    private func configureCollectionView() {
         contentCollectionView.collectionViewLayout = collectionViewLayout()
         contentCollectionView.showsHorizontalScrollIndicator = false
     }
     
-    func collectionViewLayout() -> UICollectionViewFlowLayout {
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: 90, height: 120)

@@ -8,11 +8,11 @@
 import UIKit
 import MapKit
 
-class LocationViewController: UIViewController {
+final class LocationViewController: UIViewController {
     
     // MARK: - Property
     
-    let rightBarButton = UIBarButtonItem(title: "Filter",
+    private let rightBarButton = UIBarButtonItem(title: "Filter",
                                       style: .plain,
                                       target: self,
                                       action: #selector(touchupRightButton))
@@ -24,7 +24,6 @@ class LocationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        configureLayout()
     }
     
     // MARK: - Configure UI & Layout
@@ -32,10 +31,6 @@ class LocationViewController: UIViewController {
     private func configureUI() {
         view.backgroundColor = .white
 //        navigationItem.leftBarButtonItem = lef
-    }
-    
-    private func configureLayout() {
-        
     }
     
     // MARK: - Custom Method

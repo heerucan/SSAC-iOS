@@ -15,7 +15,6 @@ class DetailHeaderView: UIView {
     let posterImageView = UIImageView()
     let titleLabel = UILabel()
     
-    
     // MARK: - Initializer
     
     override init(frame: CGRect) {
@@ -30,7 +29,7 @@ class DetailHeaderView: UIView {
     
     // MARK: - ConfigureUI
     
-    func configureUI() {
+    private func configureUI() {
         titleLabel.font = .boldSystemFont(ofSize: 18)
         titleLabel.textColor = .white
         titleLabel.numberOfLines = 1
@@ -39,7 +38,7 @@ class DetailHeaderView: UIView {
         posterImageView.contentMode = .scaleAspectFit
     }
     
-    func setupLayout() {
+    private func setupLayout() {
         addSubview(backImageView)
         backImageView.addSubview(titleLabel)
         backImageView.addSubview(posterImageView)

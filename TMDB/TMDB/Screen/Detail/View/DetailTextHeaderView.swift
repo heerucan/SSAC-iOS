@@ -19,8 +19,8 @@ class DetailTextHeaderView: UIView {
         }
     }
     
-    let lineView = UIView()
-    let titleLabel = UILabel()
+    private let lineView = UIView()
+    private let titleLabel = UILabel()
     
     // MARK: - Initializer
     
@@ -36,14 +36,14 @@ class DetailTextHeaderView: UIView {
     
     // MARK: - ConfigureUI
     
-    func configureUI() {
+    private func configureUI() {
         titleLabel.font = .boldSystemFont(ofSize: 15)
         titleLabel.textColor = .lightGray
         lineView.backgroundColor = .systemGray5
         backgroundColor = .white
     }
     
-    func setupLayout() {
+    private func setupLayout() {
         addSubview(titleLabel)
         addSubview(lineView)
         

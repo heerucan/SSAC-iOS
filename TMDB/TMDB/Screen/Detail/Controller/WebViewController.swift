@@ -13,7 +13,7 @@ final class WebViewController: UIViewController {
 
     // MARK: - Property
     
-    public var movieID = 0
+    var movieID = 0
     
     // MARK: - @IBOutlet
     
@@ -57,7 +57,7 @@ final class WebViewController: UIViewController {
     
     // MARK: - Custom Method
     
-    func openWebView(url: String) {
+    private func openWebView(url: String) {
         guard let url = URL(string: url) else {
             print("Invalid URL")
             return
@@ -70,7 +70,7 @@ final class WebViewController: UIViewController {
 // MARK: - Network
 
 extension WebViewController {
-    func requestVideo(movieID: Int) {
+    private func requestVideo(movieID: Int) {
         VideoManager.shared.requestVideo(movieID: movieID) { link in
             let detinationURL = EndPoint.youtubeURL + "\(link)"
             DispatchQueue.main.async {

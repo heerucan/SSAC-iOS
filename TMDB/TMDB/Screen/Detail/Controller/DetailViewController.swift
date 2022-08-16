@@ -26,7 +26,7 @@ final class DetailViewController: UIViewController {
     private var castList: [Cast] = []
     private var crewList: [Crew] = []
     
-    lazy var rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+    private lazy var rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
                                         style: .plain,
                                         target: self,
                                         action: #selector(touchupRightBarButton))
@@ -67,7 +67,7 @@ final class DetailViewController: UIViewController {
     
     // MARK: - Custom Method
     
-    public func setupData(data: Movie) {
+    func setupData(data: Movie) {
         image = data.image
         backImage = data.backImage
         movieTitle = data.title

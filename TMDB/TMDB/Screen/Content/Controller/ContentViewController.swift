@@ -14,7 +14,7 @@ final class ContentViewController: UIViewController {
     
     // MARK: - Property
     
-    public var movieID = 0
+    var movieID = 0
     private var posterList: [[String]] = [[]]
     
     // MARK: - @IBOutlet
@@ -37,7 +37,7 @@ final class ContentViewController: UIViewController {
         navigationController?.navigationBar.tintColor = .black
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         contentTableView.delegate = self
         contentTableView.dataSource = self
         contentTableView.separatorStyle = .none
@@ -96,7 +96,7 @@ extension ContentViewController: UICollectionViewDataSource, UICollectionViewDel
 // MARK: - Network
 
 extension ContentViewController {
-    func requestSimilarMovie() {
+    private func requestSimilarMovie() {
         MovieManager.shared.requestSimilarMovie(movieID: movieID, pageNumber: 1) { list in
             self.posterList.append(list)
             MovieManager.shared.requestSimilarMovie(movieID: self.movieID, pageNumber: 2) { list in
