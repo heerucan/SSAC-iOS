@@ -14,12 +14,12 @@ open class HureeView: UIView {
 }
 
 extension UIView {
-    open func makeRound() {
+    public func makeRound() {
         layer.cornerRadius = 10
         layer.masksToBounds = true
     }
     
-    open func makeShadow() {
+    public func makeShadow() {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 0)
         layer.shadowOpacity = 0.2
