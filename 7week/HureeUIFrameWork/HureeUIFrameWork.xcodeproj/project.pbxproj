@@ -15,6 +15,7 @@
 		5B5A677928AB284C00D7B3F3 /* HureeReusableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A677828AB284C00D7B3F3 /* HureeReusableProtocol.swift */; };
 		5B5A677B28AB288C00D7B3F3 /* HureeActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A677A28AB288C00D7B3F3 /* HureeActivityViewController.swift */; };
 		5B5A677D28AB2A2600D7B3F3 /* HureeWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5A677C28AB2A2600D7B3F3 /* HureeWebView.swift */; };
+		5BC61F3428ABDA5C00BC1D87 /* HureeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F3328ABDA5C00BC1D87 /* HureeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		5B5A677828AB284C00D7B3F3 /* HureeReusableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HureeReusableProtocol.swift; sourceTree = "<group>"; };
 		5B5A677A28AB288C00D7B3F3 /* HureeActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HureeActivityViewController.swift; sourceTree = "<group>"; };
 		5B5A677C28AB2A2600D7B3F3 /* HureeWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HureeWebView.swift; sourceTree = "<group>"; };
+		5BC61F3328ABDA5C00BC1D87 /* HureeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HureeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				5B5A677A28AB288C00D7B3F3 /* HureeActivityViewController.swift */,
 				5B5A677828AB284C00D7B3F3 /* HureeReusableProtocol.swift */,
 				5B5A677C28AB2A2600D7B3F3 /* HureeWebView.swift */,
+				5BC61F3328ABDA5C00BC1D87 /* HureeView.swift */,
 			);
 			path = HureeUIFrameWork;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				5B5A673028AB1C2900D7B3F3 /* HureeAlert.swift in Sources */,
 				5B5A671A28AB1BC800D7B3F3 /* HureeUIFrameWork.docc in Sources */,
 				5B5A677D28AB2A2600D7B3F3 /* HureeWebView.swift in Sources */,
+				5BC61F3428ABDA5C00BC1D87 /* HureeView.swift in Sources */,
 				5B5A677928AB284C00D7B3F3 /* HureeReusableProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

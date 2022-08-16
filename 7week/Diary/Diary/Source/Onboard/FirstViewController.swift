@@ -7,8 +7,12 @@
 
 import UIKit
 
+import HureeUIFrameWork
+
 class FirstViewController: UIViewController {
     
+    let myView = MyView()
+        
     // MARK: - @IBOutlet
 
     @IBOutlet weak var tutorialLabel: UILabel!
@@ -20,6 +24,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        myView.changeBackgroundColor(.red)
     }
     
     // MARK: - Configure UI & Layout
@@ -49,5 +54,12 @@ class FirstViewController: UIViewController {
         } completion: { _ in
             print("🪲 blackView끝")
         }
+    }
+}
+
+class MyView: HureeView {
+    override func changeBackgroundColor(_ color: UIColor) {
+        super.changeBackgroundColor(color)
+        print("다른 모듈에 있는 HureeView는 open이기 때문에 서브클래싱이 가능하고, 오버라이딩도 가능하다.")
     }
 }
