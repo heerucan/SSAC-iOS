@@ -56,7 +56,7 @@ extension OnboardViewController: UIPageViewControllerDelegate, UIPageViewControl
         
         // 왜 1을 빼주냐면, beforeIndex를 가져와야 하기 때문에 -> 0,1,2 있으면 2번 기준으로 1번을 보여주는 것
         let previousIndex = viewControllerIndex - 1 // -1
-        
+        print("🚗 지금뷰컨인덱스 : ",viewControllerIndex, " | 이전뷰컨인덱스:", previousIndex)
         // 0보다 작은 인덱스는 없으니까 nil이고, 그게 아니라면 리스트에서 가져오는 것
         return previousIndex < 0 ? nil : pageViewControllerList[previousIndex]
     }
@@ -66,7 +66,7 @@ extension OnboardViewController: UIPageViewControllerDelegate, UIPageViewControl
         guard let viewControllerIndex = pageViewControllerList.firstIndex(of: viewController) else { return nil }
         
         let nextIndex = viewControllerIndex + 1
-        
+        print("🚙 지금뷰컨인덱스 : ",viewControllerIndex, " | 이후뷰컨인덱스:", nextIndex)
         // nextIndex가 리스트보다 값이 크면 가져올 수 없으니까 nil이다.
         return nextIndex >= pageViewControllerList.count ? nil : pageViewControllerList[nextIndex]
     }
