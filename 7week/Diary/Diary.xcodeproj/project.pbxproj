@@ -19,6 +19,7 @@
 		5BC61F1828AB80E800BC1D87 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F1728AB80E800BC1D87 /* ThirdViewController.swift */; };
 		5BC61F8828AC6E4D00BC1D87 /* HureeUIFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F8528AC6E1F00BC1D87 /* HureeUIFrameWork.framework */; platformFilter = ios; };
 		5BC61F8928AC6E4D00BC1D87 /* HureeUIFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F8528AC6E1F00BC1D87 /* HureeUIFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5BC61F8C28AC71AC00BC1D87 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		5BC61F1528AB80DF00BC1D87 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5BC61F1728AB80E800BC1D87 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5BC61F7F28AC6E1F00BC1D87 /* HureeUIFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HureeUIFrameWork.xcodeproj; path = ../HureeUIFrameWork/HureeUIFrameWork.xcodeproj; sourceTree = "<group>"; };
+		5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				5BC61F0E28AB809100BC1D87 /* Onboard */,
+				5BC61F8A28AC718B00BC1D87 /* CodeBase */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -162,6 +165,14 @@
 				5BC61F8728AC6E1F00BC1D87 /* HureeUIFrameWorkTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		5BC61F8A28AC718B00BC1D87 /* CodeBase */ = {
+			isa = PBXGroup;
+			children = (
+				5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */,
+			);
+			path = CodeBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC61F1228AB80C900BC1D87 /* OnboardController.swift in Sources */,
+				5BC61F8C28AC71AC00BC1D87 /* CodeViewController.swift in Sources */,
 				5BC61EF828AB805900BC1D87 /* AppDelegate.swift in Sources */,
 				5BC61EFA28AB805900BC1D87 /* SceneDelegate.swift in Sources */,
 				5BC61F1628AB80DF00BC1D87 /* SecondViewController.swift in Sources */,
