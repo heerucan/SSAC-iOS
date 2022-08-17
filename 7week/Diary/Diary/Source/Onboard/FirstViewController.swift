@@ -15,6 +15,7 @@ class FirstViewController: UIViewController {
         
     // MARK: - @IBOutlet
 
+    @IBOutlet weak var starImageView: UIImageView!
     @IBOutlet weak var tutorialLabel: UILabel!
     @IBOutlet weak var blackView: UIView!
     @IBOutlet weak var blackViewConstraint: NSLayoutConstraint!
@@ -25,11 +26,13 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         myView.changeBackgroundColor(.red)
+        
     }
     
     // MARK: - Configure UI & Layout
     
     private func configureUI() {
+        tutorialLabel.textColor = .green
         tutorialLabel.numberOfLines = 0
         tutorialLabel.alpha = 0
         tutorialLabel.font = .boldSystemFont(ofSize: 25)
@@ -39,21 +42,32 @@ class FirstViewController: UIViewController {
         """
         blackView.alpha = 0
         blackView.backgroundColor = .black
+        starImageView.tintColor = .yellow
         UIView.animate(withDuration: 3) {
             self.tutorialLabel.alpha = 1
         } completion: { _ in
             self.configureBlackViewAnimation()
+            self.animateImageView()
         }
     }
     
     private func configureBlackViewAnimation() {
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.5) {
             self.blackView.alpha = 1
-            self.blackViewConstraint.constant += 250
+            self.blackView.transform = CGAffineTransform(scaleX: 5, y: 1)
             self.view.layoutIfNeeded()
         } completion: { _ in
             print("🪲 blackView끝")
         }
+    }
+    
+    private func animateImageView() {
+        UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse]) {
+            self.starImageView.transform = CGAffineTransform(scaleX: 1.8, y: 1.8)
+        } completion: { _ in
+            print("🪲 imageView 끝")
+        }
+
     }
 }
 

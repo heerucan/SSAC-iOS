@@ -72,12 +72,21 @@
                                     <constraint firstAttribute="height" constant="5" id="Zfm-cV-PaI"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yit-Ju-dOm">
+                                <rect key="frame" x="334" y="108.5" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Y1O-6q-9zB"/>
+                                    <constraint firstAttribute="height" constant="30" id="cwy-34-R1J"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qhv-ha-1Bp"/>
                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
+                            <constraint firstItem="yit-Ju-dOm" firstAttribute="centerY" secondItem="usu-98-j8t" secondAttribute="centerY" id="6sX-5q-mcL"/>
                             <constraint firstItem="qhv-ha-1Bp" firstAttribute="trailing" secondItem="usu-98-j8t" secondAttribute="trailing" constant="30" id="9qH-XW-ZoQ"/>
                             <constraint firstItem="Nwz-uy-wsR" firstAttribute="centerX" secondItem="Xnf-ah-yCX" secondAttribute="centerX" id="HCV-Pv-CnK"/>
+                            <constraint firstItem="qhv-ha-1Bp" firstAttribute="trailing" secondItem="yit-Ju-dOm" secondAttribute="trailing" constant="50" id="JDh-Z0-xtK"/>
                             <constraint firstItem="usu-98-j8t" firstAttribute="top" secondItem="qhv-ha-1Bp" secondAttribute="top" constant="30" id="qTt-ET-6uv"/>
                             <constraint firstItem="usu-98-j8t" firstAttribute="leading" secondItem="qhv-ha-1Bp" secondAttribute="leading" constant="30" id="w1z-7c-Aps"/>
                             <constraint firstItem="Nwz-uy-wsR" firstAttribute="top" secondItem="usu-98-j8t" secondAttribute="bottom" constant="8" id="wwz-8K-cHX"/>
@@ -86,12 +95,13 @@
                     <connections>
                         <outlet property="blackView" destination="Nwz-uy-wsR" id="tMf-H1-PMh"/>
                         <outlet property="blackViewConstraint" destination="MaV-Zn-dlx" id="apH-ZS-wC9"/>
+                        <outlet property="starImageView" destination="yit-Ju-dOm" id="mlU-F3-idZ"/>
                         <outlet property="tutorialLabel" destination="usu-98-j8t" id="WYU-f9-GBx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xzk-1W-f8G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="98"/>
+            <point key="canvasLocation" x="853.62318840579712" y="97.767857142857139"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="Hbu-vm-cEE">
@@ -125,6 +135,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
