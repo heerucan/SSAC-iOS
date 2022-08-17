@@ -47,6 +47,7 @@ final class SearchViewController: UIViewController {
     // MARK: - configureUI
     
     private func configureUI() {
+        UserDefaults.standard.set(false, forKey: Key.first.rawValue)
         view.backgroundColor = .white
         navigationItem.leftBarButtonItem = leftBarButton
         navigationItem.rightBarButtonItem = rightBarButton

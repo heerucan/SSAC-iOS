@@ -24,3 +24,8 @@ enum MediaType: String {
 enum TimeWindow: String {
     case day, week
 }
+
+enum Key: String {
+    case first = "first"
+    static let firstUser = UserDefaults.standard.bool(forKey: Key.first.rawValue)
+}

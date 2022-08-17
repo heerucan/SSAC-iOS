@@ -18,10 +18,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
-        let storyboard = UIStoryboard(name: Storyboard.onboard, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: OnboardViewController.reuseIdentifier)
-                as? OnboardViewController else { return }
-        window?.rootViewController = UINavigationController(rootViewController: viewController)
+        if Key.firstUser {
+            let storyboard = UIStoryboard(name: Storyboard.onboard, bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: OnboardViewController.reuseIdentifier)
+                    as? OnboardViewController else { return }
+            window?.rootViewController = UINavigationController(rootViewController: viewController)
+        } else {
+            let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
+            guard let viewController = storyboard.instantiateViewController(withIdentifier: SearchViewController.reuseIdentifier)
+                    as? SearchViewController else { return }
+            window?.rootViewController = UINavigationController(rootViewController: viewController)
+        }
         window?.makeKeyAndVisible()
     }
 
