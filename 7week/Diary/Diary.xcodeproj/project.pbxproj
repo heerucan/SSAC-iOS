@@ -22,6 +22,7 @@
 		5BC61F8C28AC71AC00BC1D87 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */; };
 		5BC61F8F28AC819300BC1D87 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BC61F8E28AC819300BC1D87 /* SnapKit */; };
 		5BC61F9128AC822B00BC1D87 /* SnapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F9028AC822B00BC1D87 /* SnapKitViewController.swift */; };
+		5BC61F9328AC8C0F00BC1D87 /* CodeSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F9228AC8C0F00BC1D87 /* CodeSnapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		5BC61F7F28AC6E1F00BC1D87 /* HureeUIFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HureeUIFrameWork.xcodeproj; path = ../HureeUIFrameWork/HureeUIFrameWork.xcodeproj; sourceTree = "<group>"; };
 		5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		5BC61F9028AC822B00BC1D87 /* SnapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapKitViewController.swift; sourceTree = "<group>"; };
+		5BC61F9228AC8C0F00BC1D87 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			children = (
 				5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */,
 				5BC61F9028AC822B00BC1D87 /* SnapKitViewController.swift */,
+				5BC61F9228AC8C0F00BC1D87 /* CodeSnapViewController.swift */,
 			);
 			path = CodeBase;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				5BC61F8C28AC71AC00BC1D87 /* CodeViewController.swift in Sources */,
 				5BC61EF828AB805900BC1D87 /* AppDelegate.swift in Sources */,
 				5BC61EFA28AB805900BC1D87 /* SceneDelegate.swift in Sources */,
+				5BC61F9328AC8C0F00BC1D87 /* CodeSnapViewController.swift in Sources */,
 				5BC61F1628AB80DF00BC1D87 /* SecondViewController.swift in Sources */,
 				5BC61F1828AB80E800BC1D87 /* ThirdViewController.swift in Sources */,
 				5BC61F1428AB80D600BC1D87 /* FirstViewController.swift in Sources */,
