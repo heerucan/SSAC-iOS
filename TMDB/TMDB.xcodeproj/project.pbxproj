@@ -35,10 +35,15 @@
 		5BB8E9732899F7A4006815FD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5BB8E9722899F7A4006815FD /* .gitignore */; };
 		5BB8E9762899F894006815FD /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8E9752899F894006815FD /* APIKey.swift */; };
 		5BB8E9782899F9CF006815FD /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB8E9772899F9CF006815FD /* Constant.swift */; };
-		5BC61F3F28ABE63100BC1D87 /* HureeUIFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F3B28ABE5B900BC1D87 /* HureeUIFrameWork.framework */; platformFilter = ios; };
-		5BC61F4028ABE63100BC1D87 /* HureeUIFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F3B28ABE5B900BC1D87 /* HureeUIFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5BC61F4928ABE9F300BC1D87 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F4828ABE9F300BC1D87 /* String+.swift */; };
 		5BC61F4B28ABE9F900BC1D87 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F4A28ABE9F900BC1D87 /* Date+.swift */; };
+		5BC61F5128ABF0C300BC1D87 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC61F5028ABF0C300BC1D87 /* Onboard.storyboard */; };
+		5BC61F5328ABF0F600BC1D87 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F5228ABF0F600BC1D87 /* OnboardViewController.swift */; };
+		5BC61F5528AC628000BC1D87 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F5428AC628000BC1D87 /* FirstViewController.swift */; };
+		5BC61F5728AC629300BC1D87 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F5628AC629300BC1D87 /* SecondViewController.swift */; };
+		5BC61F5928AC62B300BC1D87 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F5828AC62B300BC1D87 /* ThirdViewController.swift */; };
+		5BC61F7C28AC6D1D00BC1D87 /* HureeUIFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F7928AC6D1800BC1D87 /* HureeUIFrameWork.framework */; platformFilter = ios; };
+		5BC61F7D28AC6D1D00BC1D87 /* HureeUIFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F7928AC6D1800BC1D87 /* HureeUIFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5BC6C6A6289AA32000BA3F89 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6C6A4289AA32000BA3F89 /* SearchTableViewCell.swift */; };
 		5BC6C6A7289AA32000BA3F89 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BC6C6A5289AA32000BA3F89 /* SearchTableViewCell.xib */; };
 		5BC6C6AD289ABC4300BA3F89 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5BC6C6AC289ABC4300BA3F89 /* Kingfisher */; };
@@ -52,16 +57,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5BC61F3A28ABE5B900BC1D87 /* PBXContainerItemProxy */ = {
+		5BC61F7828AC6D1800BC1D87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5BC61F3528ABE5B900BC1D87 /* HureeUIFrameWork.xcodeproj */;
+			containerPortal = 5BC61F7328AC6D1700BC1D87 /* HureeUIFrameWork.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5B5A671528AB1BC800D7B3F3;
 			remoteInfo = HureeUIFrameWork;
 		};
-		5BC61F3C28ABE5B900BC1D87 /* PBXContainerItemProxy */ = {
+		5BC61F7A28AC6D1800BC1D87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5BC61F3528ABE5B900BC1D87 /* HureeUIFrameWork.xcodeproj */;
+			containerPortal = 5BC61F7328AC6D1700BC1D87 /* HureeUIFrameWork.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5B5A671F28AB1BC800D7B3F3;
 			remoteInfo = HureeUIFrameWorkTests;
@@ -69,13 +74,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5BC61F4128ABE63100BC1D87 /* Embed Frameworks */ = {
+		5BC61F7E28AC6D1D00BC1D87 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5BC61F4028ABE63100BC1D87 /* HureeUIFrameWork.framework in Embed Frameworks */,
+				5BC61F7D28AC6D1D00BC1D87 /* HureeUIFrameWork.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,9 +118,14 @@
 		5BB8E9722899F7A4006815FD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5BB8E9752899F894006815FD /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		5BB8E9772899F9CF006815FD /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		5BC61F3528ABE5B900BC1D87 /* HureeUIFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HureeUIFrameWork.xcodeproj; path = ../7week/HureeUIFrameWork/HureeUIFrameWork.xcodeproj; sourceTree = "<group>"; };
 		5BC61F4828ABE9F300BC1D87 /* String+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		5BC61F4A28ABE9F900BC1D87 /* Date+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		5BC61F5028ABF0C300BC1D87 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
+		5BC61F5228ABF0F600BC1D87 /* OnboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardViewController.swift; sourceTree = "<group>"; };
+		5BC61F5428AC628000BC1D87 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		5BC61F5628AC629300BC1D87 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		5BC61F5828AC62B300BC1D87 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5BC61F7328AC6D1700BC1D87 /* HureeUIFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HureeUIFrameWork.xcodeproj; path = ../7week/HureeUIFrameWork/HureeUIFrameWork.xcodeproj; sourceTree = "<group>"; };
 		5BC6C6A4289AA32000BA3F89 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		5BC6C6A5289AA32000BA3F89 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		5BC6C6B6289ABE9000BA3F89 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
@@ -133,7 +143,7 @@
 				5BC6C6B3289ABC5D00BA3F89 /* SwiftyJSON in Frameworks */,
 				5BC6C6AD289ABC4300BA3F89 /* Kingfisher in Frameworks */,
 				5BC6C6B0289ABC5200BA3F89 /* Alamofire in Frameworks */,
-				5BC61F3F28ABE63100BC1D87 /* HureeUIFrameWork.framework in Frameworks */,
+				5BC61F7C28AC6D1D00BC1D87 /* HureeUIFrameWork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +289,7 @@
 		5BB8E94F2899F6C2006815FD = {
 			isa = PBXGroup;
 			children = (
-				5BC61F3528ABE5B900BC1D87 /* HureeUIFrameWork.xcodeproj */,
+				5BC61F7328AC6D1700BC1D87 /* HureeUIFrameWork.xcodeproj */,
 				5BB8E9722899F7A4006815FD /* .gitignore */,
 				5BB8E95A2899F6C2006815FD /* TMDB */,
 				5BB8E9592899F6C2006815FD /* Products */,
@@ -301,7 +311,6 @@
 				5BAACB50289EB2E000D66B8E /* Network */,
 				5BB8E9742899F886006815FD /* Global */,
 				5BB8E9702899F6E0006815FD /* Screen */,
-				5BB8E9712899F6E6006815FD /* Stroyboard */,
 				5BB8E96F2899F6CD006815FD /* Support */,
 				5BB8E9692899F6C3006815FD /* Info.plist */,
 			);
@@ -311,10 +320,10 @@
 		5BB8E96F2899F6CD006815FD /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5BB8E9712899F6E6006815FD /* Stroyboard */,
 				5BB8E95D2899F6C2006815FD /* SceneDelegate.swift */,
 				5BB8E95B2899F6C2006815FD /* AppDelegate.swift */,
 				5BB8E9642899F6C3006815FD /* Assets.xcassets */,
-				5BB8E9662899F6C3006815FD /* LaunchScreen.storyboard */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -322,6 +331,7 @@
 		5BB8E9702899F6E0006815FD /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5BC61F4D28ABF09300BC1D87 /* Onboard */,
 				5B47E13A28A1423200EA5F7D /* Search */,
 				5B60370628A66FE5002D4DA5 /* Location */,
 				5B47E13B28A1423A00EA5F7D /* Detail */,
@@ -333,6 +343,8 @@
 		5BB8E9712899F6E6006815FD /* Stroyboard */ = {
 			isa = PBXGroup;
 			children = (
+				5BB8E9662899F6C3006815FD /* LaunchScreen.storyboard */,
+				5BC61F5028ABF0C300BC1D87 /* Onboard.storyboard */,
 				5BB8E9612899F6C2006815FD /* Main.storyboard */,
 			);
 			path = Stroyboard;
@@ -357,20 +369,31 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5BC61F3628ABE5B900BC1D87 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5BC61F3B28ABE5B900BC1D87 /* HureeUIFrameWork.framework */,
-				5BC61F3D28ABE5B900BC1D87 /* HureeUIFrameWorkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5BC61F3E28ABE63100BC1D87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5BC61F4D28ABF09300BC1D87 /* Onboard */ = {
+			isa = PBXGroup;
+			children = (
+				5BC61F5228ABF0F600BC1D87 /* OnboardViewController.swift */,
+				5BC61F5428AC628000BC1D87 /* FirstViewController.swift */,
+				5BC61F5628AC629300BC1D87 /* SecondViewController.swift */,
+				5BC61F5828AC62B300BC1D87 /* ThirdViewController.swift */,
+			);
+			path = Onboard;
+			sourceTree = "<group>";
+		};
+		5BC61F7428AC6D1700BC1D87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BC61F7928AC6D1800BC1D87 /* HureeUIFrameWork.framework */,
+				5BC61F7B28AC6D1800BC1D87 /* HureeUIFrameWorkTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		5BC6C6AA289AB33100BA3F89 /* Extension */ = {
@@ -413,7 +436,7 @@
 				5BB8E9542899F6C2006815FD /* Sources */,
 				5BB8E9552899F6C2006815FD /* Frameworks */,
 				5BB8E9562899F6C2006815FD /* Resources */,
-				5BC61F4128ABE63100BC1D87 /* Embed Frameworks */,
+				5BC61F7E28AC6D1D00BC1D87 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -462,8 +485,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5BC61F3628ABE5B900BC1D87 /* Products */;
-					ProjectRef = 5BC61F3528ABE5B900BC1D87 /* HureeUIFrameWork.xcodeproj */;
+					ProductGroup = 5BC61F7428AC6D1700BC1D87 /* Products */;
+					ProjectRef = 5BC61F7328AC6D1700BC1D87 /* HureeUIFrameWork.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -474,18 +497,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5BC61F3B28ABE5B900BC1D87 /* HureeUIFrameWork.framework */ = {
+		5BC61F7928AC6D1800BC1D87 /* HureeUIFrameWork.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = HureeUIFrameWork.framework;
-			remoteRef = 5BC61F3A28ABE5B900BC1D87 /* PBXContainerItemProxy */;
+			remoteRef = 5BC61F7828AC6D1800BC1D87 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5BC61F3D28ABE5B900BC1D87 /* HureeUIFrameWorkTests.xctest */ = {
+		5BC61F7B28AC6D1800BC1D87 /* HureeUIFrameWorkTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = HureeUIFrameWorkTests.xctest;
-			remoteRef = 5BC61F3C28ABE5B900BC1D87 /* PBXContainerItemProxy */;
+			remoteRef = 5BC61F7A28AC6D1800BC1D87 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -503,6 +526,7 @@
 				5B8EBADC289C80FA00970347 /* DetailTableViewCell.xib in Resources */,
 				5BC6C6A7289AA32000BA3F89 /* SearchTableViewCell.xib in Resources */,
 				5B3644B728A2E2AE001EAC17 /* ContentCollectionViewCell.xib in Resources */,
+				5BC61F5128ABF0C300BC1D87 /* Onboard.storyboard in Resources */,
 				5B3644AD28A2CF78001EAC17 /* PosterView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,16 +552,20 @@
 				5BC61F4928ABE9F300BC1D87 /* String+.swift in Sources */,
 				5BAACB54289EBC0600D66B8E /* CreditManager.swift in Sources */,
 				5BAACB57289EC24D00D66B8E /* DetailHeaderView.swift in Sources */,
+				5BC61F5928AC62B300BC1D87 /* ThirdViewController.swift in Sources */,
 				5B3644B228A2DF77001EAC17 /* ContentViewController.swift in Sources */,
+				5BC61F5528AC628000BC1D87 /* FirstViewController.swift in Sources */,
 				5B3644AF28A2CF87001EAC17 /* PosterView.swift in Sources */,
 				5B60370928A67005002D4DA5 /* LocationViewController.swift in Sources */,
 				5BC6C6A6289AA32000BA3F89 /* SearchTableViewCell.swift in Sources */,
 				5B3644B628A2E2AE001EAC17 /* ContentCollectionViewCell.swift in Sources */,
+				5BC61F5328ABF0F600BC1D87 /* OnboardViewController.swift in Sources */,
 				5B8EBAE4289C945A00970347 /* CastModel.swift in Sources */,
 				5B8EBAD8289C80C900970347 /* DetailViewController.swift in Sources */,
 				5BB8E9762899F894006815FD /* APIKey.swift in Sources */,
 				5BB8E95E2899F6C2006815FD /* SceneDelegate.swift in Sources */,
 				5B3644B928A2E3FE001EAC17 /* ContentTableViewCell.swift in Sources */,
+				5BC61F5728AC629300BC1D87 /* SecondViewController.swift in Sources */,
 				5B6F0A5728A181BA001EB18B /* GenreModel.swift in Sources */,
 				5B47E13928A1359400EA5F7D /* URL+.swift in Sources */,
 				5B47E13728A1358400EA5F7D /* EndPoint.swift in Sources */,
