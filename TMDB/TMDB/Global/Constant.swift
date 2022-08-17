@@ -9,6 +9,7 @@ import Foundation
 
 enum Storyboard {
     static let main = "Main"
+    static let onboard = "Onboard"
 }
 
 enum Nib {
