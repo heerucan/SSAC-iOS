@@ -20,6 +20,8 @@
 		5BC61F8828AC6E4D00BC1D87 /* HureeUIFrameWork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F8528AC6E1F00BC1D87 /* HureeUIFrameWork.framework */; platformFilter = ios; };
 		5BC61F8928AC6E4D00BC1D87 /* HureeUIFrameWork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC61F8528AC6E1F00BC1D87 /* HureeUIFrameWork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5BC61F8C28AC71AC00BC1D87 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */; };
+		5BC61F8F28AC819300BC1D87 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5BC61F8E28AC819300BC1D87 /* SnapKit */; };
+		5BC61F9128AC822B00BC1D87 /* SnapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61F9028AC822B00BC1D87 /* SnapKitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,7 @@
 		5BC61F1728AB80E800BC1D87 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5BC61F7F28AC6E1F00BC1D87 /* HureeUIFrameWork.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HureeUIFrameWork.xcodeproj; path = ../HureeUIFrameWork/HureeUIFrameWork.xcodeproj; sourceTree = "<group>"; };
 		5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
+		5BC61F9028AC822B00BC1D87 /* SnapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapKitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +79,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BC61F8828AC6E4D00BC1D87 /* HureeUIFrameWork.framework in Frameworks */,
+				5BC61F8F28AC819300BC1D87 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				5BC61F8B28AC71AC00BC1D87 /* CodeViewController.swift */,
+				5BC61F9028AC822B00BC1D87 /* SnapKitViewController.swift */,
 			);
 			path = CodeBase;
 			sourceTree = "<group>";
@@ -192,6 +197,9 @@
 			dependencies = (
 			);
 			name = Diary;
+			packageProductDependencies = (
+				5BC61F8E28AC819300BC1D87 /* SnapKit */,
+			);
 			productName = Diary;
 			productReference = 5BC61EF428AB805900BC1D87 /* Diary.app */;
 			productType = "com.apple.product-type.application";
@@ -220,6 +228,9 @@
 				Base,
 			);
 			mainGroup = 5BC61EEB28AB805900BC1D87;
+			packageReferences = (
+				5BC61F8D28AC819300BC1D87 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 5BC61EF528AB805900BC1D87 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -278,6 +289,7 @@
 				5BC61F1628AB80DF00BC1D87 /* SecondViewController.swift in Sources */,
 				5BC61F1828AB80E800BC1D87 /* ThirdViewController.swift in Sources */,
 				5BC61F1428AB80D600BC1D87 /* FirstViewController.swift in Sources */,
+				5BC61F9128AC822B00BC1D87 /* SnapKitViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,6 +511,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BC61F8D28AC819300BC1D87 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BC61F8E28AC819300BC1D87 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BC61F8D28AC819300BC1D87 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5BC61EEC28AB805900BC1D87 /* Project object */;
 }
