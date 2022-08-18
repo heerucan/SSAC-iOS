@@ -13,6 +13,10 @@ class CodeSnapViewController: UIViewController {
     
     // MARK: - Property
     
+    var testArray: Array<Int> = [1,2,3,4]
+    var testdic: Dictionary<Int, String> = [:]
+    var testSet: Set = [2,3,4]
+    
     let greenView: UIView = {
         let view = UIView()
         view.backgroundColor = .green
