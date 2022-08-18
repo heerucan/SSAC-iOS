@@ -230,8 +230,6 @@ one.name == two.name
 
 // 변수에 대한 위치를 바꿔주는 기능
 
-swap
-
 var fruit1 = "사과"
 var fruit2 = "바나나"
 swap(&fruit1, &fruit2) // & => inout parameter
