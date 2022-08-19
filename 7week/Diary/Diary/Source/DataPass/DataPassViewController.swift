@@ -28,6 +28,10 @@ final class DataPassViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         configureLayout()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(saveButtonNotification(_:)),
+                                               name: .saveButton,
+                                               object: nil)
     }
     
     // MARK: - Configure UI & Layout
@@ -50,9 +54,20 @@ final class DataPassViewController: UIViewController {
     
     // MARK: - @objc
     
+    @objc func saveButtonNotification(_ notification: Notification) {
+        guard let name = notification.userInfo?["name"] as? String else { return }
+        self.nameButton.setTitle(name, for: .normal)
+    }
+    
     @objc func touchupNameButton() {
-        // 여기에 인스턴스를 이미 만들어뒀으니까 기능구현을 미리 해두고!
-        // 작동은 언제시키냐!?! -> 필요한 시점에 시키겠지?! 그건 바로 dismiss할 때!
+        
+        NotificationCenter.default.post(name: .test,
+                                        object: nil,
+                                        userInfo: ["name": "\(Int.random(in: 1...100))",
+                                                   "value": 12345])
+        
+        /* 여기에 인스턴스를 이미 만들어뒀으니까 기능구현을 미리 해두고!
+         작동은 언제시키냐!?! -> 필요한 시점에 시키겠지?! 그건 바로 dismiss할 때! */
         let vc = ProfileViewController()
         // 함수 타입이 들어오게 되는 것임
         vc.saveButtonActionHandler = {
