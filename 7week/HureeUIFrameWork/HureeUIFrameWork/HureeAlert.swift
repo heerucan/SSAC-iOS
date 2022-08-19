@@ -11,7 +11,7 @@ extension UIViewController {
     
     open func testOpen() { }
     
-    public func showHureeAlert(title: String,
+    @objc open func showHureeAlert(title: String,
                         message: String,
                         buttonTitle: String,
                         buttonAction: @escaping ((UIAlertAction) -> Void)) {

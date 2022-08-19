@@ -1,17 +1,13 @@
 //
-//  SnapKitViewController.swift
+//  WriteView.swift
 //  Diary
 //
-//  Created by heerucan on 2022/08/17.
+//  Created by heerucan on 2022/08/19.
 //
 
 import UIKit
 
-import SnapKit
-
-final class SnapKitViewController: UIViewController {
-
-    // MARK: - Property
+class WriteView: BaseView {
     
     let photoImageView: UIImageView = {
         let imageView = UIImageView()
@@ -49,41 +45,24 @@ final class SnapKitViewController: UIViewController {
         return view
     }()
     
-    // MARK: - LifeCycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        configureUI()
-        configureLayout()
-    }
-    
-    // MARK: - Configure UI & Layout
-    
-    private func configureUI() {
-        view.backgroundColor = .white
-    }
-    
-    private func configureLayout() {
-        view.addSubviews([photoImageView,
+    override func configureUI() {
+        self.addSubviews([photoImageView,
                           titleTextField,
                           dateTextField,
                           contentTextView])
-        
+    }
+    
+    override func configureLayout() {
         photoImageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
-//            make.leadingMargin.equalTo(20)
-//            make.trailingMargin.equalTo(-20)
+            make.top.equalTo(self.safeAreaLayoutGuide)
             make.leading.trailing.equalToSuperview().inset(20)
-//            make.height.equalTo(100)
-            make.height.equalTo(view).multipliedBy(0.3) // view의 높이의 0.3 정도
+            make.height.equalTo(self).multipliedBy(0.3)
         }
         
         titleTextField.snp.makeConstraints { make in
             make.top.equalTo(photoImageView.snp.bottom).offset(20)
             make.leading.equalTo(photoImageView.snp.leading)
             make.trailing.equalTo(photoImageView.snp.trailing)
-//            make.leadingMargin.equalTo(20)
-//            make.trailingMargin.equalTo(-20)
             make.height.equalTo(50)
         }
         
@@ -91,32 +70,14 @@ final class SnapKitViewController: UIViewController {
             make.top.equalTo(titleTextField.snp.bottom).offset(20)
             make.leading.equalTo(photoImageView.snp.leading)
             make.trailing.equalTo(photoImageView.snp.trailing)
-//            make.leadingMargin.equalTo(20)
-//            make.trailingMargin.equalTo(-20)
             make.height.equalTo(50)
         }
         
         contentTextView.snp.makeConstraints { make in
             make.top.equalTo(dateTextField.snp.bottom).offset(20)
-//            make.leadingMargin.equalTo(20)
-//            make.trailingMargin.equalTo(-20)
             make.leading.equalTo(photoImageView.snp.leading)
             make.trailing.equalTo(photoImageView.snp.trailing)
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
-    }
-    
-   
-    
-    // MARK: - Custom Method
-    
-    
-    // MARK: - @objc
-
-}
-
-extension UIView {
-    func addSubviews(_ myView: [UIView]) {
-        myView.forEach { self.addSubview($0)}
     }
 }
