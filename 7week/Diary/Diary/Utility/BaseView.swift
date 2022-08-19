@@ -25,5 +25,3 @@ class BaseView: UIView {
     
     func configureLayout() { }
 }
-
-
