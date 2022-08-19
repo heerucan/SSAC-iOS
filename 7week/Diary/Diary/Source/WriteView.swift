@@ -16,25 +16,15 @@ class WriteView: BaseView {
         return imageView
     }()
     
-    let titleTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .none
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1
+    let titleTextField: BlackRadiusTextField = {
+        let textField = BlackRadiusTextField()
         textField.placeholder = "제목을 입력해주세요"
-        textField.textAlignment = .center
-        textField.font = .boldSystemFont(ofSize: 15)
         return textField
     }()
     
-    let dateTextField: UITextField = {
-        let textField = UITextField()
-        textField.borderStyle = .none
-        textField.layer.borderColor = UIColor.black.cgColor
-        textField.layer.borderWidth = 1
+    let dateTextField: BlackRadiusTextField = {
+        let textField = BlackRadiusTextField()
         textField.placeholder = "날짜를 입력해주세요"
-        textField.textAlignment = .center
-        textField.font = .boldSystemFont(ofSize: 15)
         return textField
     }()
     
@@ -44,6 +34,14 @@ class WriteView: BaseView {
         view.layer.borderColor = UIColor.black.cgColor
         return view
     }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func configureUI() {
         self.addSubviews([photoImageView,

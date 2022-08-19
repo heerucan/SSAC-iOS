@@ -13,6 +13,8 @@
 		5BC3070E28AF144300C96381 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3070D28AF144300C96381 /* WriteViewController.swift */; };
 		5BC3071028AF169900C96381 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3070F28AF169900C96381 /* BaseView.swift */; };
 		5BC3071228AF179A00C96381 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3071128AF179A00C96381 /* WriteView.swift */; };
+		5BC3071428AF267700C96381 /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3071328AF267700C96381 /* Practice.swift */; };
+		5BC3071728AF2CF500C96381 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC3071628AF2CF500C96381 /* BlackRadiusTextField.swift */; };
 		5BC61EF828AB805900BC1D87 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61EF728AB805900BC1D87 /* AppDelegate.swift */; };
 		5BC61EFA28AB805900BC1D87 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC61EF928AB805900BC1D87 /* SceneDelegate.swift */; };
 		5BC61EFF28AB805900BC1D87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BC61EFD28AB805900BC1D87 /* Main.storyboard */; };
@@ -69,6 +71,8 @@
 		5BC3070D28AF144300C96381 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		5BC3070F28AF169900C96381 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		5BC3071128AF179A00C96381 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		5BC3071328AF267700C96381 /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
+		5BC3071628AF2CF500C96381 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		5BC61EF428AB805900BC1D87 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BC61EF728AB805900BC1D87 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BC61EF928AB805900BC1D87 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 		5BC3070728AF126100C96381 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				5BC3071528AF2CD500C96381 /* CustomView */,
 				5BC3070A28AF127500C96381 /* BaseViewController.swift */,
 				5BC3070F28AF169900C96381 /* BaseView.swift */,
 			);
@@ -125,6 +130,14 @@
 				5BC3071128AF179A00C96381 /* WriteView.swift */,
 			);
 			name = Diary;
+			sourceTree = "<group>";
+		};
+		5BC3071528AF2CD500C96381 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				5BC3071628AF2CF500C96381 /* BlackRadiusTextField.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 		5BC61EEB28AB805900BC1D87 = {
@@ -169,6 +182,7 @@
 		5BC61F0C28AB806900BC1D87 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5BC3071328AF267700C96381 /* Practice.swift */,
 				5BC61F0D28AB807100BC1D87 /* Storyboard */,
 				5BC61EF728AB805900BC1D87 /* AppDelegate.swift */,
 				5BC61EF928AB805900BC1D87 /* SceneDelegate.swift */,
@@ -329,8 +343,10 @@
 			files = (
 				5BC61F1228AB80C900BC1D87 /* OnboardController.swift in Sources */,
 				5BC61F8C28AC71AC00BC1D87 /* CodeViewController.swift in Sources */,
+				5BC3071728AF2CF500C96381 /* BlackRadiusTextField.swift in Sources */,
 				5BC3071228AF179A00C96381 /* WriteView.swift in Sources */,
 				5BC61EF828AB805900BC1D87 /* AppDelegate.swift in Sources */,
+				5BC3071428AF267700C96381 /* Practice.swift in Sources */,
 				5BC61EFA28AB805900BC1D87 /* SceneDelegate.swift in Sources */,
 				5BC61F9328AC8C0F00BC1D87 /* CodeSnapViewController.swift in Sources */,
 				5BC3070E28AF144300C96381 /* WriteViewController.swift in Sources */,
