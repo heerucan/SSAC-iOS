@@ -12,6 +12,7 @@ final class ProfileViewController: UIViewController {
     // MARK: - Property
     
     var saveButtonActionHandler: (() -> ())?
+    var saveButtonActionHandler2: ((String) -> ())?
         
     let nameTextField: UITextField = {
         let textField = UITextField()
@@ -71,6 +72,8 @@ final class ProfileViewController: UIViewController {
         // 이때 함수타입을 가진 프로퍼티를 호출해서 동작시키는 것임
         // 물음표가 왜 괄호 앞에 붙는 것? -> 실제로 실행하고 싶다할 때 괄호를 붙이는 것
         saveButtonActionHandler?()
+        saveButtonActionHandler2?(nameTextField.text!)
+        
         self.dismiss(animated: true, completion: nil)
     }
 

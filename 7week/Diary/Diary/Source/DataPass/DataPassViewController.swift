@@ -58,6 +58,11 @@ final class DataPassViewController: UIViewController {
         vc.saveButtonActionHandler = {
             self.nameButton.setTitle(vc.nameTextField.text, for: .normal)
         }
+        
+        vc.saveButtonActionHandler2 = { name in
+            self.nameButton.setTitle(name, for: .normal)
+        }
+        
         present(vc, animated: true, completion: nil)
     }
 
