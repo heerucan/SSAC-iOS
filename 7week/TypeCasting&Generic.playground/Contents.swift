@@ -195,6 +195,11 @@ func total<T: Numeric>(a: [T]) -> T {
     return a.reduce(.zero, +)
 }
 
+func equal<T: Equatable>(a: T, b: T) -> Bool {
+    return a == b
+}
+
+print(equal(a: 3, b: 4))
 
 // 예시4
 
