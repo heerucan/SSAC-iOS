@@ -8,9 +8,28 @@
 import UIKit
 
 extension UIViewController {
-    func transitionViewController<T: UIViewController>(storyboard sb: String, viewController vc: T) {
+    
+    enum TransitionStyle {
+        case present
+        case push
+    }
+    
+    func transitionViewController<T: UIViewController>(storyboard sb: String,
+                                                       viewController vc: T,
+                                                       transitionStyle style: TransitionStyle,
+                                                       completion: ((T) -> Void)? = nil) {
+        
         let storyboard = UIStoryboard(name: sb, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: T.reuseIdentifier) as? T else { return }
-        self.present(viewController, animated: true)
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: T.reuseIdentifier) as? T
+        else { return }
+        completion?(viewController)
+
+        switch style {
+        case .present:
+            viewController.modalPresentationStyle = .overFullScreen
+            self.present(viewController, animated: true)
+        case .push:
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
 }
