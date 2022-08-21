@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+final class ThirdViewController: UIViewController {
 
     // MARK: - @IBOutlet
     
@@ -22,9 +22,10 @@ class ThirdViewController: UIViewController {
     }
     
     @IBAction func touchupSkipButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: SearchViewController.reuseIdentifier) as? SearchViewController else { return }
-        navigationController?.pushViewController(viewController, animated: true)
+        transitionViewController(
+            storyboard: Storyboard.main,
+            viewController: SearchViewController(),
+            transitionStyle: .push)
     }
     
     // MARK: - Configure UI & Layout

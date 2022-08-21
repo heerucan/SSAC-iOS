@@ -68,24 +68,22 @@ final class SearchViewController: UIViewController {
     // MARK: - @objc
     
     @objc func touchupLeftButton() {
-        let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: LocationViewController.reuseIdentifier)
-                as? LocationViewController
-        else { return }
-        navigationController?.pushViewController(viewController, animated: true)
+        transitionViewController(
+            storyboard: Storyboard.main,
+            viewController: LocationViewController(),
+            transitionStyle: .push)
     }
     
     @objc func touchupRightButton() { }
     
     @objc func touchupLinkButton(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: WebViewController.reuseIdentifier)
-                as? WebViewController
-        else { return }
-        viewController.modalPresentationStyle = .overFullScreen
-        viewController.movieID = movieList[sender.tag].id
-        present(viewController, animated: true)
-    }  
+        transitionViewController(
+            storyboard: Storyboard.main,
+            viewController: WebViewController(),
+            transitionStyle: .present) { vc in
+                vc.movieID = self.movieList[sender.tag].id
+            }
+    }
 }
 
 // MARK: - UITableViewDataSource, UITableViewDelegate
@@ -111,11 +109,12 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let sb = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as?
-                DetailViewController else { return }
-        vc.setupData(data: movieList[indexPath.row])
-        self.navigationController?.pushViewController(vc, animated: true)
+        transitionViewController(
+            storyboard: Storyboard.main,
+            viewController: DetailViewController(),
+            transitionStyle: .push) { vc in
+                vc.setupData(data: self.movieList[indexPath.row])
+            }
     }
 }
 

@@ -73,6 +73,7 @@ final class DetailViewController: UIViewController {
         movieTitle = data.title
         overview = data.overview
         movieID = data.id
+        print("디텔뷰", data)
     }
     
     // MARK: - @objc
@@ -81,13 +82,14 @@ final class DetailViewController: UIViewController {
         isExpand = !isExpand
         self.detailTableView.reloadData()
     }
-
+    
     @objc func touchupRightBarButton() {
-        let storyboard = UIStoryboard(name: Storyboard.main, bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: ContentViewController.reuseIdentifier)
-                as? ContentViewController else { return }
-        viewController.movieID = movieID
-        navigationController?.pushViewController(viewController, animated: true)
+        transitionViewController(
+            storyboard: Storyboard.main,
+            viewController: ContentViewController(),
+            transitionStyle: .push) { vc in
+                vc.movieID = self.movieID
+            }
     }
 }
 

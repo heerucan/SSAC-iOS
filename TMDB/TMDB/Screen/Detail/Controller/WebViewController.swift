@@ -25,6 +25,7 @@ final class WebViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         requestVideo(movieID: movieID)
+        
     }
     
     // MARK: - @IBAction
