@@ -19,23 +19,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        UserDefaults.standard.set(false, forKey: "First") // > 이건 sceneDelegate에 있으면 안됨
         // 왜냐하면 앱이 시작될 때마다 값이
         
-        guard let scene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: scene)
-        
-        if UserDefaults.standard.bool(forKey: "First") {
-            let sb = UIStoryboard(name: "Trend", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "MyViewController") as! MyViewController
-            
-            window?.rootViewController = UINavigationController(rootViewController: vc)
-        } else {
-            
-            let sb = UIStoryboard(name: "Trend", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: BucketListTableViewController.identifier) as! BucketListTableViewController
-            
-            window?.rootViewController = UINavigationController(rootViewController: vc)
-        }
-        
-        window?.makeKeyAndVisible() // window에 실제로 이 rootViewController를 보여주는 역할
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        window = UIWindow(windowScene: scene)
+//
+//        if UserDefaults.standard.bool(forKey: "First") {
+//            let sb = UIStoryboard(name: "Trend", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "MyViewController") as! MyViewController
+//
+//            window?.rootViewController = UINavigationController(rootViewController: vc)
+//        } else {
+//
+//            let sb = UIStoryboard(name: "Trend", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: BucketListTableViewController.identifier) as! BucketListTableViewController
+//
+//            window?.rootViewController = UINavigationController(rootViewController: vc)
+//        }
+//
+//        window?.makeKeyAndVisible() // window에 실제로 이 rootViewController를 보여주는 역할
 
         
     }
