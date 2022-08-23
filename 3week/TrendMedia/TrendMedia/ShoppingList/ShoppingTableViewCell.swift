@@ -25,5 +25,6 @@ class ShoppingTableViewCell: UITableViewCell {
     }
 
     @IBAction func clickedStarButton(_ sender: Any) {
+        
     }
 }
