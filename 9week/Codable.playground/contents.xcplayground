@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' buildActiveScheme='true' importAppTypes='true'>
+    <pages>
+        <page name='example2'/>
+        <page name='example1'/>
+        <page name='example3'/>
+        <page name='example4'/>
+        <page name='example5'/>
+        <page name='Encoding'/>
+        <page name='example7'/>
+        <page name='example8'/>
+    </pages>
+</playground>
