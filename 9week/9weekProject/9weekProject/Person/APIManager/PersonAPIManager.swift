@@ -29,8 +29,6 @@ class PersonAPIManager {
             URLQueryItem(name: "region", value: language)
         ]
         
-        URLSession.shared.dataTask(with: <#T##URLRequest#>, completionHandler: <#T##(Data?, URLResponse?, Error?) -> Void#>)
-        
         URLSession.shared.dataTask(with: component.url!) { data, response, error in
             
             DispatchQueue.main.async {
