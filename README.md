@@ -24,6 +24,8 @@
 <br>
 
 ### **🥳 Mini Project**
+> 구현 화면은 추후 업데이트할 예정입니다!
+
 |PROJECT|ISSUE|DESCRIPTION|PERIOD|
 |:-:|:-:|:-|:-:|
 |[`Tamagotchi`](https://github.com/heerucan/SSAC-Tamagotchi)|[🛟](https://github.com/heerucan/SSAC-Tamagotchi/issues)|- **`🦋1차 평가 프로젝트🦋`** <br> - `Storyboard`를 베이스로 Layout 구현 <br> - `UserDefaults`에 값을 저장하고 삭제해서 사용자의 상태에 따라 보여주는 첫 화면을 다르게 구현 <br> - `ReuseableViewProtocol`을 사용해서 뷰컨/셀의 identifier 중복 코드 개선|`07.22 - 07.25`|
