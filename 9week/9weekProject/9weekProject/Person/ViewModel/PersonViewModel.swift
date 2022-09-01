@@ -17,6 +17,7 @@ class PersonViewModel {
             guard let person = person else {
                 return
             }
+            print(person, "fetchPerson 값이 있나?")
             self.list.value = person
             dump(person)
         }

@@ -38,21 +38,20 @@ class Observable<T> { // 양방향 바인딩
         closure(value) // 외부에서 들어온 값을 먼저 반영해주고
         listener = closure // 들어온 값을 내부에서도 반영해주기 위해 listener도 타입이 같아서 프로퍼티 변수에 담아주고, didSet을 통해 변경 시마다 대응
     }
-    
 }
 
-class User {
-        
-    private var listener: ((String) -> Void)?
-    
-    var value: String {
-        didSet {
-            print("데이터 바뀜!")
-            listener?(value) // label.text = value처럼 해주려고 함
-        }
-    }
-    
-    init(_ value: String) {
-        self.value = value
-    }
-}
+//class User {
+//        
+//    private var listener: ((String) -> Void)?
+//    
+//    var value: String {
+//        didSet {
+//            print("데이터 바뀜!")
+//            listener?(value) // label.text = value처럼 해주려고 함
+//        }
+//    }
+//    
+//    init(_ value: String) {
+//        self.value = value
+//    }
+//}
