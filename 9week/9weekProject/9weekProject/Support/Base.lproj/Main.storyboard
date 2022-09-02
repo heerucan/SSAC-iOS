@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qlQ-qS-xp1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZWM-NS-CID">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -238,6 +238,199 @@
             </objects>
             <point key="canvasLocation" x="1628" y="67"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HGK-zt-z2I">
+            <objects>
+                <viewController storyboardIdentifier="GCDViewController" id="ZWM-NS-CID" customClass="GCDViewController" customModule="_weekProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bog-uR-Fw1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ya-NM-Ij0">
+                                <rect key="frame" x="50" y="64" width="314" height="28.5"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Serial(Main)/Sync">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="serialSync:" destination="tcE-Wu-Dx2" eventType="touchUpInside" id="exV-hC-FU4"/>
+                                    <action selector="serialSync:" destination="ZWM-NS-CID" eventType="touchUpInside" id="geV-e9-qFd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ccM-qh-G0V">
+                                <rect key="frame" x="50" y="117.5" width="314" height="28.5"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Serial(Main)/Async">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="serialAsync:" destination="ZWM-NS-CID" eventType="touchUpInside" id="bT5-pc-aPz"/>
+                                    <action selector="serialAsync:" destination="tcE-Wu-Dx2" eventType="touchUpInside" id="o6e-jB-46t"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2VO-Zc-Hd1">
+                                <rect key="frame" x="50" y="171" width="314" height="28.5"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Concurrent(Global)/Sync">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="globalSync:" destination="tcE-Wu-Dx2" eventType="touchUpInside" id="5PA-BD-iqJ"/>
+                                    <action selector="globalSync:" destination="ZWM-NS-CID" eventType="touchUpInside" id="k0i-eu-zjS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vtv-cc-xzf">
+                                <rect key="frame" x="50" y="224.5" width="314" height="28.5"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Concurrent(Global)/Async">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="globalAsync:" destination="tcE-Wu-Dx2" eventType="touchUpInside" id="2GS-cJ-lhh"/>
+                                    <action selector="globalAsync:" destination="ZWM-NS-CID" eventType="touchUpInside" id="nNl-Nj-pc2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VhB-8R-oSn">
+                                <rect key="frame" x="50" y="278" width="314" height="29"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GCD QoS (Quality of Service)">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="qos:" destination="ZWM-NS-CID" eventType="touchUpInside" id="Xxs-6H-r1J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzw-rl-Xqy">
+                                <rect key="frame" x="50" y="332" width="314" height="29"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DispatchGroup">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="dispatchGroup:" destination="ZWM-NS-CID" eventType="touchUpInside" id="gzj-Mf-tQ1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0QK-6P-eHG">
+                                <rect key="frame" x="50" y="386" width="314" height="29"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DispatchGroup - NASA">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nasaDispatchGroupButton:" destination="ZWM-NS-CID" eventType="touchUpInside" id="Yd5-1b-BFd"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5yp-1L-eI7">
+                                <rect key="frame" x="50" y="435" width="87.5" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="QRU-9V-ZoY"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38G-E9-TrW">
+                                <rect key="frame" x="50" y="555" width="314" height="29"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DispatchGroup - enter/leave - NASA">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nasaEnterLeaveDispatchGroupButton:" destination="ZWM-NS-CID" eventType="touchUpInside" id="i2L-7e-j5C"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BSI-9p-YEr">
+                                <rect key="frame" x="167.5" y="435" width="79" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="a2C-IM-xHZ"/>
+                                    <constraint firstAttribute="width" constant="79" id="xZF-K0-hHE"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wai-8C-82K">
+                                <rect key="frame" x="276.5" y="435" width="87.5" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="lQ5-Hu-3gw"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZP-be-DEd">
+                                <rect key="frame" x="50" y="609" width="314" height="29"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="RaceCondition">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="0.0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="raceCondition:" destination="ZWM-NS-CID" eventType="touchUpInside" id="Kaf-7N-orm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hoD-nl-2t1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Ya-NM-Ij0" firstAttribute="centerX" secondItem="bog-uR-Fw1" secondAttribute="centerX" id="0v1-Fn-fPb"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="Pzw-rl-Xqy" secondAttribute="trailing" constant="50" id="0z2-DK-EVf"/>
+                            <constraint firstItem="MZP-be-DEd" firstAttribute="top" secondItem="38G-E9-TrW" secondAttribute="bottom" constant="25" id="3dN-Ki-2OX"/>
+                            <constraint firstItem="Vtv-cc-xzf" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="43g-aH-a26"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="0QK-6P-eHG" secondAttribute="trailing" constant="50" id="6Kq-gg-fcJ"/>
+                            <constraint firstItem="BSI-9p-YEr" firstAttribute="centerX" secondItem="bog-uR-Fw1" secondAttribute="centerX" id="7R4-9P-EuR"/>
+                            <constraint firstItem="5yp-1L-eI7" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="ACY-g0-SC2"/>
+                            <constraint firstItem="MZP-be-DEd" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="AwJ-Kg-Du9"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="38G-E9-TrW" secondAttribute="trailing" constant="50" id="CPp-Y2-LkN"/>
+                            <constraint firstItem="BSI-9p-YEr" firstAttribute="leading" secondItem="5yp-1L-eI7" secondAttribute="trailing" constant="30" id="Cme-aT-ccY"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="MZP-be-DEd" secondAttribute="trailing" constant="50" id="EGH-vo-4GW"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="1Ya-NM-Ij0" secondAttribute="trailing" constant="50" id="Gdq-d2-10D"/>
+                            <constraint firstItem="ccM-qh-G0V" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="Ggh-Ow-Efy"/>
+                            <constraint firstItem="wai-8C-82K" firstAttribute="leading" secondItem="BSI-9p-YEr" secondAttribute="trailing" constant="30" id="IxA-qL-XRc"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="Vtv-cc-xzf" secondAttribute="trailing" constant="50" id="KkP-HP-bae"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="VhB-8R-oSn" secondAttribute="trailing" constant="50" id="Kuf-x3-wgr"/>
+                            <constraint firstItem="38G-E9-TrW" firstAttribute="top" secondItem="5yp-1L-eI7" secondAttribute="bottom" constant="20" id="Mma-rX-uVN"/>
+                            <constraint firstItem="1Ya-NM-Ij0" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="O2q-en-qhG"/>
+                            <constraint firstItem="5yp-1L-eI7" firstAttribute="top" secondItem="0QK-6P-eHG" secondAttribute="bottom" constant="20" id="ORP-tC-hBp"/>
+                            <constraint firstItem="38G-E9-TrW" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="P6l-N9-RER"/>
+                            <constraint firstItem="wai-8C-82K" firstAttribute="top" secondItem="0QK-6P-eHG" secondAttribute="bottom" constant="20" id="SVf-7P-hpO"/>
+                            <constraint firstItem="VhB-8R-oSn" firstAttribute="top" secondItem="Vtv-cc-xzf" secondAttribute="bottom" constant="25" id="WvL-rY-aQd"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="2VO-Zc-Hd1" secondAttribute="trailing" constant="50" id="XQu-GM-4Vh"/>
+                            <constraint firstItem="2VO-Zc-Hd1" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="YUC-K1-dZw"/>
+                            <constraint firstItem="Pzw-rl-Xqy" firstAttribute="top" secondItem="VhB-8R-oSn" secondAttribute="bottom" constant="25" id="ZoD-pu-BbB"/>
+                            <constraint firstItem="BSI-9p-YEr" firstAttribute="top" secondItem="0QK-6P-eHG" secondAttribute="bottom" constant="20" id="cYQ-JE-O0j"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="wai-8C-82K" secondAttribute="trailing" constant="50" id="cuz-Dg-S9H"/>
+                            <constraint firstItem="2VO-Zc-Hd1" firstAttribute="top" secondItem="ccM-qh-G0V" secondAttribute="bottom" constant="25" id="dXh-FJ-OZX"/>
+                            <constraint firstItem="VhB-8R-oSn" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="gcd-8t-P19"/>
+                            <constraint firstItem="ccM-qh-G0V" firstAttribute="top" secondItem="1Ya-NM-Ij0" secondAttribute="bottom" constant="25" id="lGj-6T-Sga"/>
+                            <constraint firstItem="hoD-nl-2t1" firstAttribute="trailing" secondItem="ccM-qh-G0V" secondAttribute="trailing" constant="50" id="m2X-el-PyR"/>
+                            <constraint firstItem="0QK-6P-eHG" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="p8T-aZ-sIi"/>
+                            <constraint firstItem="Vtv-cc-xzf" firstAttribute="top" secondItem="2VO-Zc-Hd1" secondAttribute="bottom" constant="25" id="pAG-0i-WyA"/>
+                            <constraint firstItem="Pzw-rl-Xqy" firstAttribute="leading" secondItem="hoD-nl-2t1" secondAttribute="leading" constant="50" id="pFW-T2-hUa"/>
+                            <constraint firstItem="0QK-6P-eHG" firstAttribute="top" secondItem="Pzw-rl-Xqy" secondAttribute="bottom" constant="25" id="t3y-Bc-CMl"/>
+                            <constraint firstItem="BSI-9p-YEr" firstAttribute="top" secondItem="0QK-6P-eHG" secondAttribute="bottom" constant="20" id="wyW-9D-uHf"/>
+                            <constraint firstItem="1Ya-NM-Ij0" firstAttribute="top" secondItem="hoD-nl-2t1" secondAttribute="top" constant="20" id="yz6-Ov-uvI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nasaImage" destination="5yp-1L-eI7" id="spq-CV-p1A"/>
+                        <outlet property="nasaImage2" destination="BSI-9p-YEr" id="SkW-E8-Nrx"/>
+                        <outlet property="nasaImage3" destination="wai-8C-82K" id="CRL-ng-qSD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oa3-Cq-Iak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="tcE-Wu-Dx2" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2428.985507246377" y="66.964285714285708"/>
+        </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
@@ -245,6 +438,9 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

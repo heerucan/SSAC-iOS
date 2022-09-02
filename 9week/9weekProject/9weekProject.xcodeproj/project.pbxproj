@@ -21,6 +21,7 @@
 		5B7230A528BDA7C90022F63B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230A428BDA7C90022F63B /* APIError.swift */; };
 		5B7230A728BDA8100022F63B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230A628BDA8100022F63B /* Person.swift */; };
 		5B7230A928BDB7610022F63B /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7230A828BDB7610022F63B /* URLSession+.swift */; };
+		5B7C35F628C186930051FC0C /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7C35F528C186930051FC0C /* GCDViewController.swift */; };
 		5B972B8628BEF8CC001AAD7B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B972B8528BEF8CC001AAD7B /* Observable.swift */; };
 		5B972B8828BEFC0B001AAD7B /* PersonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B972B8728BEFC0B001AAD7B /* PersonViewModel.swift */; };
 		5B972BE728C03801001AAD7B /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B972BE628C03801001AAD7B /* Sample.swift */; };
@@ -47,6 +48,7 @@
 		5B7230A428BDA7C90022F63B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		5B7230A628BDA8100022F63B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		5B7230A828BDB7610022F63B /* URLSession+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+.swift"; sourceTree = "<group>"; };
+		5B7C35F528C186930051FC0C /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		5B972B8528BEF8CC001AAD7B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		5B972B8728BEFC0B001AAD7B /* PersonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewModel.swift; sourceTree = "<group>"; };
 		5B972BE628C03801001AAD7B /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
@@ -87,10 +89,8 @@
 		5B72307C28BD94EB0022F63B /* 9weekProject */ = {
 			isa = PBXGroup;
 			children = (
-				5B972BE828C04882001AAD7B /* Login */,
 				5B7230A328BDA7B80022F63B /* Global */,
-				5B72309C28BDA7350022F63B /* Person */,
-				5B72309328BD951A0022F63B /* Lotto */,
+				5B7C35F228C186650051FC0C /* Screen */,
 				5B72309728BD95450022F63B /* Support */,
 				5B72308B28BD94EC0022F63B /* Info.plist */,
 			);
@@ -119,7 +119,6 @@
 		5B72309728BD95450022F63B /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				5B972BEB28C048F1001AAD7B /* Practice */,
 				5B72307D28BD94EB0022F63B /* AppDelegate.swift */,
 				5B72307F28BD94EB0022F63B /* SceneDelegate.swift */,
 				5B72308328BD94EB0022F63B /* Main.storyboard */,
@@ -172,6 +171,34 @@
 				5B972B8528BEF8CC001AAD7B /* Observable.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		5B7C35F228C186650051FC0C /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				5B7C35F328C1867C0051FC0C /* GCD */,
+				5B972BEB28C048F1001AAD7B /* Practice */,
+				5B72309C28BDA7350022F63B /* Person */,
+				5B72309328BD951A0022F63B /* Lotto */,
+				5B972BE828C04882001AAD7B /* Login */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		5B7C35F328C1867C0051FC0C /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				5B7C35F428C186820051FC0C /* Controller */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		5B7C35F428C186820051FC0C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B7C35F528C186930051FC0C /* GCDViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		5B972B8928BEFC0F001AAD7B /* ViewModel */ = {
@@ -329,6 +356,7 @@
 				5B7230A028BDA75A0022F63B /* APIKey.swift in Sources */,
 				5B972BE728C03801001AAD7B /* Sample.swift in Sources */,
 				5B72309628BD952F0022F63B /* LottoAPIManager.swift in Sources */,
+				5B7C35F628C186930051FC0C /* GCDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
