@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  9weekProject
+
+  Created by heerucan on 2022/09/06.
+  
+*/
+
+"CFBundleDisplayName" = "lvxi";
+"NSLocationWhenInUseUsageDescription" = "使用用户当前位置信息来应对多国语言 。";

@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  9weekProject
+
+  Created by heerucan on 2022/09/06.
+  
+*/
+
+"navigation_title" = "日记本";
+
+"common_cancel" = "取消";
+
+"search_placeholder" = "请输入。";
+
+"main_age_placeholder" = "请输入年龄。";
+
+"introduce" = "我的绰号是%@";
+
+"number_test" = "我%lld岁
+";

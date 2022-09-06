@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  9weekProject
+
+  Created by heerucan on 2022/09/06.
+  
+*/
+
+"navigation_title" = "루희다이어리";
+
+"common_cancel" = "취소";
+
+"search_placeholder" = "입력해주세요";
+
+"main_age_placeholder" = "나이를 입력해보세요";
+
+"introduce" = "제 이름은 %@입니다";
+
+"number_test" = "저는 %lld 살입니다";

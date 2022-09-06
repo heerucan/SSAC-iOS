@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     
     private var viewModel = PersonViewModel()
-
+    
     @IBOutlet weak var lotto: UILabel!
     @IBOutlet weak var tableView: UITableView! {
         didSet {

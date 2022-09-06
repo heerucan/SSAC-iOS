@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  9weekProject
+
+  Created by heerucan on 2022/09/06.
+  
+*/
+
+"navigation_title" = "Ruhee Diary";
+
+"common_cancel" = "cancel";
+
+"search_placeholder" = "search something";
+
+"main_age_placeholder" = "how old?";
+
+"introduce" = "My nickname is %@";
+
+"number_test" = "I am %lld old";

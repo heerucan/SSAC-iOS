@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  9weekProject
+
+  Created by heerucan on 2022/09/06.
+  
+*/
+
+"CFBundleDisplayName" = "Ruhee";
+"NSLocationWhenInUseUsageDescription" = "Use your current location information for multilingual response.";

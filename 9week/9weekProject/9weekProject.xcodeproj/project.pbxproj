@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B3652F128C6D98600E91E1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B3652F328C6D98600E91E1E /* Localizable.strings */; };
+		5B3652FC28C6DBDA00E91E1E /* LocalizableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3652FB28C6DBDA00E91E1E /* LocalizableViewController.swift */; };
+		5B3652FF28C6E0D100E91E1E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B36530128C6E0D100E91E1E /* InfoPlist.strings */; };
 		5B72307E28BD94EB0022F63B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72307D28BD94EB0022F63B /* AppDelegate.swift */; };
 		5B72308028BD94EB0022F63B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72307F28BD94EB0022F63B /* SceneDelegate.swift */; };
 		5B72308228BD94EB0022F63B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B72308128BD94EB0022F63B /* ViewController.swift */; };
@@ -32,6 +35,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B3652EB28C6D96B00E91E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		5B3652EC28C6D96B00E91E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		5B3652ED28C6D97400E91E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		5B3652EE28C6D97400E91E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5B3652F228C6D98600E91E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B3652F428C6D98700E91E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5B3652F528C6D98800E91E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5B3652F728C6DA0000E91E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		5B3652F928C6DA2300E91E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5B3652FB28C6DBDA00E91E1E /* LocalizableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableViewController.swift; sourceTree = "<group>"; };
+		5B36530028C6E0D100E91E1E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B36530228C6E0D500E91E1E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		5B36530328C6E0D900E91E1E /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5B72307A28BD94EB0022F63B /* 9weekProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 9weekProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B72307D28BD94EB0022F63B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B72307F28BD94EB0022F63B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3652FA28C6DBCA00E91E1E /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				5B3652FB28C6DBDA00E91E1E /* LocalizableViewController.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		5B72307128BD94EA0022F63B = {
 			isa = PBXGroup;
 			children = (
@@ -122,8 +146,10 @@
 				5B72307D28BD94EB0022F63B /* AppDelegate.swift */,
 				5B72307F28BD94EB0022F63B /* SceneDelegate.swift */,
 				5B72308328BD94EB0022F63B /* Main.storyboard */,
-				5B72308628BD94EC0022F63B /* Assets.xcassets */,
 				5B72308828BD94EC0022F63B /* LaunchScreen.storyboard */,
+				5B72308628BD94EC0022F63B /* Assets.xcassets */,
+				5B3652F328C6D98600E91E1E /* Localizable.strings */,
+				5B36530128C6E0D100E91E1E /* InfoPlist.strings */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -176,6 +202,7 @@
 		5B7C35F228C186650051FC0C /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				5B3652FA28C6DBCA00E91E1E /* Localizable */,
 				5B7C35F328C1867C0051FC0C /* GCD */,
 				5B972BEB28C048F1001AAD7B /* Practice */,
 				5B72309C28BDA7350022F63B /* Person */,
@@ -309,6 +336,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ko,
 			);
 			mainGroup = 5B72307128BD94EA0022F63B;
 			productRefGroup = 5B72307B28BD94EB0022F63B /* Products */;
@@ -325,6 +354,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B3652F128C6D98600E91E1E /* Localizable.strings in Resources */,
+				5B3652FF28C6E0D100E91E1E /* InfoPlist.strings in Resources */,
 				5B72309228BD95050022F63B /* .gitignore in Resources */,
 				5B72308A28BD94EC0022F63B /* LaunchScreen.storyboard in Resources */,
 				5B72308728BD94EC0022F63B /* Assets.xcassets in Resources */,
@@ -340,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B972BEA28C0489A001AAD7B /* LoginViewController.swift in Sources */,
+				5B3652FC28C6DBDA00E91E1E /* LocalizableViewController.swift in Sources */,
 				5B972B8628BEF8CC001AAD7B /* Observable.swift in Sources */,
 				5B72308228BD94EB0022F63B /* ViewController.swift in Sources */,
 				5B72309A28BD9BAE0022F63B /* Lotto.swift in Sources */,
@@ -363,10 +395,33 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5B3652F328C6D98600E91E1E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B3652F228C6D98600E91E1E /* en */,
+				5B3652F428C6D98700E91E1E /* zh-Hans */,
+				5B3652F528C6D98800E91E1E /* ko */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		5B36530128C6E0D100E91E1E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B36530028C6E0D100E91E1E /* en */,
+				5B36530228C6E0D500E91E1E /* zh-Hans */,
+				5B36530328C6E0D900E91E1E /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		5B72308328BD94EB0022F63B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				5B72308428BD94EB0022F63B /* Base */,
+				5B3652EB28C6D96B00E91E1E /* zh-Hans */,
+				5B3652ED28C6D97400E91E1E /* ko */,
+				5B3652F728C6DA0000E91E1E /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -375,6 +430,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				5B72308928BD94EC0022F63B /* Base */,
+				5B3652EC28C6D96B00E91E1E /* zh-Hans */,
+				5B3652EE28C6D97400E91E1E /* ko */,
+				5B3652F928C6DA2300E91E1E /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -386,6 +444,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -447,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
