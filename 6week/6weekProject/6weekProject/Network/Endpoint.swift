@@ -11,6 +11,7 @@ enum Endpoint {
     case blog
     case cafe
     case clova
+    case shopping
     
     var requestURL: String {
         switch self {
@@ -20,6 +21,8 @@ enum Endpoint {
             return URL.makeURL("cafe?query=")
         case .clova:
             return "https://openapi.naver.com/v1/vision/celebrity"
+        case .shopping:
+            return "https://openapi.naver.com/v1/search/shop.json?query="
         }
     }
 }

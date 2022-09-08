@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SwiftyJSON
 
 /*
@@ -33,15 +34,15 @@ class ViewController: UIViewController {
     private var isExpanded = false // false면 2줄, true면 0줄
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        searchBlog(keyword: "Swift")
-        
+        requestShoppingList(query: "spao")
+//        searchBlog(keyword: "Swift")
         let user = User()
         user.nickname
- 
     }
     
     @IBAction func expandCell(_ sender: UIBarButtonItem) {
@@ -53,6 +54,12 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension // 모든 섹션 셀에 대해 유동적
+    }
+    
+    func requestShoppingList(query: String) {
+        ClovaAPIManager.shared.getImage(query: query) { json in
+            print(json[0])
+        }
     }
 
     

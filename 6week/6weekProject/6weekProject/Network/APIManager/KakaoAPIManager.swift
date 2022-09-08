@@ -21,7 +21,7 @@ struct Person {
         let user = User()
         user.name
         user.nickname
-        user.age
+//        user.age
     }
 }
 

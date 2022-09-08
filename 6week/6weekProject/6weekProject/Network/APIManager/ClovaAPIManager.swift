@@ -17,6 +17,36 @@ struct ClovaAPIManager {
     private init() { }
     
     typealias completionHandler = (String) -> ()
+    typealias completion = ([String]) -> ()
+
+    
+    // MARK: - GET : Get Image
+    
+    func getImage(query: String, completion: @escaping completion) {
+        
+        guard let text = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        let url = "https://openapi.naver.com/v1/search/shop.json?query=\(text)"
+        
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID,
+                                   "X-Naver-Client-Secret": APIKey.NAVER_KEY]
+        
+        // UIImage를 텍스트 형태 (바이너리 타입)로 변환해서 전달
+//        guard let imageData = image.jpegData(compressionQuality: 0.0) else { return }
+
+        AF.request(url, method: .get, headers: header).validate(statusCode: 200..<400).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                let image = json["items"].arrayValue.map { $0["image"].stringValue.replacingOccurrences(of: "'\'", with: "") }
+                    
+                completion(image)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
     
     // MARK: - POST : POST IMAGE
     
