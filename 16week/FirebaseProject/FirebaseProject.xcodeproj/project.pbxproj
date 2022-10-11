@@ -16,6 +16,7 @@
 		5B480F5D28F4EE6000259540 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 5B480F5C28F4EE6000259540 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		5B480F5F28F4EE6000259540 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 5B480F5E28F4EE6000259540 /* FirebaseCrashlytics */; };
 		5B480F6128F4EE6000259540 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 5B480F6028F4EE6000259540 /* FirebaseMessaging */; };
+		5B480F6428F4F70A00259540 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B480F6328F4F70A00259540 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		5B05990028F4ED1200CBDBE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B05990328F4ED1200CBDBE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B05990528F4ED1200CBDBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B480F6228F4F1F800259540 /* FirebaseProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FirebaseProject.entitlements; sourceTree = "<group>"; };
+		5B480F6328F4F70A00259540 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,7 @@
 		5B0598F628F4ED0F00CBDBE5 /* FirebaseProject */ = {
 			isa = PBXGroup;
 			children = (
+				5B480F6228F4F1F800259540 /* FirebaseProject.entitlements */,
 				5B0598F728F4ED0F00CBDBE5 /* AppDelegate.swift */,
 				5B0598F928F4ED0F00CBDBE5 /* SceneDelegate.swift */,
 				5B0598FB28F4ED0F00CBDBE5 /* ViewController.swift */,
@@ -69,6 +73,7 @@
 				5B05990028F4ED1200CBDBE5 /* Assets.xcassets */,
 				5B05990228F4ED1200CBDBE5 /* LaunchScreen.storyboard */,
 				5B05990528F4ED1200CBDBE5 /* Info.plist */,
+				5B480F6328F4F70A00259540 /* GoogleService-Info.plist */,
 			);
 			path = FirebaseProject;
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B05990428F4ED1200CBDBE5 /* LaunchScreen.storyboard in Resources */,
+				5B480F6428F4F70A00259540 /* GoogleService-Info.plist in Resources */,
 				5B05990128F4ED1200CBDBE5 /* Assets.xcassets in Resources */,
 				5B0598FF28F4ED0F00CBDBE5 /* Main.storyboard in Resources */,
 			);
@@ -301,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirebaseProject/FirebaseProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5GQ6QL9S3X;
@@ -329,6 +336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FirebaseProject/FirebaseProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5GQ6QL9S3X;
