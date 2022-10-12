@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        UIViewController.swizzleMethod()
+        
         FirebaseApp.configure()
         
         // 알림 시스템에 앱 등록 - 권한 요청
@@ -40,14 +42,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // 메시지 대리자 설정
         Messaging.messaging().delegate = self
         
-        // 현재 등록된 토큰 가져오기
-        Messaging.messaging().token { token, error in
-          if let error = error {
-            print("Error fetching FCM registration token: \(error)")
-          } else if let token = token {
-            print("FCM registration token: \(token)")
-          }
-        }
+        // 현재 등록된 토큰 가져오기 -> 유저가 탈퇴할 때 해당 코드가 필요하지만, 앱이 재시작될 때마다 해당 부분이 필요하지는 않다.
+//        Messaging.messaging().token { token, error in
+//          if let error = error {
+//            print("Error fetching FCM registration token: \(error)")
+//          } else if let token = token {
+//            print("FCM registration token: \(token)")
+//          }
+//        }
 
         return true
     }
@@ -80,11 +82,25 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     // foreground에서 알림 수신: 로컬/푸시 동일
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        completionHandler([.badge, .sound, .banner, .list])
+       
+        // 특정화면에서는 포그라운드 푸시를 제한할 수 있다
+        guard let viewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController?.topViewController else { return }
+        
+        print("😊", viewController)
+        
+        // SettingViewController에서는 푸시를 제한한다.
+        if viewController is SettingViewController {
+            completionHandler([])
+        } else {
+            completionHandler([.badge, .sound, .banner, .list])
+            
+        }
     }
     
     // 푸시 클릭
     // 유저가 푸시를 클릭했을 때에만 수신 확인 가능
+    
+    // 특정 푸시를 클릭하면 특정 상세 화면으로 화면 전환 >
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         print("사용자가 푸시를 클릭했습니다.")
         print(response.notification.request.content.title)
@@ -97,6 +113,25 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             print("홈 화면으로 넘긴다.")
         } else {
             print("그냥 냅둔다.")
+        }
+        
+        
+        // topViewController는 우리가 만든 것
+        guard let viewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController?.topViewController else { return }
+        
+        print("😊", viewController)
+        
+        // 클래스가 ViewController라면 그냥 무조건 SettingViewController로 넘겨주는 것임
+        if viewController is ViewController {
+            viewController.navigationController?.pushViewController(SettingViewController(), animated: true)
+        }
+        
+        if viewController is ProfileViewController {
+            viewController.dismiss(animated: true)
+        }
+        
+        if viewController is SettingViewController {
+            viewController.navigationController?.popViewController(animated: true)
         }
     }
 }
