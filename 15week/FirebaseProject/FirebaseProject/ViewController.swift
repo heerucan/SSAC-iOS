@@ -11,7 +11,6 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -107,6 +106,6 @@ extension UIViewController {
     
     // 바꿔주려는 메소드의 실제 작동되는 부분
     @objc func changeViewWillAppear() {
-        print("Change ViewWillAppear SUCCEED🧡")
+        print("🧡내가 만든 ViewWillAppear SUCCEED🧡")
     }
 }
