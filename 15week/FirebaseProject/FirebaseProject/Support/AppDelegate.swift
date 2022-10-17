@@ -18,8 +18,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        aboutRealmMigration()
+        // 10/17 수업에서 Migration 코드 추가
+        let config = Realm.Configuration(schemaVersion: 3) { migration, oldSchemaVersion in
+            
+            if oldSchemaVersion < 1 { // List<DetailTodo> 추가
+                
+            }
+            
+            if oldSchemaVersion < 2 { // Memo EmbeddedObject 추가
+                
+            }
+            
+            if oldSchemaVersion < 3 { // DetailTodo에 deadline 컬럼 추가
+                
+            }
+        }
         
+        Realm.Configuration.defaultConfiguration = config
+        
+//        aboutRealmMigration()
+        
+        // Method Swizzling
         UIViewController.swizzleMethod()
         
         FirebaseApp.configure()
