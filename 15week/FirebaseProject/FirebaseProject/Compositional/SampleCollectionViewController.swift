@@ -7,82 +7,94 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+import RealmSwift
 
-class SampleCollectionViewController: UICollectionViewController {
-
+final class SampleCollectionViewController: UICollectionViewController {
+    
+    // MARK: - Realm
+    
+    var tasks: Results<Todo>!
+    let localRealm = try! Realm()
+    
+    // 2.
+    var cellRegisteration: UICollectionView.CellRegistration<UICollectionViewListCell, Todo>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tasks = localRealm.objects(Todo.self) // realm에서 데이터 가져오기
+        
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        // Do any additional setup after loading the view.
+        
+        // 1.
+        let configuration = UICollectionLayoutListConfiguration(appearance: .grouped)
+        let layout = UICollectionViewCompositionalLayout.list(using: configuration)
+        // UICollectionViewCompositionalLayout은 UICollectionViewLayout를 상속받고 있음
+        collectionView.collectionViewLayout = layout // UICollectionViewLayout
+        
+        // 3. cellType, cell IndexPath, cell에 들어갈 데이터
+        cellRegisteration = UICollectionView.CellRegistration(handler: { cell, indexPath, itemIdentifier in
+            var content = cell.defaultContentConfiguration()
+            content.image = itemIdentifier.importance < 2 ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+            content.text = itemIdentifier.title
+            content.secondaryText = "\(itemIdentifier.detail.count)개의 세부항목"
+            
+            cell.contentConfiguration = content
+        })
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        return tasks.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-        // Configure the cell
-    
+        let item = tasks[indexPath.item]
+        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegisteration, for: indexPath, item: item)
+        
+        // 타입으로서의 프로토콜
+        // 타입 자체를 프로토콜로 선언을 해버리면, 클래스 제약에도 벗어나고, 구조체/열거형 제약에도 벗어나서 어떤 객체든지 값 전달이 가능하다.
+        var test: fruit = apple()
+        test = banana()
+        test = melon()
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
+}
+
+// 클래스 간에 상속만 잘해주면 클래스가 달라도 값을 넣어줄 수 있음
+
+class food {
+    
+}
+
+protocol fruit {
+    
+}
+
+class apple: food, fruit {
+    
+}
+
+class banana: food, fruit {
+    
+}
+
+// 구조체나 열거형은 애초에 상속이 안되는데 food의 속성을 주고 싶은 경우는 어떻게 하나?
+// 이때 프로토콜 개념이 등장
+
+enum strawberry: fruit {
+    
+}
+
+struct melon: fruit {
 
 }
+
+/*
+ let tv = UITableView()
+ tv.delegate = self
+ tv.dataSource = self
+ */
+// 근데 self는 클래스의 인스턴스고, delegate는 프로토콜을 타입으로 가지고 있는 프로퍼티임
+// 결국 프로토콜로서 값을 전달할 수 있었던 것임.
+
