@@ -7,10 +7,19 @@
 
 import UIKit
 
-struct User {
+struct User: Hashable {
+    let id = UUID().uuidString
     let name: String
     let company: String
     let age: Int
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+    
+    static func == (lhs: User, rhs: User) -> Bool {
+        lhs.id == rhs.id
+    }
 }
 
 final class SimpleCollectionViewController: UICollectionViewController {
@@ -24,7 +33,7 @@ final class SimpleCollectionViewController: UICollectionViewController {
         User(name: "태리야끼", company: "두나무", age: 26),
         User(name: "후리구", company: "naver", age: 25),
         User(name: "소깡구", company: "toss", age: 25),
-        User(name: "태리끼", company: "두나무", age: 26),
+        User(name: "태리야끼", company: "두나무", age: 26),
         User(name: "몽구방구", company: "naver", age: 23),
         User(name: "후구", company: "naver", age: 25),
         User(name: "소구", company: "toss", age: 25),
@@ -35,23 +44,12 @@ final class SimpleCollectionViewController: UICollectionViewController {
     
     var cellRegistration: UICollectionView.CellRegistration<UICollectionViewListCell, User>!
     
-    //    var hello: (() -> Void)!
-    //    func welcome() {
-    //        print("hello")
-    //    }
+    var dataSource: UICollectionViewDiffableDataSource<Int, User>!
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        print(hello)
-        ////        hello = welcome // welcome 과 welcome()은 다르다
-        //
-        //        hello = {
-        //            print("hello")
-        //        }
-        //        print(hello)
-        //        hello()
         
         collectionView.collectionViewLayout = createLayout()
         
@@ -92,20 +90,30 @@ final class SimpleCollectionViewController: UICollectionViewController {
             backgroundConfig.strokeColor = .black
             cell.backgroundConfiguration = backgroundConfig
         }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
+        
+        var snapshot = NSDiffableDataSourceSnapshot<Int, User>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(list)
+        dataSource.apply(snapshot)
     }
     
     // MARK: - UICollectionView Delegate / DataSource
-    
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let item = list[indexPath.item]
-        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
-        return cell
-    }
+    // Diffable을 사용한다면 쓰지 않음
+    //    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    //        return list.count
+    //    }
+    //
+    //    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    //
+    //        let item = list[indexPath.item]
+    //        let cell = collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: item)
+    //        return cell
+    //    }
 }
 
 // MARK: - CompositionalLayout

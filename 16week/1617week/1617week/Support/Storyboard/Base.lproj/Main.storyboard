@@ -86,6 +86,63 @@
             </objects>
             <point key="canvasLocation" x="1870" y="115"/>
         </scene>
+        <!--DiffableDataSourceViewController-->
+        <scene sceneID="bdE-Qx-Q0C">
+            <objects>
+                <viewController title="DiffableDataSourceViewController" id="1Qg-Ol-Wr5" customClass="DiffableDataSourceViewController" customModule="_617week" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ix7-kw-N7q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="m4D-Lx-x4e">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gBQ-jp-CSg"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MPd-jV-E9j">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gg9-dD-kNe">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Njh-h6-0Yc">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="d0C-jd-WZK">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YTw-C2-1jK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YTw-C2-1jK" firstAttribute="trailing" secondItem="MPd-jV-E9j" secondAttribute="trailing" id="2ka-Sm-qPA"/>
+                            <constraint firstItem="m4D-Lx-x4e" firstAttribute="top" secondItem="YTw-C2-1jK" secondAttribute="top" id="3oY-ua-EqM"/>
+                            <constraint firstItem="MPd-jV-E9j" firstAttribute="top" secondItem="m4D-Lx-x4e" secondAttribute="bottom" id="V76-Jy-OKh"/>
+                            <constraint firstItem="YTw-C2-1jK" firstAttribute="bottom" secondItem="MPd-jV-E9j" secondAttribute="bottom" id="cyx-no-1Zz"/>
+                            <constraint firstItem="YTw-C2-1jK" firstAttribute="trailing" secondItem="m4D-Lx-x4e" secondAttribute="trailing" id="rD7-j3-MEr"/>
+                            <constraint firstItem="m4D-Lx-x4e" firstAttribute="leading" secondItem="ix7-kw-N7q" secondAttribute="leading" id="tgb-F5-jnn"/>
+                            <constraint firstItem="MPd-jV-E9j" firstAttribute="leading" secondItem="YTw-C2-1jK" secondAttribute="leading" id="yVX-xv-oUb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="MPd-jV-E9j" id="cNH-7T-rkj"/>
+                        <outlet property="searchBar" destination="m4D-Lx-x4e" id="RPZ-fl-79F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uxa-2Z-sH6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2721" y="123"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

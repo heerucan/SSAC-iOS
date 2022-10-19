@@ -14,6 +14,7 @@
 		5B8A7EFC28FE2D9C00E8AC62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B8A7EFB28FE2D9C00E8AC62 /* Assets.xcassets */; };
 		5B8A7EFF28FE2D9C00E8AC62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B8A7EFD28FE2D9C00E8AC62 /* LaunchScreen.storyboard */; };
 		5B8A7F0A28FE38FF00E8AC62 /* SimpleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8A7F0928FE38FF00E8AC62 /* SimpleCollectionViewController.swift */; };
+		5BC92D8F28FF8FAB006D6E61 /* DiffableDataSourceCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC92D8E28FF8FAB006D6E61 /* DiffableDataSourceCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5B8A7EFE28FE2D9C00E8AC62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B8A7F0028FE2D9C00E8AC62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B8A7F0928FE38FF00E8AC62 /* SimpleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleCollectionViewController.swift; sourceTree = "<group>"; };
+		5BC92D8E28FF8FAB006D6E61 /* DiffableDataSourceCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDataSourceCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				5B8A7EF628FE2D9800E8AC62 /* SimpleTableViewController.swift */,
 				5B8A7F0928FE38FF00E8AC62 /* SimpleCollectionViewController.swift */,
+				5BC92D8E28FF8FAB006D6E61 /* DiffableDataSourceCollectionViewController.swift */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BC92D8F28FF8FAB006D6E61 /* DiffableDataSourceCollectionViewController.swift in Sources */,
 				5B8A7F0A28FE38FF00E8AC62 /* SimpleCollectionViewController.swift in Sources */,
 				5B8A7EF728FE2D9800E8AC62 /* SimpleTableViewController.swift in Sources */,
 				5B8A7EF328FE2D9800E8AC62 /* AppDelegate.swift in Sources */,
