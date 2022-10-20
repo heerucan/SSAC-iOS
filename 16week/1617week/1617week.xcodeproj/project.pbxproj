@@ -120,7 +120,6 @@
 				5BEE11642900D77B00CA1913 /* Model */,
 				5BEE11612900D24300CA1913 /* ViewModel */,
 				5BEE11602900D13900CA1913 /* Controller */,
-				5BEE115C2900CF7D00CA1913 /* CObservable.swift */,
 			);
 			path = MVVM;
 			sourceTree = "<group>";
@@ -145,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				5BEE11652900D78800CA1913 /* News.swift */,
+				5BEE115C2900CF7D00CA1913 /* CObservable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

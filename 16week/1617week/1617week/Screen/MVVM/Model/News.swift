@@ -32,10 +32,10 @@ struct News {
 
 extension News {
     private static func itemsInternal() -> [NewsItem] {
-        return [ NewsItem(title: "Conference 2019 Registration Now Open",
-                              date: DateComponents(year: 2019, month: 3, day: 14), body: """
-                    Register by Wednesday, March 20, 2019 at 5:00PM PSD for your chance to join us and thousands
-                    of coders, creators, and crazy ones at this year's Conference 19 in San Jose, June 3-7.
+        return [ NewsItem(title: "루희가 취업했때 어머어머어머 연봉 7천마넌..",
+                              date: DateComponents(year: 2024, month: 3, day: 14), body: """
+                    후리방구가 오늘 취업을 했따는 속보가 들어왔숩니다. 연봉은 7천마넌이구요
+                    복지가 엄청나게 좋다.. 최고방구다... 워라벨도 최고다.. 무야호,, 
                     """),
                  NewsItem(title: "Apply for a Conference19 Scholarship",
                               date: DateComponents(year: 2019, month: 3, day: 14), body: """
