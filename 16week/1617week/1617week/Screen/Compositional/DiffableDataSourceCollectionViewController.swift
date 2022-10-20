@@ -95,15 +95,6 @@ extension DiffableDataSourceViewController {
             return cell
         })
         
-        func performQuery(filter: String?) {
-            
-            // 6. snapshot 생성
-            var snapshot = NSDiffableDataSourceSnapshot<Int, String>()
-            snapshot.appendSections([0])
-            snapshot.appendItems(list)
-            dataSource.apply(snapshot)
-        }
-        
         // 6. snapshot 생성
         var snapshot = NSDiffableDataSourceSnapshot<Int, String>()
         snapshot.appendSections([0])

@@ -126,7 +126,6 @@ extension SimpleCollectionViewController {
         // collectionView의 속성도 여기서 설정해줄 수 있음
         configuration.showsSeparators = false
         configuration.backgroundColor = .systemPink
-        
         let layout = UICollectionViewCompositionalLayout.list(using: configuration)
         collectionView.collectionViewLayout = layout
         return layout

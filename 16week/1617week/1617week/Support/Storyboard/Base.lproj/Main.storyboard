@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OQc-IE-FGt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cy6-y8-axs">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -51,6 +51,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6W-Y2-svL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="115"/>
+        </scene>
+        <!--NewsViewController-->
+        <scene sceneID="25b-Fd-bKy">
+            <objects>
+                <viewController title="NewsViewController" id="cy6-y8-axs" customClass="NewsViewController" customModule="_617week" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HcC-Ov-HFd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pku-FW-Xzm">
+                                <rect key="frame" x="30" y="74" width="354" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jQI-qV-u4X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YgB-j4-MP1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Pku-FW-Xzm" firstAttribute="leading" secondItem="YgB-j4-MP1" secondAttribute="leading" constant="30" id="7xX-uY-k2H"/>
+                            <constraint firstItem="YgB-j4-MP1" firstAttribute="trailing" secondItem="Pku-FW-Xzm" secondAttribute="trailing" constant="30" id="gXR-Vp-OcT"/>
+                            <constraint firstItem="Pku-FW-Xzm" firstAttribute="top" secondItem="YgB-j4-MP1" secondAttribute="top" constant="30" id="lbA-V1-c1R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="numberTextField" destination="Pku-FW-Xzm" id="ttn-kg-FSv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UP1-0v-xRw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="874"/>
         </scene>
         <!--Simple Collection View Controller-->
         <scene sceneID="lf8-mL-aMZ">

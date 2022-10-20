@@ -49,7 +49,7 @@ class LoginViewController: UIViewController {
     // 입력될 때마다 몬가를 할 거야!
     @IBAction func nameTextFieldTextChanged(_ sender: Any) {
         viewModel.name.value = nameTextField.text!
-        viewModel.checkValidation()
+//        viewModel.checkValidation()
     }
     
     @IBAction func emailTextFieldTextChanged(_ sender: Any) {
