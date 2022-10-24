@@ -16,7 +16,7 @@ final class APIService {
     
     typealias completion = ((SearchPhoto?, Int?, Error?) -> Void)
 
-    static func searchPhoto(query: String, completion: @escaping completion) {
+    func searchPhoto(query: String, completion: @escaping completion) {
         let url = "\(APIKey.searchURL)\(query)"
         let header: HTTPHeaders = ["Authorization": APIKey.authorization]
         
