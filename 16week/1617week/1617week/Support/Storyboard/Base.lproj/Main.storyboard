@@ -372,13 +372,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nIP-30-fGO">
+                        <barButtonItem key="leftBarButtonItem" title="새로운 연락처" id="hB5-lk-vn4"/>
                         <rightBarButtonItems>
-                            <barButtonItem title="추가" id="PDU-NC-CZN"/>
-                            <barButtonItem title="리셋" id="Qzz-n5-XEQ"/>
+                            <barButtonItem title="fetch" id="PDU-NC-CZN"/>
+                            <barButtonItem title="reset" id="Qzz-n5-XEQ"/>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="PDU-NC-CZN" id="AWy-vd-lYK"/>
+                        <outlet property="newButton" destination="hB5-lk-vn4" id="4uR-uM-Adi"/>
                         <outlet property="resetButton" destination="Qzz-n5-XEQ" id="S5h-A2-4LJ"/>
                         <outlet property="searchBar" destination="cDA-eP-9oG" id="RM0-nf-wS8"/>
                         <outlet property="tableView" destination="hqg-CB-TcV" id="JH8-uZ-Ta7"/>
