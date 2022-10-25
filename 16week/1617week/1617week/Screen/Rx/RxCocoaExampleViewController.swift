@@ -12,7 +12,9 @@ import RxSwift
 
 final class RxCocoaExampleViewController: UIViewController {
     
-    let disposeBag = DisposeBag()
+    // MARK: - Dispose Bag
+    
+    var disposeBag = DisposeBag()
     
     // MARK: - @IBOutlet
     
@@ -24,6 +26,11 @@ final class RxCocoaExampleViewController: UIViewController {
     @IBOutlet weak var signName: UITextField!
     @IBOutlet weak var signEmail: UITextField!
     @IBOutlet weak var signButton: UIButton!
+    @IBOutlet weak var nicknameLabel: UILabel!
+    
+    // MARK: - Property
+    
+    var nickname = Observable.just("폴킴")
     
     // MARK: - LifeCycle
     
@@ -34,14 +41,30 @@ final class RxCocoaExampleViewController: UIViewController {
         setSwitch()
         setSign()
         setOperator()
+        
+        
+        
+        nickname
+            .bind(to: nicknameLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
+            
+        }
+    }
+    
+    deinit {
+        print("RxCocoaExampleViewController")
     }
     
     // MARK: - Custom Method
     
     private func setOperator() {
         
+        // MARK: - repeatElement
+        
         Observable.repeatElement("Ruhee")
-            .take(5)
+            .take(5) // Finite Observable Sequence
             .subscribe { value in
                 print("repeatElement - ", value)
             } onError: { error in
@@ -54,25 +77,26 @@ final class RxCocoaExampleViewController: UIViewController {
             .disposed(by: disposeBag)
         
         
-        let intervalObservable = Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
-            .subscribe { value in
-                print("repeatElement - ", value)
-            } onError: { error in
-                print("repeatElement - ", error)
-            } onCompleted: {
-                print("repeatElement - onCompleted")
-            } onDisposed: {
-                print("repeatElement - onDisposed")
-            }
-//            .disposed(by: disposeBag)
+        // MARK: - interval
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+5) {
-            intervalObservable.dispose()
-        }
+        Observable<Int>.interval(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe { value in
+                print("interval - ", value)
+            } onError: { error in
+                print("interval - ", error)
+            } onCompleted: {
+                print("interval - onCompleted")
+            } onDisposed: {
+                print("interval - onDisposed")
+            }
+            .disposed(by: disposeBag)
+        
+               
+        
+        // MARK: - just
         
         let itemsA = ["루희", "루루", "루키", "후리", "훌"]
         let itemsB = ["소깡", "sokyte", "도영이꺼", "쏘"]
-        
         
         // just
         Observable.just(itemsA)
@@ -86,7 +110,10 @@ final class RxCocoaExampleViewController: UIViewController {
                 print("just - onDisposed")
             }
             .disposed(by: disposeBag)
-
+        
+        
+        // MARK: - of
+         
         // of
         Observable.of(itemsA, itemsB)
             .subscribe { value in
@@ -100,6 +127,8 @@ final class RxCocoaExampleViewController: UIViewController {
             }
             .disposed(by: disposeBag)
         
+        
+        // MARK: - from
         
         // from
         Observable.from(itemsA)
@@ -143,11 +172,12 @@ final class RxCocoaExampleViewController: UIViewController {
             .disposed(by: disposeBag)
         
         signButton.rx.tap
-            .subscribe { _ in
+            .subscribe { [weak self] _ in
+                guard let self = self else { return }
                 self.showAlert()
             }
             .disposed(by: disposeBag)
-
+        
     }
     
     private func showAlert() {
@@ -190,18 +220,18 @@ final class RxCocoaExampleViewController: UIViewController {
             }
             .bind(to: simpleLabel.rx.text)
             .disposed(by: disposeBag) // 메모리해제
-
+        
     }
     
     private func setPickerView() {
         
         let items = Observable.just([
-                "영화",
-                "애니메이션",
-                "드라마",
-                "기타"
-            ])
-     
+            "영화",
+            "애니메이션",
+            "드라마",
+            "기타"
+        ])
+        
         items
             .bind(to: pickerView.rx.itemTitles) { (row, element) in
                 return element
@@ -211,9 +241,9 @@ final class RxCocoaExampleViewController: UIViewController {
         pickerView.rx.modelSelected(String.self)
             .map { $0.first }
             .bind(to: simpleLabel.rx.text)
-//            .subscribe(onNext: { value in
-//                print(value)
-//            })
+        //            .subscribe(onNext: { value in
+        //                print(value)
+        //            })
             .disposed(by: disposeBag)
     }
 }
