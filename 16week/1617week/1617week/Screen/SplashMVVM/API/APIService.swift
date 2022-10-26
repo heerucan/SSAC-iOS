@@ -9,8 +9,12 @@ import Foundation
 
 import Alamofire
 
+enum SearchError: Error {
+    case noPhoto
+    case serverError
+}
+
 final class APIService {
-    
     static let shared = APIService()
     private init() { }
     
@@ -22,7 +26,6 @@ final class APIService {
         
         AF.request(url, method: .get, headers: header).responseDecodable(of: SearchPhoto.self) { response in
             let statusCode = response.response?.statusCode
-            
             
             switch response.result {
             case .success(let value):

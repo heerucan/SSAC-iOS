@@ -7,7 +7,14 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 final class NewsViewController: UIViewController {
+    
+    // MARK: - DisposeBag
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - @IBOutlet
     
@@ -29,29 +36,53 @@ final class NewsViewController: UIViewController {
         configureHierarchy()
         configureDataSource()
         bindData()
-        setupViews()
+//        setupViews()
     }
     
     // MARK: - Bind : 객체를 연결하고 핸들링해주는 코드, 어디서 어떻게 데이터가 구성되어 있는지는 모르고 있음
     // 뷰모델에서 컨트롤러로 데이터가 흘러 들어오는 상태
     
-    func bindData() {
-        viewModel.pageNumber.bind { value in
-//            print("bind == \(value)")
-            self.numberTextField.text = value
-        }
+    private func bindData() {
         
-        viewModel.sampleNews.bind { item in
+        viewModel.pageNumber
+            .withUnretained(self)
+            .bind { (vc, value) in
+//            print("bind == \(value)")
+            vc.numberTextField.text = value
+        }.disposed(by: disposeBag)
+        
+        viewModel.sampleNews
+            .bind { [weak self] item in
+            guard let self = self else { return }
             var snapshot = NSDiffableDataSourceSnapshot<Int, News.NewsItem>()
             snapshot.appendSections([0])
             snapshot.appendItems(item)
             self.dataSource.apply(snapshot, animatingDifferences: false)
-        }
+        }.disposed(by: disposeBag)
+        
+        loadButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                vc.viewModel.loadSample()
+            }.disposed(by: disposeBag)
+        
+        resetButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                vc.viewModel.resetSample()
+            }.disposed(by: disposeBag)
+        
+//        numberTextField.rx.
+//            .withUnretained(self)
+//            .bind { (vc, _) in
+//                vc.viewModel.changePageNumberFormat(text: numberTextField.rx.text)
+//            }
+//            .disposed(by: disposeBag)
     }
     
     // MARK: - Custom Method
     
-    func setupViews() {
+    private func setupViews() {
         numberTextField.addTarget(self, action: #selector(numberTextFieldChanged), for: .editingChanged)
         resetButton.addTarget(self, action: #selector(touchupResetButton), for: .touchUpInside)
         loadButton.addTarget(self, action: #selector(touchupLoadButton), for: .touchUpInside)

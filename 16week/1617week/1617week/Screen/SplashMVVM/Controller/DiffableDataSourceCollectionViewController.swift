@@ -6,9 +6,16 @@
 //
 
 import UIKit
+
+import RxCocoa
+import RxSwift
 import Kingfisher
 
 final class DiffableDataSourceViewController: UIViewController {
+    
+    // MARK: - DisposeBag
+    
+    private let disoseBag = DisposeBag()
     
     // MARK: - @IBOutlet
     
@@ -28,28 +35,62 @@ final class DiffableDataSourceViewController: UIViewController {
         super.viewDidLoad()
         collectionView.collectionViewLayout = createLayout()
         configureDataSource()
-        setupDelegate()
+//        setupDelegate()
         bindData()
     }
     
     // MARK: - Bind
     
     private func bindData() {
-        viewModel.photoList.bind { photo in
-            // 6. snapshot 생성
-            // 서버통신하면서 request 후 load되는데 시간이 걸리기 때문에
-            var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>()
-            snapshot.appendSections([0])
-            snapshot.appendItems(photo.results)
-            self.dataSource.apply(snapshot)
-        }
+        
+        viewModel.photoList
+            .withUnretained(self)
+            .subscribe { (vc, value) in
+                var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>()
+                snapshot.appendSections([0])
+                snapshot.appendItems(value.results)
+                self.dataSource.apply(snapshot)
+            } onError: { error in
+                print(error)
+            } onCompleted: {
+                print("completed")
+            } onDisposed: {
+                print("disposed")
+            }
+            .disposed(by: DisposeBag())
+        
+        //        viewModel.photoList
+        //            .withUnretained(self)
+        //            .bind { (vc, value) in
+        //                // 6. snapshot 생성
+        //                // 서버통신하면서 request 후 load되는데 시간이 걸리기 때문에
+        //                var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>()
+        //                snapshot.appendSections([0])
+        //                snapshot.appendItems(value.results)
+        //                self.dataSource.apply(snapshot)
+        //            }
+        //            .disposed(by: disoseBag)
+
+        
+        // MARK: - SearchBarDelegate를 Rx로 개선
+        
+        searchBar.rx.text
+            .orEmpty
+            .debounce(.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .withUnretained(self)
+            .bind { (vc, value) in
+                vc.viewModel.requestSearchPhoto(query: value)
+            }
+            .disposed(by: disoseBag)
+
     }
     
     // MARK: - Custom Method
     
     private func setupDelegate() {
         collectionView.delegate = self
-        searchBar.delegate = self
+//        searchBar.delegate = self
     }
 }
 
@@ -63,15 +104,15 @@ extension DiffableDataSourceViewController: UICollectionViewDelegate {
     //    }
 }
 
-extension DiffableDataSourceViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        //        var snapshot = dataSource.snapshot()
-        //        snapshot.appendItems([searchBar.text!])
-        //        dataSource.apply(snapshot, animatingDifferences: true)
-        
-        viewModel.requestSearchPhoto(query: searchBar.text!)
-    }
-}
+//extension DiffableDataSourceViewController: UISearchBarDelegate {
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        //        var snapshot = dataSource.snapshot()
+//        //        snapshot.appendItems([searchBar.text!])
+//        //        dataSource.apply(snapshot, animatingDifferences: true)
+//
+//        viewModel.requestSearchPhoto(query: searchBar.text!)
+//    }
+//}
 
 // MARK: - Extension
 

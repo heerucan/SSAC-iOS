@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B38423F2908CBB5005799CB /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38423E2908CBB5005799CB /* SubscribeViewController.swift */; };
 		5B76B2DA290622D0007B8B29 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B76B2D9290622D0007B8B29 /* RxCocoa */; };
 		5B76B2DC290622D0007B8B29 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B76B2DB290622D0007B8B29 /* RxSwift */; };
 		5B76B2DF290625C6007B8B29 /* RxCocoaExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76B2DE290625C6007B8B29 /* RxCocoaExampleViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B38423E2908CBB5005799CB /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
 		5B76B2DE290625C6007B8B29 /* RxCocoaExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaExampleViewController.swift; sourceTree = "<group>"; };
 		5B76B2E529077A36007B8B29 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		5B76B2EA290788AD007B8B29 /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				5B76B2E529077A36007B8B29 /* SubjectViewController.swift */,
+				5B38423E2908CBB5005799CB /* SubscribeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				5BEE115F2900D13200CA1913 /* NewsViewController.swift in Sources */,
 				5B76B2EF290788E7007B8B29 /* Contact.swift in Sources */,
 				5B76B2E629077A36007B8B29 /* SubjectViewController.swift in Sources */,
+				5B38423F2908CBB5005799CB /* SubscribeViewController.swift in Sources */,
 				5B8A7EF328FE2D9800E8AC62 /* AppDelegate.swift in Sources */,
 				5BEE11742900EF8000CA1913 /* SearchPhoto.swift in Sources */,
 				5B8A7EF528FE2D9800E8AC62 /* SceneDelegate.swift in Sources */,
