@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B38423F2908CBB5005799CB /* SubscribeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38423E2908CBB5005799CB /* SubscribeViewController.swift */; };
+		5B384247290A07A5005799CB /* ValidationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B384246290A07A5005799CB /* ValidationViewController.swift */; };
+		5B38424B290A22C4005799CB /* ValidationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B38424A290A22C4005799CB /* ValidationViewModel.swift */; };
 		5B76B2DA290622D0007B8B29 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B76B2D9290622D0007B8B29 /* RxCocoa */; };
 		5B76B2DC290622D0007B8B29 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B76B2DB290622D0007B8B29 /* RxSwift */; };
 		5B76B2DF290625C6007B8B29 /* RxCocoaExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B76B2DE290625C6007B8B29 /* RxCocoaExampleViewController.swift */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		5B38423E2908CBB5005799CB /* SubscribeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeViewController.swift; sourceTree = "<group>"; };
+		5B384246290A07A5005799CB /* ValidationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewController.swift; sourceTree = "<group>"; };
+		5B38424A290A22C4005799CB /* ValidationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationViewModel.swift; sourceTree = "<group>"; };
 		5B76B2DE290625C6007B8B29 /* RxCocoaExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxCocoaExampleViewController.swift; sourceTree = "<group>"; };
 		5B76B2E529077A36007B8B29 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		5B76B2EA290788AD007B8B29 /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
@@ -77,9 +81,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B384245290A078E005799CB /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				5B38424C290A232F005799CB /* Model */,
+				5B384248290A0899005799CB /* ViewModel */,
+				5B384249290A089F005799CB /* Controller */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
+		5B384248290A0899005799CB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5B38424A290A22C4005799CB /* ValidationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5B384249290A089F005799CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5B384246290A07A5005799CB /* ValidationViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5B38424C290A232F005799CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		5B76B2E429077A23007B8B29 /* Rx */ = {
 			isa = PBXGroup;
 			children = (
+				5B384245290A078E005799CB /* Validation */,
 				5B76B2E829078898007B8B29 /* RxCocoa */,
 				5B76B2E72907888D007B8B29 /* Subject */,
 			);
@@ -361,6 +399,7 @@
 				5BEE115D2900CF7D00CA1913 /* CObservable.swift in Sources */,
 				5BC92D8F28FF8FAB006D6E61 /* DiffableDataSourceCollectionViewController.swift in Sources */,
 				5BEE116B2900ED6B00CA1913 /* DiffableViewModel.swift in Sources */,
+				5B38424B290A22C4005799CB /* ValidationViewModel.swift in Sources */,
 				5B8A7F0A28FE38FF00E8AC62 /* SimpleCollectionViewController.swift in Sources */,
 				5BEE11662900D78800CA1913 /* News.swift in Sources */,
 				5B8A7EF728FE2D9800E8AC62 /* SimpleTableViewController.swift in Sources */,
@@ -368,6 +407,7 @@
 				5B76B2EF290788E7007B8B29 /* Contact.swift in Sources */,
 				5B76B2E629077A36007B8B29 /* SubjectViewController.swift in Sources */,
 				5B38423F2908CBB5005799CB /* SubscribeViewController.swift in Sources */,
+				5B384247290A07A5005799CB /* ValidationViewController.swift in Sources */,
 				5B8A7EF328FE2D9800E8AC62 /* AppDelegate.swift in Sources */,
 				5BEE11742900EF8000CA1913 /* SearchPhoto.swift in Sources */,
 				5B8A7EF528FE2D9800E8AC62 /* SceneDelegate.swift in Sources */,

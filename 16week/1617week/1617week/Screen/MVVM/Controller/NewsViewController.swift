@@ -72,12 +72,12 @@ final class NewsViewController: UIViewController {
                 vc.viewModel.resetSample()
             }.disposed(by: disposeBag)
         
-//        numberTextField.rx.
-//            .withUnretained(self)
-//            .bind { (vc, _) in
-//                vc.viewModel.changePageNumberFormat(text: numberTextField.rx.text)
-//            }
-//            .disposed(by: disposeBag)
+        numberTextField.rx.text.orEmpty
+            .withUnretained(self)
+            .bind { (vc, value) in
+                vc.viewModel.changePageNumberFormat(text: value)
+            }
+            .disposed(by: disposeBag)
     }
     
     // MARK: - Custom Method

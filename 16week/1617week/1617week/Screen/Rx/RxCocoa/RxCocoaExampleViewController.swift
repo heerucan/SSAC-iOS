@@ -47,6 +47,7 @@ final class RxCocoaExampleViewController: UIViewController {
         nickname
             .bind(to: nicknameLabel.rx.text)
             .disposed(by: disposeBag)
+
         
         DispatchQueue.main.asyncAfter(deadline: .now()+2) {
             

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e69-CX-HEp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -247,6 +247,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uxa-2Z-sH6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2721" y="123"/>
+        </scene>
+        <!--ValidationViewController-->
+        <scene sceneID="QWm-Cb-QQi">
+            <objects>
+                <viewController title="ValidationViewController" id="e69-CX-HEp" customClass="ValidationViewController" customModule="_617week" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3tF-1G-GgH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8자 이상!!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L2q-UZ-8cg">
+                                <rect key="frame" x="20" y="134" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="69K-57-ieT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nm-pf-MJK">
+                                <rect key="frame" x="20" y="204" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8ul-BB-v3l"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AGa-2D-Nfq">
+                                <rect key="frame" x="20" y="64" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BLZ-BG-spU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bwg-QN-cKY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bwg-QN-cKY" firstAttribute="trailing" secondItem="L2q-UZ-8cg" secondAttribute="trailing" constant="20" id="7lX-WV-gFe"/>
+                            <constraint firstItem="8nm-pf-MJK" firstAttribute="leading" secondItem="bwg-QN-cKY" secondAttribute="leading" constant="20" id="9aT-AP-ShQ"/>
+                            <constraint firstItem="bwg-QN-cKY" firstAttribute="trailing" secondItem="8nm-pf-MJK" secondAttribute="trailing" constant="20" id="ABf-1o-dtd"/>
+                            <constraint firstItem="AGa-2D-Nfq" firstAttribute="leading" secondItem="bwg-QN-cKY" secondAttribute="leading" constant="20" id="EBp-Ie-Llw"/>
+                            <constraint firstItem="bwg-QN-cKY" firstAttribute="trailing" secondItem="AGa-2D-Nfq" secondAttribute="trailing" constant="20" id="dVq-p2-fA0"/>
+                            <constraint firstItem="L2q-UZ-8cg" firstAttribute="leading" secondItem="bwg-QN-cKY" secondAttribute="leading" constant="20" id="jHl-zE-972"/>
+                            <constraint firstItem="L2q-UZ-8cg" firstAttribute="top" secondItem="AGa-2D-Nfq" secondAttribute="bottom" constant="20" id="kCn-E8-iuk"/>
+                            <constraint firstItem="8nm-pf-MJK" firstAttribute="top" secondItem="L2q-UZ-8cg" secondAttribute="bottom" constant="20" id="l9M-Ty-YFG"/>
+                            <constraint firstItem="AGa-2D-Nfq" firstAttribute="top" secondItem="bwg-QN-cKY" secondAttribute="top" constant="20" id="oqC-O2-QDj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="nameTextField" destination="AGa-2D-Nfq" id="Rna-Yr-t7W"/>
+                        <outlet property="stepButton" destination="8nm-pf-MJK" id="e5u-qs-cLL"/>
+                        <outlet property="validationLabel" destination="L2q-UZ-8cg" id="NeJ-kE-ZjC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KNd-I8-ovz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3762" y="138"/>
         </scene>
         <!--RxCocoaExampleViewController-->
         <scene sceneID="fDk-Q1-llv">

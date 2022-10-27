@@ -17,7 +17,7 @@ final class NewsViewModel {
     // var pageNumber: CObservable<String> = CObservable("3000")
     
 //    var pageNumber = BehaviorSubject<String>(value: "3,000")
-    var pageNumber = BehaviorRelay(value: "3,000")
+    var pageNumber = BehaviorRelay(value: "3000")
     
     func changePageNumberFormat(text: String) {
         let numberFormatter = NumberFormatter()
