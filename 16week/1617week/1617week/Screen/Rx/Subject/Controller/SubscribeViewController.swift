@@ -9,6 +9,7 @@ import UIKit
 
 import RxAlamofire
 import RxCocoa
+import RxDataSources
 import RxSwift
 
 final class SubscribeViewController: UIViewController {
@@ -17,17 +18,26 @@ final class SubscribeViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private lazy var dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Int>>
+    { dataSource, tableView, indexPath, item in
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")!
+        cell.textLabel?.text = "\(item)"
+        return cell
+    }
+    
     // MARK: - @IBOutlet
 
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     // MARK: - LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        testRxAlamofire()
+//        testRxAlamofire()
+        testRxDataSource()
         
         Observable.of(1,2,3,4,5,6,7,8,9,10)
             .skip(3) // 앞에서 3개의 이벤트는 무시하고 4부터 방출
@@ -105,11 +115,39 @@ final class SubscribeViewController: UIViewController {
     }
 }
 
+// MARK: - RxDataSource
+
+extension SubscribeViewController {
+    private func testRxDataSource() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        //RxTableViewSectionedReloadDataSource -> diffable이랑 비슷하게 생각하렴
+        // String -> model
+        // Int -> items
+        
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            return dataSource.sectionModels[index].model
+        }
+        
+        dataSource.canEditRowAtIndexPath = { dataSource, indexPath in
+          return true
+        }
+        
+        Observable
+            .just([
+                SectionModel(model: "첫번째", items: [1, 2, 3]),
+                SectionModel(model: "두번째", items: [1, 2, 3]),
+                SectionModel(model: "세번째", items: [1, 2, 3])
+            ])
+            .bind(to: tableView.rx.items(dataSource: dataSource))
+            .disposed(by: disposeBag)
+    }
+}
+
 // MARK: - RxAlamofire
 
 extension SubscribeViewController {
-    
-    func testRxAlamofire() {
+    private func testRxAlamofire() {
         
         // Success Error 밖에 없잖아? 네트워크는?
         
