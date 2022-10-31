@@ -7,6 +7,7 @@
 
 import UIKit
 
+import RxAlamofire
 import RxCocoa
 import RxSwift
 
@@ -25,6 +26,8 @@ final class SubscribeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        testRxAlamofire()
         
         Observable.of(1,2,3,4,5,6,7,8,9,10)
             .skip(3) // 앞에서 3개의 이벤트는 무시하고 4부터 방출
@@ -100,5 +103,31 @@ final class SubscribeViewController: UIViewController {
             .drive(label.rx.text)
             .disposed(by: disposeBag)
     }
+}
 
+// MARK: - RxAlamofire
+
+extension SubscribeViewController {
+    
+    func testRxAlamofire() {
+        
+        // Success Error 밖에 없잖아? 네트워크는?
+        
+        let url = APIKey.searchURL + "heart"
+        request(.get, url, headers: ["Authorization": APIKey.authorization])
+            .data() // 데이터 스트림을 data로 바꿔줘야 함
+            .decode(type: SearchPhoto.self, decoder: JSONDecoder())
+            .withUnretained(self)
+            .subscribe(onNext: { (vc, value) in
+                print(value.results[0].urls)
+                vc.label.text = "\(value.results[0].urls)"
+            }, onError: { error in
+                print(error.localizedDescription)
+            }, onCompleted: {
+                print("completed")
+            }, onDisposed: {
+                print("disposed")
+            })
+            .disposed(by: disposeBag)
+    }
 }
