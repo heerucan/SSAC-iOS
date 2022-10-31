@@ -25,6 +25,17 @@ final class SubscribeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Observable.of(1,2,3,4,5,6,7,8,9,10)
+            .skip(3) // 앞에서 3개의 이벤트는 무시하고 4부터 방출
+            .filter { $0 % 2 == 0 } // 2의 배수만 방출
+            .debug()
+            .map { $0 * 2 } // 해당 이벤트에 대해 2를 곱해서 방출
+            .subscribe({ value in
+//                print("----", value)
+            })
+            .disposed(by: disposeBag)
+        
         bindData()
     }
     
@@ -33,7 +44,8 @@ final class SubscribeViewController: UIViewController {
     func bindData() {
         
         // 1. weak self
-        button.rx.tap
+        let sample = button.rx.tap
+        sample
             .subscribe { [weak self] _ in
                 guard let self = self else { return }
                 self.label.text = "안녕 반가워"
@@ -75,6 +87,7 @@ final class SubscribeViewController: UIViewController {
         
         // 5. operator로 데이터의 stream 조작
         button.rx.tap
+//            .debug() // print 해주는 것
             .map { "안녕 반가워" }
             .bind(to: label.rx.text)
             .disposed(by: disposeBag)
