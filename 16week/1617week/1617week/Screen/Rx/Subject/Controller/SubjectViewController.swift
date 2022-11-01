@@ -51,6 +51,26 @@ final class SubjectViewController: UIViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ContactCell")
         
+        let input = SubjectViewModel.Input(addTap: addButton.rx.tap,
+                                           newTap: newButton.rx.tap,
+                                           resetTap: resetButton.rx.tap,
+                                           searchText: searchBar.rx.text)
+        
+        let output = viewModel.transform(input: input)
+        
+        /* 이 부분이 transform에서 처리됨
+        viewModel.list // VM -> VC (Ouput)
+            .asDriver(onErrorJustReturn: [])
+         */
+         
+        output.list
+            .drive(tableView.rx.items(
+                cellIdentifier: "ContactCell",
+                cellType: UITableViewCell.self)) { (row, element, cell) in
+                    cell.textLabel?.text = "\(element.name): \(element.age)세, \(element.number)"
+                }
+                .disposed(by: disposeBag)
+        
         viewModel.list
             .bind(to: tableView.rx.items(
                 cellIdentifier: "ContactCell",
@@ -60,34 +80,43 @@ final class SubjectViewController: UIViewController {
         
         viewModel.fetchData()
         
-        addButton.rx.tap
+        output.addTap // VC -> VM (Input)
             .withUnretained(self)
             .subscribe { (vc, _) in
                 vc.viewModel.fetchData()
             }
             .disposed(by: disposeBag)
                         
-        resetButton.rx.tap
+        output.resetTap // VC -> VM (Input)
             .withUnretained(self)
             .subscribe { (vc, _) in
                 vc.viewModel.resetData()
-            }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
-        newButton.rx.tap
+        output.newTap // VC -> VM (Input)
             .withUnretained(self)
             .subscribe { (vc, _) in
                 vc.viewModel.newData()
-            }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
         
-        searchBar.rx.text.orEmpty
-            .withUnretained(self)
+        /* 이 부분이 transform에서 처리됨
+        searchBar.rx.text
+            .orEmpty // VC -> VM (Input)
             .debounce(RxTimeInterval.seconds(1),
                       scheduler: MainScheduler.instance) // wait - 1초 기다리고 검색
+            .distinctUntilChanged()
+         */
+        
+        output.searchText
+            .withUnretained(self)
             .subscribe { (vc, value) in
                 print("---", value)
                 vc.viewModel.filterData(query: value)
-            }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
     }
 }
 

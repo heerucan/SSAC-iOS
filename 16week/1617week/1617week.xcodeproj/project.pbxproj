@@ -37,6 +37,7 @@
 		5BF45032290F7698002EAC9B /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF45031290F7698002EAC9B /* RxAlamofire */; };
 		5BF45035290F776E002EAC9B /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF45034290F776E002EAC9B /* Differentiator */; };
 		5BF45037290F776E002EAC9B /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 5BF45036290F776E002EAC9B /* RxDataSources */; };
+		5BF4503A2910C11A002EAC9B /* CommonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF450392910C11A002EAC9B /* CommonViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		5BEE11732900EF8000CA1913 /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
 		5BEE11762900F00900CA1913 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		5BEE11782900F03500CA1913 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		5BF450392910C11A002EAC9B /* CommonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 		5B8A7EF128FE2D9800E8AC62 /* 1617week */ = {
 			isa = PBXGroup;
 			children = (
+				5BF450382910C0FE002EAC9B /* Protocol */,
 				5B8A7F0728FE2E1400E8AC62 /* Screen */,
 				5B8A7F0628FE2DFC00E8AC62 /* Support */,
 			);
@@ -317,6 +320,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5BF450382910C0FE002EAC9B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				5BF450392910C11A002EAC9B /* CommonViewModel.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -416,6 +427,7 @@
 				5B38423F2908CBB5005799CB /* SubscribeViewController.swift in Sources */,
 				5B384247290A07A5005799CB /* ValidationViewController.swift in Sources */,
 				5B8A7EF328FE2D9800E8AC62 /* AppDelegate.swift in Sources */,
+				5BF4503A2910C11A002EAC9B /* CommonViewModel.swift in Sources */,
 				5BEE11742900EF8000CA1913 /* SearchPhoto.swift in Sources */,
 				5B8A7EF528FE2D9800E8AC62 /* SceneDelegate.swift in Sources */,
 				5BEE11702900EDEF00CA1913 /* APIService.swift in Sources */,

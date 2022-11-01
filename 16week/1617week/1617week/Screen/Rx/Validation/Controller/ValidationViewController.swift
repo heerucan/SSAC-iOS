@@ -38,56 +38,74 @@ final class ValidationViewController: UIViewController {
     
     private func bind() {
         
-        // 텍필에서 글을 입력 후 버튼 누르면
-        // 경고라벨이 발생!!
-        // 버튼 누르면 -> 발생시켜!!
-        // 옵저버블(버튼) -> 옵저버(라벨)
-        // 작성한 글을 업데이트시키는 게 불가능해
-        // 동시에 할 수 있는 서브젝트
-        // UI에 친화적인 아이인 Relay
+        // MARK: - After
+        let input = ValidationViewModel.Input(text: nameTextField.rx.text, tap: stepButton.rx.tap)
+        let output = viewModel.transform(input: input)
+        
+        output.text
+            .drive(validationLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.validation
+            .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden)
+            .disposed(by: disposeBag)
         
         
         
-        // Stream에서 연산자를 만나며 데이터의 타입이 변경
-//        nameTextField.rx.text // String?
-//            .orEmpty // String
-//            .map { $0.count >= 8 } // Bool
-//            .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden)
-//            .disposed(by: disposeBag)
+        // MARK: - Before
         
-        // 뷰모델의 validText를 validationText에 전달하겠다!
-        // 근데 UI에 특화된 요소니까, Relay로 만든 것이고 짝꿍은 Drive
-        viewModel.validText
+        /*
+         텍필에서 글을 입력 후 버튼 누르면
+         경고라벨이 발생!!
+         버튼 누르면 -> 발생시켜!!
+         옵저버블(버튼) -> 옵저버(라벨)
+         작성한 글을 업데이트시키는 게 불가능해
+         동시에 할 수 있는 서브젝트
+         UI에 친화적인 아이인 Relay
+                
+         Stream에서 연산자를 만나며 데이터의 타입이 변경
+        nameTextField.rx.text // String?
+            .orEmpty // String
+            .map { $0.count >= 8 } // Bool
+            .bind(to: stepButton.rx.isEnabled, validationLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
+         뷰모델의 validText를 validationText에 전달하겠다!
+         근데 UI에 특화된 요소니까, Relay로 만든 것이고 짝꿍은 Drive
+         */
+        
+        viewModel.validText // Output
             .asDriver()
             .drive(validationLabel.rx.text)
             .disposed(by: disposeBag)
                 
-        let validation = nameTextField.rx.text
+        let validation = nameTextField.rx.text // 데이터를 핸들링하고 있음 Input
             .orEmpty
             .map { $0.count >= 8 }
             .asDriver(onErrorJustReturn: false)
 //            .share()
 
-        validation
+        validation // Input
             .drive(stepButton.rx.isEnabled, validationLabel.rx.isHidden)
             .disposed(by: disposeBag)
 
-        validation
-            .drive { [weak self] value in
+        output.validation  // Input
+            .bind { [weak self] value in
                 guard let self = self else { return }
                 let color: UIColor = value ? .systemPink : .lightGray
                 self.stepButton.backgroundColor = color
             }
             .disposed(by: disposeBag)
         
+        /*
+         subscribe에 해당하는 요소인데 ->
+         이벤트를 보내면 성공할 수도, 실패할 수도 있으니까!!
+         이벤트가 전달될 때 어떻게 처리가 되는가!!
+         근데 tap 같은 경우는 거의 next만 처리됨!
+         그래서 bind로 변경할 것임
+        */
         
-        // subscribe에 해당하는 요소인데 ->
-        // 이벤트를 보내면 성공할 수도, 실패할 수도 있으니까!!
-        // 이벤트가 전달될 때 어떻게 처리가 되는가!!
-        // 근데 tap 같은 경우는 거의 next만 처리됨!
-        // 그래서 bind로 변경할 것임
-        
-        stepButton.rx.tap
+        output.tap // Input
             .bind { _ in
                 print("SHOW ALERT")
             }
