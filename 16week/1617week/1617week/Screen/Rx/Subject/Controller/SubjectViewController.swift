@@ -110,7 +110,7 @@ final class SubjectViewController: UIViewController {
             .distinctUntilChanged()
          */
         
-        output.searchText
+        output.searchText 
             .withUnretained(self)
             .subscribe { (vc, value) in
                 print("---", value)
