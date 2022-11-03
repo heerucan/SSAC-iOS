@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B11F4FF2912004B00B5ED45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F4FE2912004B00B5ED45 /* AppDelegate.swift */; };
 		5B11F5012912004B00B5ED45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F5002912004B00B5ED45 /* SceneDelegate.swift */; };
-		5B11F5032912004B00B5ED45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F5022912004B00B5ED45 /* ViewController.swift */; };
+		5B11F5032912004B00B5ED45 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F5022912004B00B5ED45 /* ProfileViewController.swift */; };
 		5B11F5062912004B00B5ED45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B11F5042912004B00B5ED45 /* Main.storyboard */; };
 		5B11F5082912004F00B5ED45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B11F5072912004F00B5ED45 /* Assets.xcassets */; };
 		5B11F50B2912004F00B5ED45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B11F5092912004F00B5ED45 /* LaunchScreen.storyboard */; };
@@ -20,13 +20,18 @@
 		5B11F522291212D800B5ED45 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F521291212D800B5ED45 /* Login.swift */; };
 		5B11F5242912157C00B5ED45 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F5232912157C00B5ED45 /* Profile.swift */; };
 		5B11F52629121BF300B5ED45 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F52529121BF300B5ED45 /* EndPoint.swift */; };
+		5B11F55A291348FA00B5ED45 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F559291348FA00B5ED45 /* APIError.swift */; };
+		5B11F55C2913530100B5ED45 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F55B2913530100B5ED45 /* ProfileViewModel.swift */; };
+		5B11F55F291353FC00B5ED45 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5B11F55E291353FC00B5ED45 /* RxCocoa */; };
+		5B11F561291353FC00B5ED45 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 5B11F560291353FC00B5ED45 /* RxSwift */; };
+		5B11F5632913629700B5ED45 /* SubscriptExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B11F5622913629700B5ED45 /* SubscriptExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B11F4FB2912004B00B5ED45 /* week18.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = week18.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B11F4FE2912004B00B5ED45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B11F5002912004B00B5ED45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5B11F5022912004B00B5ED45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B11F5022912004B00B5ED45 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5B11F5052912004B00B5ED45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B11F5072912004F00B5ED45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B11F50A2912004F00B5ED45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +42,9 @@
 		5B11F521291212D800B5ED45 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5B11F5232912157C00B5ED45 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5B11F52529121BF300B5ED45 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		5B11F559291348FA00B5ED45 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		5B11F55B2913530100B5ED45 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		5B11F5622913629700B5ED45 /* SubscriptExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B11F561291353FC00B5ED45 /* RxSwift in Frameworks */,
+				5B11F55F291353FC00B5ED45 /* RxCocoa in Frameworks */,
 				5B11F51429120A1D00B5ED45 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,7 +93,8 @@
 		5B11F51729120F2800B5ED45 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				5B11F5022912004B00B5ED45 /* ViewController.swift */,
+				5B11F5022912004B00B5ED45 /* ProfileViewController.swift */,
+				5B11F55B2913530100B5ED45 /* ProfileViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -94,6 +105,7 @@
 				5B11F51529120F0300B5ED45 /* APIService.swift */,
 				5B11F51D2912100C00B5ED45 /* APIKey.swift */,
 				5B11F52529121BF300B5ED45 /* EndPoint.swift */,
+				5B11F559291348FA00B5ED45 /* APIError.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -106,6 +118,7 @@
 				5B11F5072912004F00B5ED45 /* Assets.xcassets */,
 				5B11F4FE2912004B00B5ED45 /* AppDelegate.swift */,
 				5B11F5002912004B00B5ED45 /* SceneDelegate.swift */,
+				5B11F5622913629700B5ED45 /* SubscriptExample.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -137,6 +150,8 @@
 			name = week18;
 			packageProductDependencies = (
 				5B11F51329120A1D00B5ED45 /* Alamofire */,
+				5B11F55E291353FC00B5ED45 /* RxCocoa */,
+				5B11F560291353FC00B5ED45 /* RxSwift */,
 			);
 			productName = week18;
 			productReference = 5B11F4FB2912004B00B5ED45 /* week18.app */;
@@ -168,6 +183,7 @@
 			mainGroup = 5B11F4F22912004B00B5ED45;
 			packageReferences = (
 				5B11F51229120A1D00B5ED45 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5B11F55D291353FC00B5ED45 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 5B11F4FC2912004B00B5ED45 /* Products */;
 			projectDirPath = "";
@@ -197,14 +213,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B11F5032912004B00B5ED45 /* ViewController.swift in Sources */,
+				5B11F5632913629700B5ED45 /* SubscriptExample.swift in Sources */,
+				5B11F5032912004B00B5ED45 /* ProfileViewController.swift in Sources */,
 				5B11F4FF2912004B00B5ED45 /* AppDelegate.swift in Sources */,
 				5B11F52629121BF300B5ED45 /* EndPoint.swift in Sources */,
 				5B11F51629120F0300B5ED45 /* APIService.swift in Sources */,
+				5B11F55C2913530100B5ED45 /* ProfileViewModel.swift in Sources */,
 				5B11F5242912157C00B5ED45 /* Profile.swift in Sources */,
 				5B11F522291212D800B5ED45 /* Login.swift in Sources */,
 				5B11F5012912004B00B5ED45 /* SceneDelegate.swift in Sources */,
 				5B11F51E2912100C00B5ED45 /* APIKey.swift in Sources */,
+				5B11F55A291348FA00B5ED45 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +453,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		5B11F55D291353FC00B5ED45 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -441,6 +468,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5B11F51229120A1D00B5ED45 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		5B11F55E291353FC00B5ED45 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B11F55D291353FC00B5ED45 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		5B11F560291353FC00B5ED45 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5B11F55D291353FC00B5ED45 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

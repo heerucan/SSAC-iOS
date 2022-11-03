@@ -24,13 +24,13 @@ final class APIService {
                    parameters: signupAPI.parameters,
                    headers: signupAPI.headers)
             .responseString { response in
-            switch response.result {
-            case .success(let value):
-                print("회원가입", value)
-            case .failure(let error):
-                print("회원가입", error.localizedDescription)
+                switch response.result {
+                case .success(let value):
+                    print("회원가입", value)
+                case .failure(let error):
+                    print("회원가입", error.localizedDescription)
+                }
             }
-        }
     }
     
     // MARK: - POST 로그인
@@ -38,7 +38,7 @@ final class APIService {
     func login(email: String, password: String) {
         
         let loginAPI = SeSACAPI.login(email: email, password: password)
-
+        
         AF.request(loginAPI.url,
                    method: .post,
                    parameters: loginAPI.parameters,
@@ -69,6 +69,33 @@ final class APIService {
                     print("프로필", data)
                 case .failure(let error):
                     print("프로필", error.localizedDescription)
+                }
+            }
+    }
+    
+    func requestSeSAC<T: Decodable>(type: T.Type = T.self,
+                                    url: URL,
+                                    method: HTTPMethod,
+                                    parameters: [String:String]? = nil,
+                                    headers: HTTPHeaders,
+                                    completion: @escaping (Result<T, Error>) -> Void) {
+        
+        AF.request(url,
+                   method: method,
+                   parameters: parameters,
+                   headers: headers)
+            .responseDecodable(of: T.self) { response in
+                guard let statusCode = response.response?.statusCode else { return }
+
+                switch response.result {
+                case .success(let data):
+                    print(data)
+                    completion(.success(data))
+                    
+                case .failure(_):
+                    guard let error = APIError(rawValue: statusCode) else { return }
+                    print(error.localizedDescription)
+                    completion(.failure(error))
                 }
             }
     }
