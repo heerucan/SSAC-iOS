@@ -13,11 +13,13 @@ import RxRelay
 
 final class ValidationViewModel {
     
-    let validText = BehaviorRelay(value: "8자 이상 작성해주세요")
+//    let validText = BehaviorRelay(value: "8자 이상 작성해주세요")
 
     struct Input {
         // 텍스트필드의 인풋속성을 여기로 가져온 것
         let text: ControlProperty<String?> // nameTextField.rx.text
+        let validText = BehaviorRelay(value: "8자 이상 작성해주세요")
+        
         let tap: ControlEvent<Void> // stepButton.rx.tap
     }
     
@@ -36,7 +38,8 @@ final class ValidationViewModel {
             .share()
 //            .asDriver(onErrorJustReturn: false)
         
-        let text = validText.asDriver()
+        let text = input.validText.asDriver()
+    
         
         return Output(validation: valid, tap: input.tap, text: text)
     }

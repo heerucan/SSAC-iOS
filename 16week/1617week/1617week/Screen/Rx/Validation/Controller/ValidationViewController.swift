@@ -74,10 +74,10 @@ final class ValidationViewController: UIViewController {
          근데 UI에 특화된 요소니까, Relay로 만든 것이고 짝꿍은 Drive
          */
         
-        viewModel.validText // Output
-            .asDriver()
-            .drive(validationLabel.rx.text)
-            .disposed(by: disposeBag)
+//        viewModel.validText // Output
+//            .asDriver()
+//            .drive(validationLabel.rx.text)
+//            .disposed(by: disposeBag)
                 
         let validation = nameTextField.rx.text // 데이터를 핸들링하고 있음 Input
             .orEmpty
