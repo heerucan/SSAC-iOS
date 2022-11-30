@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B31363A2936FAF8003DC5C6 /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3136392936FAF8003DC5C6 /* ValidatorTests.swift */; };
 		5BCE6C652935ABE900876E70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6C642935ABE900876E70 /* LoginViewController.swift */; };
 		5BF40D01293454F000F1536C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF40D00293454F000F1536C /* AppDelegate.swift */; };
 		5BF40D03293454F000F1536C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF40D02293454F000F1536C /* SceneDelegate.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B3136392936FAF8003DC5C6 /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
 		5BCE6C642935ABE900876E70 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5BF40CFD293454F000F1536C /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF40D00293454F000F1536C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				5BF40D302935A45400F1536C /* DemoProjectTests.swift */,
+				5B3136392936FAF8003DC5C6 /* ValidatorTests.swift */,
 			);
 			path = DemoProjectTests;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B31363A2936FAF8003DC5C6 /* ValidatorTests.swift in Sources */,
 				5BF40D312935A45400F1536C /* DemoProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -40,7 +40,7 @@
         <!--Login View Controller-->
         <scene sceneID="Sr1-lX-PdQ">
             <objects>
-                <viewController id="hd3-4S-f7D" customClass="LoginViewController" customModule="DemoProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="hd3-4S-f7D" customClass="LoginViewController" customModule="DemoProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bil-MI-imV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="checkTextField" destination="iTc-MF-vNO" id="QfZ-Aw-pfa"/>
                         <outlet property="descriptionLabel" destination="oKQ-Qw-wcN" id="BPv-rb-Dtc"/>
+                        <outlet property="emailTextField" destination="ngn-dT-qdv" id="aH4-JD-1jV"/>
+                        <outlet property="passwordTextField" destination="SCz-z2-Iri" id="B8X-6P-QhU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQn-Uu-chy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
