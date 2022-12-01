@@ -53,6 +53,17 @@ class APIServiceTests: XCTestCase {
         ex. dummy, mock, fake data, stub, spy... 같은 데이터로 이야기 함
      
      */
+    
+    /*
+     ✅ F.I.R.S.T
+     - Fast : 빠르게 결과가 나와야 함
+     - Isolated : 테스트가 독립적이어서 서로 영향을 주지 않게 고립되어야 함 -> tearDown에서 해제시켜준 이유
+     - Repeatable : 반복해도 같은 결과가 나와야 함 -> test double의 존재 이유
+     - Self-validating : 스스로 검증을 해야 함 -> XCTest를 써서 자체적으로 성공인지 실패인지 검증해라
+     - Timely : 철저하고 적절한 때에 작성이 되어야 함 -> ex. lotto 번호가 1~45까지 값이 나오는데 최소치와 최대치를 최대한 적절하게 테스트해야 함
+     
+     또한, 실패를 많이 경험해야 실패를 개선하는 것이 테스트의 의미가 있는 것
+     */
     func test_APILottoResponse_AsyncCover() throws {
         
         print("testExample Start")
