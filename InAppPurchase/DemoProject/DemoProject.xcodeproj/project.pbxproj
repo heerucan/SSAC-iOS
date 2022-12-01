@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5B31363A2936FAF8003DC5C6 /* ValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3136392936FAF8003DC5C6 /* ValidatorTests.swift */; };
+		5B31363F29383960003DC5C6 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B31363E29383960003DC5C6 /* APIService.swift */; };
+		5B31364229383BCF003DC5C6 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B31364129383BCF003DC5C6 /* APIServiceTests.swift */; };
 		5BCE6C652935ABE900876E70 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCE6C642935ABE900876E70 /* LoginViewController.swift */; };
 		5BF40D01293454F000F1536C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF40D00293454F000F1536C /* AppDelegate.swift */; };
 		5BF40D03293454F000F1536C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF40D02293454F000F1536C /* SceneDelegate.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		5B3136392936FAF8003DC5C6 /* ValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorTests.swift; sourceTree = "<group>"; };
+		5B31363E29383960003DC5C6 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		5B31364129383BCF003DC5C6 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		5BCE6C642935ABE900876E70 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5BF40CFD293454F000F1536C /* DemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF40D00293454F000F1536C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,10 +87,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B3136402938396A003DC5C6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				5BF40D00293454F000F1536C /* AppDelegate.swift */,
+				5BF40D02293454F000F1536C /* SceneDelegate.swift */,
+				5BF40D06293454F000F1536C /* Main.storyboard */,
+				5BF40D09293454F200F1536C /* Assets.xcassets */,
+				5BF40D0B293454F200F1536C /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		5BF40CF4293454F000F1536C = {
 			isa = PBXGroup;
 			children = (
 				5BF40CFF293454F000F1536C /* DemoProject */,
+				5B3136402938396A003DC5C6 /* Resource */,
 				5BF40D202935A44C00F1536C /* DemoProjectUITests */,
 				5BF40D2F2935A45400F1536C /* DemoProjectTests */,
 				5BF40CFE293454F000F1536C /* Products */,
@@ -107,14 +124,10 @@
 		5BF40CFF293454F000F1536C /* DemoProject */ = {
 			isa = PBXGroup;
 			children = (
-				5BF40D00293454F000F1536C /* AppDelegate.swift */,
-				5BF40D02293454F000F1536C /* SceneDelegate.swift */,
+				5B31363E29383960003DC5C6 /* APIService.swift */,
 				5BF40D04293454F000F1536C /* ViewController.swift */,
-				5BF40D06293454F000F1536C /* Main.storyboard */,
-				5BF40D09293454F200F1536C /* Assets.xcassets */,
-				5BF40D0B293454F200F1536C /* LaunchScreen.storyboard */,
-				5BF40D0E293454F200F1536C /* Info.plist */,
 				5BCE6C642935ABE900876E70 /* LoginViewController.swift */,
+				5BF40D0E293454F200F1536C /* Info.plist */,
 			);
 			path = DemoProject;
 			sourceTree = "<group>";
@@ -141,6 +154,7 @@
 			children = (
 				5BF40D302935A45400F1536C /* DemoProjectTests.swift */,
 				5B3136392936FAF8003DC5C6 /* ValidatorTests.swift */,
+				5B31364129383BCF003DC5C6 /* APIServiceTests.swift */,
 			);
 			path = DemoProjectTests;
 			sourceTree = "<group>";
@@ -277,6 +291,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BCE6C652935ABE900876E70 /* LoginViewController.swift in Sources */,
+				5B31363F29383960003DC5C6 /* APIService.swift in Sources */,
 				5BF40D05293454F000F1536C /* ViewController.swift in Sources */,
 				5BF40D01293454F000F1536C /* AppDelegate.swift in Sources */,
 				5BF40D03293454F000F1536C /* SceneDelegate.swift in Sources */,
@@ -296,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B31364229383BCF003DC5C6 /* APIServiceTests.swift in Sources */,
 				5B31363A2936FAF8003DC5C6 /* ValidatorTests.swift in Sources */,
 				5BF40D312935A45400F1536C /* DemoProjectTests.swift in Sources */,
 			);

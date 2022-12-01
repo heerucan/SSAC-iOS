@@ -8,14 +8,19 @@
 import XCTest
 @testable import DemoProject
 
+// Unit Test는 빨라야 한다. 소스 코드 기준으로 로직 테스트함
+// 항상 같은 결과를 내야 한다. repeatable
 class ValidatorTests: XCTestCase {
     
     var sut: Validator!
+    // var sut: Validator() -> 이렇게 작성하면 사용된 인스턴스가 다음 테스트에 영향을 줄 수 있기 때문에 다른 테스트에 영향을 주지 않게끔. 고립시켜야 함
 
+    // 인스턴스 생성하고
     override func setUpWithError() throws {
        sut = Validator()
     }
 
+    // 인스턴스 해제
     override func tearDownWithError() throws {
         sut = nil
     }
